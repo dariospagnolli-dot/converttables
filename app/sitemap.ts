@@ -6,7 +6,12 @@ import { HOW_MANY_ENTRIES } from '@/lib/data/how-many'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://convertmath.com'
 
-const TABLE_PAGES = ['multiplication', 'roman-numerals', 'binary-hex', 'squares-cubes', 'prime-numbers', 'powers-of-2', 'logarithm']
+const TABLE_PAGES = [
+  'multiplication', 'roman-numerals', 'binary-hex', 'squares-cubes',
+  'prime-numbers', 'powers-of-2', 'logarithm', 'ascii', 'math-symbols',
+  'greek-alphabet', 'fractions', 'trigonometry', 'html-colors',
+  'resistor-color-code', 'awg-wire-gauge', 'shoe-sizes',
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = []
