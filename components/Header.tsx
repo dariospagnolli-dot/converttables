@@ -11,6 +11,9 @@ export function Header({ locale }: { locale: Locale }) {
           ConvertMath
         </Link>
         <nav className="hidden sm:flex items-center gap-6 text-sm">
+          <Link href={`/${locale}/convert`} className="text-muted-foreground hover:text-foreground transition-colors">
+            {t(locale, 'conversions')}
+          </Link>
           <Link href={`/${locale}/convert/cups-to-grams`} className="text-muted-foreground hover:text-foreground transition-colors">
             {t(locale, 'cookingConversions')}
           </Link>
