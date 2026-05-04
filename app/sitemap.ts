@@ -3,6 +3,7 @@ import { locales } from '@/lib/i18n/config'
 import { INGREDIENTS } from '@/lib/data/ingredients'
 import { CONVERSION_PAIRS } from '@/lib/conversions/general'
 import { HOW_MANY_ENTRIES } from '@/lib/data/how-many'
+import { COLOR_PAGES } from '@/lib/data/colors'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://convertmath.com'
 
@@ -11,6 +12,7 @@ const TABLE_PAGES = [
   'prime-numbers', 'powers-of-2', 'logarithm', 'ascii', 'math-symbols',
   'greek-alphabet', 'fractions', 'trigonometry', 'html-colors',
   'resistor-color-code', 'awg-wire-gauge', 'shoe-sizes',
+  'alt-codes', 'addition', 'fibonacci', 'pi', 'percentage-chart', 'exponent-rules',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -41,6 +43,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // How many
     for (const entry of HOW_MANY_ENTRIES) {
       entries.push({ url: `${BASE_URL}/${locale}/convert/how-many/${entry.slug}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 })
+    }
+
+    // Color pages
+    for (const color of COLOR_PAGES) {
+      entries.push({ url: `${BASE_URL}/${locale}/tables/colors/${color.slug}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 })
     }
 
     // Tables
