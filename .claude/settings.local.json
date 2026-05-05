@@ -2,7 +2,18 @@
   "permissions": {
     "allow": [
       "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --use-npm)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(npx shadcn@latest init -d)",
+      "Bash(mkdir:*)",
+      "Bash(npx next:*)",
+      "WebFetch(domain:www.rapidtables.com)",
+      "Bash(node -e ':*)",
+      "Bash(grep -r \"l === 'it'\" app/[locale]/tables/ --include=\"*.tsx\" -l)",
+      "Bash(grep -rn \"'Inches\\\\|'kg →\\\\|'Miles\\\\|'Gallons\\\\|'HP →\\\\|'Bar →\\\\|'km/h\\\\|°F →\\\\|°C\" app/[locale]/page.tsx)",
+      "Bash(grep -rn \"'Home'\" app/[locale]/ --include=\"*.tsx\")",
+      "Bash(grep -rn \">Home<\" app/[locale]/ --include=\"*.tsx\")",
+      "Bash(grep -rn \"Conversions\\\\|conversions\" app/[locale]/convert/how-many/ --include=\"*.tsx\")",
+      "Bash(sed:*)"
     ]
   }
 }

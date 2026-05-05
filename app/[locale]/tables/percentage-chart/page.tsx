@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 
-const titles = { en: 'Percentage Chart — What is X% of Y?', it: 'Tabella Percentuali — Quanto è X% di Y?' }
+const titles = { en: 'Percentage Chart — What is X% of Y?', it: 'Tabella Percentuali — Quanto è X% di Y?', de: 'Prozenttabelle — Was ist X% von Y?', fr: 'Tableau des pourcentages — Combien fait X% de Y ?', es: 'Tabla de Porcentajes — ¿Cuánto es X% de Y?' }
 const descs = {
   en: 'Precalculated percentage chart: find what is X% of common values (100, 200, 500, 1000). Complete reference table.',
   it: 'Tabella percentuali precalcolata: trova quanto è X% di valori comuni (100, 200, 500, 1000). Tabella di riferimento completa.',
+  de: 'Vorberechnete Prozenttabelle: finde X% von gängigen Werten (100, 200, 500, 1000). Vollständige Referenztabelle.',
+  fr: 'Tableau de pourcentages précalculé : trouvez X% de valeurs courantes (100, 200, 500, 1000). Tableau de référence complet.',
+  es: 'Tabla de porcentajes precalculada: encuentra cuánto es X% de valores comunes (100, 200, 500, 1000). Tabla de referencia completa.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

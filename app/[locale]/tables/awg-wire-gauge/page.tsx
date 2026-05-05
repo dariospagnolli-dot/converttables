@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { AWG_TABLE } from '@/lib/data/electrical'
 
-const titles = { en: 'AWG Wire Gauge Chart — Size, Diameter & Ampacity', it: 'Tabella AWG Calibro Cavi — Dimensioni, Diametro e Portata' }
+const titles = { en: 'AWG Wire Gauge Chart — Size, Diameter & Ampacity', it: 'Tabella AWG Calibro Cavi — Dimensioni, Diametro e Portata', de: 'AWG-Drahtquerschnittstabelle — Größe, Durchmesser & Strombelastbarkeit', fr: 'Tableau AWG — Calibre, diamètre et capacité de courant', es: 'Tabla AWG — Calibre, diámetro y capacidad de corriente' }
 const descs = {
   en: 'American Wire Gauge (AWG) chart with wire diameter (mm/inches), cross-section area, resistance, and maximum amperage.',
   it: 'Tabella American Wire Gauge (AWG) con diametro filo (mm/pollici), sezione, resistenza e amperaggio massimo.',
+  de: 'American Wire Gauge (AWG) Tabelle mit Drahtdurchmesser (mm/Zoll), Querschnittsfläche, Widerstand und maximaler Stromstärke.',
+  fr: 'Tableau American Wire Gauge (AWG) avec diamètre du fil (mm/pouces), section, résistance et intensité maximale.',
+  es: 'Tabla American Wire Gauge (AWG) con diámetro del cable (mm/pulgadas), sección, resistencia y amperaje máximo.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

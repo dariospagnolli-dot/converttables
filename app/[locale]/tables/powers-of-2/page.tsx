@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { generatePowersOf2 } from '@/lib/tables/math'
 
-const titles = { en: 'Powers of 2 Table', it: 'Tabella Potenze di 2' }
+const titles = { en: 'Powers of 2 Table', it: 'Tabella Potenze di 2', de: 'Zweierpotenzen-Tabelle', fr: 'Table des puissances de 2', es: 'Tabla de potencias de 2' }
 const descs = {
   en: 'Complete table of powers of 2 from 2⁰ to 2⁴⁰. Essential reference for computing and data storage.',
   it: 'Tabella completa delle potenze di 2 da 2⁰ a 2⁴⁰. Riferimento essenziale per informatica.',
+  de: 'Vollständige Tabelle der Zweierpotenzen von 2⁰ bis 2⁴⁰. Unverzichtbare Referenz für Informatik und Datenspeicherung.',
+  fr: 'Table complète des puissances de 2 de 2⁰ à 2⁴⁰. Référence essentielle pour l\'informatique et le stockage de données.',
+  es: 'Tabla completa de potencias de 2 de 2⁰ a 2⁴⁰. Referencia esencial para informática y almacenamiento de datos.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

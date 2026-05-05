@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 
-const titles = { en: 'Addition Table — 1 to 20', it: 'Tabella di Addizione — da 1 a 20' }
+const titles = { en: 'Addition Table — 1 to 20', it: 'Tabella di Addizione — da 1 a 20', de: 'Additionstabelle — 1 bis 20', fr: 'Table d\'Addition — de 1 à 20', es: 'Tabla de Suma — del 1 al 20' }
 const descs = {
   en: 'Complete addition table from 1 to 20. Printable math chart for kids and students.',
   it: 'Tabella di addizione completa da 1 a 20. Tabella matematica stampabile per bambini e studenti.',
+  de: 'Vollständige Additionstabelle von 1 bis 20. Druckbare Mathematiktabelle für Kinder und Schüler.',
+  fr: 'Table d\'addition complète de 1 à 20. Tableau mathématique imprimable pour enfants et étudiants.',
+  es: 'Tabla de suma completa del 1 al 20. Tabla matemática imprimible para niños y estudiantes.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

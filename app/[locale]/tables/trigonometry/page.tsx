@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 
-const titles = { en: 'Trigonometry Table — Sin, Cos, Tan Values (0°-360°)', it: 'Tabella Trigonometrica — Sin, Cos, Tan (0°-360°)' }
+const titles = { en: 'Trigonometry Table — Sin, Cos, Tan Values (0°-360°)', it: 'Tabella Trigonometrica — Sin, Cos, Tan (0°-360°)', de: 'Trigonometrietabelle — Sin, Cos, Tan (0°–360°)', fr: 'Table de trigonométrie — Sin, Cos, Tan (0°-360°)', es: 'Tabla de Trigonometría — Sen, Cos, Tan (0°-360°)' }
 const descs = {
   en: 'Complete trigonometry table with sine, cosine, and tangent values for every degree from 0° to 360°.',
   it: 'Tabella trigonometrica completa con valori di seno, coseno e tangente per ogni grado da 0° a 360°.',
+  de: 'Vollständige Trigonometrietabelle mit Sinus-, Kosinus- und Tangenswerten für jeden Grad von 0° bis 360°.',
+  fr: 'Table trigonométrique complète avec les valeurs du sinus, cosinus et tangente pour chaque degré de 0° à 360°.',
+  es: 'Tabla trigonométrica completa con valores de seno, coseno y tangente para cada grado de 0° a 360°.',
 }
 
 function toRad(deg: number) { return deg * Math.PI / 180 }

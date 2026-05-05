@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 
-const titles = { en: 'Fraction to Decimal to Percent — Conversion Table', it: 'Frazioni Decimali Percentuali — Tabella di Conversione' }
+const titles = { en: 'Fraction to Decimal to Percent — Conversion Table', it: 'Frazioni Decimali Percentuali — Tabella di Conversione', de: 'Bruch zu Dezimal zu Prozent — Umrechnungstabelle', fr: 'Fraction en décimal en pourcentage — Table de conversion', es: 'Fracción a Decimal a Porcentaje — Tabla de conversión' }
 const descs = {
   en: 'Complete conversion table: fractions to decimals to percentages. All common fractions from 1/2 to 1/64.',
   it: 'Tabella di conversione completa: frazioni in decimali in percentuali. Tutte le frazioni comuni da 1/2 a 1/64.',
+  de: 'Vollständige Umrechnungstabelle: Brüche in Dezimalzahlen in Prozent. Alle gängigen Brüche von 1/2 bis 1/64.',
+  fr: 'Table de conversion complète : fractions en décimales en pourcentages. Toutes les fractions courantes de 1/2 à 1/64.',
+  es: 'Tabla de conversión completa: fracciones a decimales a porcentajes. Todas las fracciones comunes de 1/2 a 1/64.',
 }
 
 function gcd(a: number, b: number): number {

@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { MATH_SYMBOLS } from '@/lib/data/symbols'
 
-const titles = { en: 'Math Symbols — Complete Reference List', it: 'Simboli Matematici — Lista Completa di Riferimento' }
+const titles = { en: 'Math Symbols — Complete Reference List', it: 'Simboli Matematici — Lista Completa di Riferimento', de: 'Mathematische Symbole — Vollständige Referenzliste', fr: 'Symboles mathématiques — Liste de référence complète', es: 'Símbolos Matemáticos — Lista de referencia completa' }
 const descs = {
   en: 'Complete list of mathematical symbols with names, meanings, and examples. Copy and paste any symbol.',
   it: 'Lista completa dei simboli matematici con nomi, significati ed esempi. Copia e incolla qualsiasi simbolo.',
+  de: 'Vollständige Liste mathematischer Symbole mit Namen, Bedeutungen und Beispielen. Jedes Symbol kopieren und einfügen.',
+  fr: 'Liste complète des symboles mathématiques avec noms, significations et exemples. Copiez et collez n\'importe quel symbole.',
+  es: 'Lista completa de símbolos matemáticos con nombres, significados y ejemplos. Copia y pega cualquier símbolo.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

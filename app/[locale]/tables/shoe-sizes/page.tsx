@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 
-const titles = { en: 'Shoe Size Conversion Chart — US, EU, UK', it: 'Tabella Conversione Taglie Scarpe — US, EU, UK' }
+const titles = { en: 'Shoe Size Conversion Chart — US, EU, UK', it: 'Tabella Conversione Taglie Scarpe — US, EU, UK', de: 'Schuhgrößen-Umrechnungstabelle — US, EU, UK', fr: 'Tableau de conversion des pointures — US, EU, UK', es: 'Tabla de conversión de tallas de zapatos — US, EU, UK' }
 const descs = {
   en: 'Shoe size conversion chart: US, EU, UK sizes for men, women, and children. Find your shoe size in any system.',
   it: 'Tabella conversione taglie scarpe: taglie US, EU, UK per uomo, donna e bambini.',
+  de: 'Schuhgrößen-Umrechnungstabelle: US-, EU-, UK-Größen für Herren, Damen und Kinder. Finden Sie Ihre Schuhgröße in jedem System.',
+  fr: 'Tableau de conversion des pointures : tailles US, EU, UK pour hommes, femmes et enfants. Trouvez votre pointure dans tous les systèmes.',
+  es: 'Tabla de conversión de tallas de zapatos: tallas US, EU, UK para hombres, mujeres y niños. Encuentra tu talla en cualquier sistema.',
 }
 
 const MEN_SIZES = [

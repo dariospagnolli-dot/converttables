@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 
-const titles = { en: 'Exponent Rules — Laws of Exponents Reference', it: 'Regole degli Esponenti — Proprietà delle Potenze' }
+const titles = { en: 'Exponent Rules — Laws of Exponents Reference', it: 'Regole degli Esponenti — Proprietà delle Potenze', de: 'Potenzgesetze — Übersicht der Potenzregeln', fr: 'Règles des exposants — Lois des puissances', es: 'Reglas de los Exponentes — Leyes de las Potencias' }
 const descs = {
   en: 'Complete exponent rules reference: product rule, quotient rule, power rule, negative exponents, zero exponent, with examples.',
   it: 'Riferimento completo regole degli esponenti: prodotto, quoziente, potenza di potenza, esponenti negativi, esponente zero, con esempi.',
+  de: 'Vollständige Übersicht der Potenzgesetze: Produktregel, Quotientenregel, Potenzregel, negative Exponenten, Exponent Null, mit Beispielen.',
+  fr: 'Référence complète des règles des exposants : produit, quotient, puissance, exposants négatifs, exposant zéro, avec exemples.',
+  es: 'Referencia completa de reglas de exponentes: producto, cociente, potencia, exponentes negativos, exponente cero, con ejemplos.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

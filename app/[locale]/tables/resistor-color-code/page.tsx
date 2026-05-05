@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { RESISTOR_BANDS } from '@/lib/data/electrical'
 
-const titles = { en: 'Resistor Color Code Chart', it: 'Tabella Codice Colori Resistori' }
+const titles = { en: 'Resistor Color Code Chart', it: 'Tabella Codice Colori Resistori', de: 'Widerstandsfarbcode-Tabelle', fr: 'Tableau des codes couleurs des résistances', es: 'Tabla de código de colores de resistencias' }
 const descs = {
   en: 'Resistor color code chart: 4-band and 5-band resistor color codes with digit values, multipliers, and tolerance.',
   it: 'Tabella codice colori resistori: codici a 4 e 5 bande con valori cifre, moltiplicatori e tolleranza.',
+  de: 'Widerstandsfarbcode-Tabelle: 4-Band- und 5-Band-Farbcodes mit Ziffernwerten, Multiplikatoren und Toleranz.',
+  fr: 'Tableau des codes couleurs des résistances : codes à 4 et 5 bandes avec valeurs, multiplicateurs et tolérance.',
+  es: 'Tabla de código de colores de resistencias: códigos de 4 y 5 bandas con valores, multiplicadores y tolerancia.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

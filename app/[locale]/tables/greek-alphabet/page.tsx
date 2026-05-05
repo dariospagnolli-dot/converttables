@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { GREEK_ALPHABET } from '@/lib/data/symbols'
 
-const titles = { en: 'Greek Alphabet — Letters, Symbols & Pronunciation', it: 'Alfabeto Greco — Lettere, Simboli e Pronuncia' }
+const titles = { en: 'Greek Alphabet — Letters, Symbols & Pronunciation', it: 'Alfabeto Greco — Lettere, Simboli e Pronuncia', de: 'Griechisches Alphabet — Buchstaben, Symbole & Aussprache', fr: 'Alphabet grec — Lettres, symboles et prononciation', es: 'Alfabeto Griego — Letras, símbolos y pronunciación' }
 const descs = {
   en: 'Complete Greek alphabet with uppercase, lowercase, name, pronunciation, HTML codes and common uses in math and science.',
   it: 'Alfabeto greco completo con maiuscola, minuscola, nome, pronuncia, codici HTML e usi comuni in matematica e scienza.',
+  de: 'Vollständiges griechisches Alphabet mit Groß- und Kleinbuchstaben, Name, Aussprache, HTML-Codes und häufige Verwendung in Mathematik und Wissenschaft.',
+  fr: 'Alphabet grec complet avec majuscules, minuscules, nom, prononciation, codes HTML et utilisations courantes en mathématiques et sciences.',
+  es: 'Alfabeto griego completo con mayúsculas, minúsculas, nombre, pronunciación, códigos HTML y usos comunes en matemáticas y ciencias.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { getPrimesUpTo } from '@/lib/tables/math'
 
-const titles = { en: 'Prime Numbers Table', it: 'Tabella Numeri Primi' }
+const titles = { en: 'Prime Numbers Table', it: 'Tabella Numeri Primi', de: 'Primzahlentabelle', fr: 'Table des nombres premiers', es: 'Tabla de números primos' }
 const descs = {
   en: 'Complete list of prime numbers from 2 to 1000. Find all primes at a glance.',
   it: 'Lista completa dei numeri primi da 2 a 1000. Trova tutti i numeri primi.',
+  de: 'Vollständige Liste der Primzahlen von 2 bis 1000. Alle Primzahlen auf einen Blick.',
+  fr: 'Liste complète des nombres premiers de 2 à 1000. Trouvez tous les nombres premiers d\'un coup d\'œil.',
+  es: 'Lista completa de números primos del 2 al 1000. Encuentra todos los números primos de un vistazo.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

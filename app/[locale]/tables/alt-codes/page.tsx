@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 
-const titles = { en: 'ALT Codes — Complete List of Keyboard Symbols', it: 'Codici ALT — Lista Completa Simboli da Tastiera' }
+const titles = { en: 'ALT Codes — Complete List of Keyboard Symbols', it: 'Codici ALT — Lista Completa Simboli da Tastiera', de: 'ALT-Codes — Vollständige Liste der Tastatursymbole', fr: 'Codes ALT — Liste complète des symboles clavier', es: 'Códigos ALT — Lista completa de símbolos de teclado' }
 const descs = {
   en: 'Complete ALT codes list: type special characters and symbols on Windows using ALT key + number pad.',
   it: 'Lista completa codici ALT: digita caratteri speciali e simboli su Windows con tasto ALT + tastierino numerico.',
+  de: 'Vollständige ALT-Code-Liste: Sonderzeichen und Symbole unter Windows mit ALT-Taste + Ziffernblock eingeben.',
+  fr: 'Liste complète des codes ALT : saisissez des caractères spéciaux et symboles sous Windows avec la touche ALT + pavé numérique.',
+  es: 'Lista completa de códigos ALT: escribe caracteres especiales y símbolos en Windows usando la tecla ALT + teclado numérico.',
 }
 
 const ALT_CODES = [

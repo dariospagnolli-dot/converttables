@@ -10,7 +10,7 @@ export interface ColorPage {
 
 export const COLOR_PAGES: ColorPage[] = [
   {
-    slug: 'red', name: { en: 'Red', it: 'Rosso' }, hex: '#FF0000', rgb: [255, 0, 0],
+    slug: 'red', name: { en: 'Red', it: 'Rosso', de: 'Rot', fr: 'Rouge', es: 'Rojo' }, hex: '#FF0000', rgb: [255, 0, 0],
     shades: [
       { name: 'Light Salmon', hex: '#FFA07A' }, { name: 'Salmon', hex: '#FA8072' }, { name: 'Dark Salmon', hex: '#E9967A' },
       { name: 'Light Coral', hex: '#F08080' }, { name: 'Indian Red', hex: '#CD5C5C' }, { name: 'Crimson', hex: '#DC143C' },
@@ -18,7 +18,7 @@ export const COLOR_PAGES: ColorPage[] = [
     ],
   },
   {
-    slug: 'blue', name: { en: 'Blue', it: 'Blu' }, hex: '#0000FF', rgb: [0, 0, 255],
+    slug: 'blue', name: { en: 'Blue', it: 'Blu', de: 'Blau', fr: 'Bleu', es: 'Azul' }, hex: '#0000FF', rgb: [0, 0, 255],
     shades: [
       { name: 'Light Steel Blue', hex: '#B0C4DE' }, { name: 'Powder Blue', hex: '#B0E0E6' }, { name: 'Light Blue', hex: '#ADD8E6' },
       { name: 'Sky Blue', hex: '#87CEEB' }, { name: 'Cornflower Blue', hex: '#6495ED' }, { name: 'Dodger Blue', hex: '#1E90FF' },
@@ -27,7 +27,7 @@ export const COLOR_PAGES: ColorPage[] = [
     ],
   },
   {
-    slug: 'green', name: { en: 'Green', it: 'Verde' }, hex: '#008000', rgb: [0, 128, 0],
+    slug: 'green', name: { en: 'Green', it: 'Verde', de: 'Grün', fr: 'Vert', es: 'Verde' }, hex: '#008000', rgb: [0, 128, 0],
     shades: [
       { name: 'Honeydew', hex: '#F0FFF0' }, { name: 'Pale Green', hex: '#98FB98' }, { name: 'Light Green', hex: '#90EE90' },
       { name: 'Lime Green', hex: '#32CD32' }, { name: 'Lime', hex: '#00FF00' }, { name: 'Green', hex: '#008000' },
@@ -36,7 +36,7 @@ export const COLOR_PAGES: ColorPage[] = [
     ],
   },
   {
-    slug: 'yellow', name: { en: 'Yellow', it: 'Giallo' }, hex: '#FFFF00', rgb: [255, 255, 0],
+    slug: 'yellow', name: { en: 'Yellow', it: 'Giallo', de: 'Gelb', fr: 'Jaune', es: 'Amarillo' }, hex: '#FFFF00', rgb: [255, 255, 0],
     shades: [
       { name: 'Light Yellow', hex: '#FFFFE0' }, { name: 'Lemon Chiffon', hex: '#FFFACD' }, { name: 'Khaki', hex: '#F0E68C' },
       { name: 'Gold', hex: '#FFD700' }, { name: 'Yellow', hex: '#FFFF00' }, { name: 'Dark Khaki', hex: '#BDB76B' },
@@ -44,7 +44,7 @@ export const COLOR_PAGES: ColorPage[] = [
     ],
   },
   {
-    slug: 'orange', name: { en: 'Orange', it: 'Arancione' }, hex: '#FFA500', rgb: [255, 165, 0],
+    slug: 'orange', name: { en: 'Orange', it: 'Arancione', de: 'Orange', fr: 'Orange', es: 'Naranja' }, hex: '#FFA500', rgb: [255, 165, 0],
     shades: [
       { name: 'Peach Puff', hex: '#FFDAB9' }, { name: 'Moccasin', hex: '#FFE4B5' }, { name: 'Papaya Whip', hex: '#FFEFD5' },
       { name: 'Light Salmon', hex: '#FFA07A' }, { name: 'Orange', hex: '#FFA500' }, { name: 'Dark Orange', hex: '#FF8C00' },
@@ -52,7 +52,7 @@ export const COLOR_PAGES: ColorPage[] = [
     ],
   },
   {
-    slug: 'purple', name: { en: 'Purple', it: 'Viola' }, hex: '#800080', rgb: [128, 0, 128],
+    slug: 'purple', name: { en: 'Purple', it: 'Viola', de: 'Lila', fr: 'Violet', es: 'Morado' }, hex: '#800080', rgb: [128, 0, 128],
     shades: [
       { name: 'Lavender', hex: '#E6E6FA' }, { name: 'Thistle', hex: '#D8BFD8' }, { name: 'Plum', hex: '#DDA0DD' },
       { name: 'Violet', hex: '#EE82EE' }, { name: 'Orchid', hex: '#DA70D6' }, { name: 'Medium Orchid', hex: '#BA55D3' },
@@ -62,7 +62,7 @@ export const COLOR_PAGES: ColorPage[] = [
     ],
   },
   {
-    slug: 'pink', name: { en: 'Pink', it: 'Rosa' }, hex: '#FFC0CB', rgb: [255, 192, 203],
+    slug: 'pink', name: { en: 'Pink', it: 'Rosa', de: 'Rosa', fr: 'Rose', es: 'Rosa' }, hex: '#FFC0CB', rgb: [255, 192, 203],
     shades: [
       { name: 'Lavender Blush', hex: '#FFF0F5' }, { name: 'Misty Rose', hex: '#FFE4E1' }, { name: 'Pink', hex: '#FFC0CB' },
       { name: 'Light Pink', hex: '#FFB6C1' }, { name: 'Hot Pink', hex: '#FF69B4' }, { name: 'Deep Pink', hex: '#FF1493' },
@@ -70,7 +70,7 @@ export const COLOR_PAGES: ColorPage[] = [
     ],
   },
   {
-    slug: 'brown', name: { en: 'Brown', it: 'Marrone' }, hex: '#A52A2A', rgb: [165, 42, 42],
+    slug: 'brown', name: { en: 'Brown', it: 'Marrone', de: 'Braun', fr: 'Marron', es: 'Marrón' }, hex: '#A52A2A', rgb: [165, 42, 42],
     shades: [
       { name: 'Cornsilk', hex: '#FFF8DC' }, { name: 'Blanched Almond', hex: '#FFEBCD' }, { name: 'Bisque', hex: '#FFE4C4' },
       { name: 'Navajo White', hex: '#FFDEAD' }, { name: 'Wheat', hex: '#F5DEB3' }, { name: 'Burly Wood', hex: '#DEB887' },
@@ -80,7 +80,7 @@ export const COLOR_PAGES: ColorPage[] = [
     ],
   },
   {
-    slug: 'gray', name: { en: 'Gray', it: 'Grigio' }, hex: '#808080', rgb: [128, 128, 128],
+    slug: 'gray', name: { en: 'Gray', it: 'Grigio', de: 'Grau', fr: 'Gris', es: 'Gris' }, hex: '#808080', rgb: [128, 128, 128],
     shades: [
       { name: 'White', hex: '#FFFFFF' }, { name: 'White Smoke', hex: '#F5F5F5' }, { name: 'Gainsboro', hex: '#DCDCDC' },
       { name: 'Light Gray', hex: '#D3D3D3' }, { name: 'Silver', hex: '#C0C0C0' }, { name: 'Dark Gray', hex: '#A9A9A9' },
@@ -89,7 +89,7 @@ export const COLOR_PAGES: ColorPage[] = [
     ],
   },
   {
-    slug: 'white', name: { en: 'White', it: 'Bianco' }, hex: '#FFFFFF', rgb: [255, 255, 255],
+    slug: 'white', name: { en: 'White', it: 'Bianco', de: 'Weiß', fr: 'Blanc', es: 'Blanco' }, hex: '#FFFFFF', rgb: [255, 255, 255],
     shades: [
       { name: 'White', hex: '#FFFFFF' }, { name: 'Snow', hex: '#FFFAFA' }, { name: 'Honeydew', hex: '#F0FFF0' },
       { name: 'Mint Cream', hex: '#F5FFFA' }, { name: 'Azure', hex: '#F0FFFF' }, { name: 'Alice Blue', hex: '#F0F8FF' },
@@ -99,7 +99,7 @@ export const COLOR_PAGES: ColorPage[] = [
     ],
   },
   {
-    slug: 'black', name: { en: 'Black', it: 'Nero' }, hex: '#000000', rgb: [0, 0, 0],
+    slug: 'black', name: { en: 'Black', it: 'Nero', de: 'Schwarz', fr: 'Noir', es: 'Negro' }, hex: '#000000', rgb: [0, 0, 0],
     shades: [
       { name: 'Black', hex: '#000000' }, { name: 'Dark Slate Gray', hex: '#2F4F4F' }, { name: 'Dim Gray', hex: '#696969' },
       { name: '#111111', hex: '#111111' }, { name: '#1A1A1A', hex: '#1A1A1A' }, { name: '#222222', hex: '#222222' },
@@ -107,7 +107,7 @@ export const COLOR_PAGES: ColorPage[] = [
     ],
   },
   {
-    slug: 'cyan', name: { en: 'Cyan', it: 'Ciano' }, hex: '#00FFFF', rgb: [0, 255, 255],
+    slug: 'cyan', name: { en: 'Cyan', it: 'Ciano', de: 'Cyan', fr: 'Cyan', es: 'Cian' }, hex: '#00FFFF', rgb: [0, 255, 255],
     shades: [
       { name: 'Light Cyan', hex: '#E0FFFF' }, { name: 'Pale Turquoise', hex: '#AFEEEE' }, { name: 'Aquamarine', hex: '#7FFFD4' },
       { name: 'Turquoise', hex: '#40E0D0' }, { name: 'Medium Turquoise', hex: '#48D1CC' }, { name: 'Dark Turquoise', hex: '#00CED1' },

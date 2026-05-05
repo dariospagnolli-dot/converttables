@@ -12,9 +12,9 @@ export function Footer({ locale }: { locale: Locale }) {
             <ul className="space-y-1.5 text-muted-foreground">
               <li><Link href={`/${locale}/convert/cups-to-grams`} className="hover:text-foreground">{t(locale, 'cupsToGrams')}</Link></li>
               <li><Link href={`/${locale}/convert/grams-to-cups`} className="hover:text-foreground">{t(locale, 'gramsToCups')}</Link></li>
-              <li><Link href={`/${locale}/convert/cups-to-grams/flour`} className="hover:text-foreground">{locale === 'it' ? 'Farina' : 'Flour'}</Link></li>
-              <li><Link href={`/${locale}/convert/cups-to-grams/sugar`} className="hover:text-foreground">{locale === 'it' ? 'Zucchero' : 'Sugar'}</Link></li>
-              <li><Link href={`/${locale}/convert/cups-to-grams/butter`} className="hover:text-foreground">{locale === 'it' ? 'Burro' : 'Butter'}</Link></li>
+              <li><Link href={`/${locale}/convert/cups-to-grams/flour`} className="hover:text-foreground">{{ en: 'Flour', it: 'Farina', de: 'Mehl', fr: 'Farine', es: 'Harina' }[locale]}</Link></li>
+              <li><Link href={`/${locale}/convert/cups-to-grams/sugar`} className="hover:text-foreground">{{ en: 'Sugar', it: 'Zucchero', de: 'Zucker', fr: 'Sucre', es: 'Azúcar' }[locale]}</Link></li>
+              <li><Link href={`/${locale}/convert/cups-to-grams/butter`} className="hover:text-foreground">{{ en: 'Butter', it: 'Burro', de: 'Butter', fr: 'Beurre', es: 'Mantequilla' }[locale]}</Link></li>
             </ul>
           </div>
           <div>
@@ -32,8 +32,8 @@ export function Footer({ locale }: { locale: Locale }) {
             <ul className="space-y-1.5 text-muted-foreground">
               <li><Link href={`/${locale}/tables/multiplication`} className="hover:text-foreground">{t(locale, 'multiplicationTable')}</Link></li>
               <li><Link href={`/${locale}/tables/roman-numerals`} className="hover:text-foreground">{t(locale, 'romanNumerals')}</Link></li>
-              <li><Link href={`/${locale}/tables/prime-numbers`} className="hover:text-foreground">{locale === 'it' ? 'Numeri Primi' : 'Prime Numbers'}</Link></li>
-              <li><Link href={`/${locale}/tables/logarithm`} className="hover:text-foreground">{locale === 'it' ? 'Logaritmi' : 'Logarithms'}</Link></li>
+              <li><Link href={`/${locale}/tables/prime-numbers`} className="hover:text-foreground">{{ en: 'Prime Numbers', it: 'Numeri Primi', de: 'Primzahlen', fr: 'Nombres Premiers', es: 'Números Primos' }[locale]}</Link></li>
+              <li><Link href={`/${locale}/tables/logarithm`} className="hover:text-foreground">{{ en: 'Logarithms', it: 'Logaritmi', de: 'Logarithmen', fr: 'Logarithmes', es: 'Logaritmos' }[locale]}</Link></li>
               <li><Link href={`/${locale}/tables/binary-hex`} className="hover:text-foreground">{t(locale, 'binaryHex')}</Link></li>
             </ul>
           </div>
@@ -43,7 +43,7 @@ export function Footer({ locale }: { locale: Locale }) {
               {t(locale, 'source')}
             </p>
             <ul className="space-y-1.5 text-muted-foreground">
-              <li><Link href={`/${locale}/convert/how-many/cm-in-inch`} className="hover:text-foreground">{locale === 'it' ? 'Quanti/e...?' : 'How Many...?'}</Link></li>
+              <li><Link href={`/${locale}/convert/how-many/cm-in-inch`} className="hover:text-foreground">{{ en: 'How Many...?', it: 'Quanti/e...?', de: 'Wie viele...?', fr: 'Combien de...?', es: '¿Cuántos...?' }[locale]}</Link></li>
             </ul>
           </div>
         </div>

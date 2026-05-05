@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { HTML_NAMED_COLORS } from '@/lib/data/electrical'
 
-const titles = { en: 'HTML Color Codes — Named Colors Reference', it: 'Codici Colori HTML — Riferimento Colori con Nome' }
+const titles = { en: 'HTML Color Codes — Named Colors Reference', it: 'Codici Colori HTML — Riferimento Colori con Nome', de: 'HTML-Farbcodes — Referenz benannter Farben', fr: 'Codes couleurs HTML — Référence des couleurs nommées', es: 'Códigos de colores HTML — Referencia de colores con nombre' }
 const descs = {
   en: 'Complete list of 140 HTML named colors with hex codes, RGB values and color preview.',
   it: 'Lista completa dei 140 colori HTML con nome, codici esadecimali, valori RGB e anteprima.',
+  de: 'Vollständige Liste der 140 benannten HTML-Farben mit Hex-Codes, RGB-Werten und Farbvorschau.',
+  fr: 'Liste complète des 140 couleurs HTML nommées avec codes hex, valeurs RGB et aperçu.',
+  es: 'Lista completa de los 140 colores HTML con nombre, códigos hexadecimales, valores RGB y vista previa.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

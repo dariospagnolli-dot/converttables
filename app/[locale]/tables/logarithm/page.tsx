@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { generateLog10Table } from '@/lib/tables/math'
 
-const titles = { en: 'Logarithm Table (log₁₀ & ln)', it: 'Tabella Logaritmi (log₁₀ e ln)' }
+const titles = { en: 'Logarithm Table (log₁₀ & ln)', it: 'Tabella Logaritmi (log₁₀ e ln)', de: 'Logarithmentafel (log₁₀ & ln)', fr: 'Table de logarithmes (log₁₀ & ln)', es: 'Tabla de logaritmos (log₁₀ y ln)' }
 const descs = {
   en: 'Complete logarithm table: common logarithm (log base 10) and natural logarithm (ln) from 1 to 1000.',
   it: 'Tabella logaritmi completa: logaritmo comune (log base 10) e logaritmo naturale (ln) da 1 a 1000.',
+  de: 'Vollständige Logarithmentafel: dekadischer Logarithmus (log Basis 10) und natürlicher Logarithmus (ln) von 1 bis 1000.',
+  fr: 'Table de logarithmes complète : logarithme décimal (log base 10) et logarithme naturel (ln) de 1 à 1000.',
+  es: 'Tabla de logaritmos completa: logaritmo común (log base 10) y logaritmo natural (ln) de 1 a 1000.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

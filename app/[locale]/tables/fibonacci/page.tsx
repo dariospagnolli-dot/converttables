@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 
-const titles = { en: 'Fibonacci Sequence — First 100 Numbers', it: 'Sequenza di Fibonacci — Primi 100 Numeri' }
+const titles = { en: 'Fibonacci Sequence — First 100 Numbers', it: 'Sequenza di Fibonacci — Primi 100 Numeri', de: 'Fibonacci-Folge — Die ersten 100 Zahlen', fr: 'Suite de Fibonacci — Les 100 premiers nombres', es: 'Secuencia de Fibonacci — Los primeros 100 números' }
 const descs = {
   en: 'Complete Fibonacci sequence: first 100 Fibonacci numbers with index. F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2).',
   it: 'Sequenza di Fibonacci completa: primi 100 numeri con indice. F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2).',
+  de: 'Vollständige Fibonacci-Folge: die ersten 100 Fibonacci-Zahlen mit Index. F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2).',
+  fr: 'Suite de Fibonacci complète : les 100 premiers nombres de Fibonacci avec index. F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2).',
+  es: 'Secuencia de Fibonacci completa: los primeros 100 números de Fibonacci con índice. F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2).',
 }
 
 function generateFibonacci(n: number): string[] {

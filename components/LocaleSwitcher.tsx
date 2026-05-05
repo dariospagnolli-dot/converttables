@@ -7,6 +7,9 @@ import { locales, type Locale } from '@/lib/i18n/config'
 const localeLabels: Record<Locale, string> = {
   en: 'EN',
   it: 'IT',
+  de: 'DE',
+  fr: 'FR',
+  es: 'ES',
 }
 
 export function LocaleSwitcher({ currentLocale }: { currentLocale: Locale }) {
@@ -19,12 +22,12 @@ export function LocaleSwitcher({ currentLocale }: { currentLocale: Locale }) {
   }
 
   return (
-    <div className="flex items-center gap-1 text-sm">
+    <div className="flex items-center gap-0.5 text-sm">
       {locales.map(locale => (
         <Link
           key={locale}
           href={getLocalizedPath(locale)}
-          className={`px-2 py-1 rounded transition-colors ${
+          className={`px-1.5 py-1 rounded transition-colors ${
             locale === currentLocale
               ? 'bg-primary text-primary-foreground font-medium'
               : 'text-muted-foreground hover:text-foreground'

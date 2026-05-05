@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { generateSquaresCubesTable } from '@/lib/tables/math'
 
-const titles = { en: 'Squares & Cubes Table', it: 'Tabella Quadrati e Cubi' }
+const titles = { en: 'Squares & Cubes Table', it: 'Tabella Quadrati e Cubi', de: 'Quadrat- und Kubikzahlentabelle', fr: 'Table des carrés et des cubes', es: 'Tabla de cuadrados y cubos' }
 const descs = {
   en: 'Complete table of squares (n²) and cubes (n³) from 1 to 100.',
   it: 'Tabella completa di quadrati (n²) e cubi (n³) da 1 a 100.',
+  de: 'Vollständige Tabelle der Quadratzahlen (n²) und Kubikzahlen (n³) von 1 bis 100.',
+  fr: 'Table complète des carrés (n²) et des cubes (n³) de 1 à 100.',
+  es: 'Tabla completa de cuadrados (n²) y cubos (n³) del 1 al 100.',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

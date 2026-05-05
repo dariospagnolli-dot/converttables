@@ -2,10 +2,13 @@ import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { generateAsciiTable, generateExtendedAsciiTable } from '@/lib/data/ascii'
 
-const titles = { en: 'ASCII Table — Character Codes Chart', it: 'Tabella ASCII — Codici Caratteri' }
+const titles = { en: 'ASCII Table — Character Codes Chart', it: 'Tabella ASCII — Codici Caratteri', de: 'ASCII-Tabelle — Zeichencode-Übersicht', fr: 'Table ASCII — Codes de caractères', es: 'Tabla ASCII — Códigos de caracteres' }
 const descs = {
   en: 'Complete ASCII table with decimal, hexadecimal, octal codes and characters. Standard ASCII (0-127) and extended ASCII (128-255).',
   it: 'Tabella ASCII completa con codici decimale, esadecimale, ottale e caratteri. ASCII standard (0-127) ed esteso (128-255).',
+  de: 'Vollständige ASCII-Tabelle mit Dezimal-, Hexadezimal-, Oktalcodes und Zeichen. Standard-ASCII (0-127) und erweitertes ASCII (128-255).',
+  fr: 'Table ASCII complète avec codes décimal, hexadécimal, octal et caractères. ASCII standard (0-127) et ASCII étendu (128-255).',
+  es: 'Tabla ASCII completa con códigos decimal, hexadecimal, octal y caracteres. ASCII estándar (0-127) y ASCII extendido (128-255).',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

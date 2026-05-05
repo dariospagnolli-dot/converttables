@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 
-const titles = { en: 'Pi (π) — Value to 1000 Decimal Places', it: 'Pi Greco (π) — Valore con 1000 Decimali' }
+const titles = { en: 'Pi (π) — Value to 1000 Decimal Places', it: 'Pi Greco (π) — Valore con 1000 Decimali', de: 'Pi (π) — Wert auf 1000 Dezimalstellen', fr: 'Pi (π) — Valeur à 1000 décimales', es: 'Pi (π) — Valor con 1000 decimales' }
 const descs = {
   en: 'Pi (π) value to 1,000 decimal places. Key formulas, properties and history of pi.',
   it: 'Pi greco (π) con 1.000 decimali. Formule chiave, proprietà e storia del pi greco.',
+  de: 'Pi (π) mit 1.000 Dezimalstellen. Wichtige Formeln, Eigenschaften und Geschichte von Pi.',
+  fr: 'Pi (π) avec 1 000 décimales. Formules clés, propriétés et histoire de pi.',
+  es: 'Pi (π) con 1.000 decimales. Fórmulas clave, propiedades e historia de pi.',
 }
 
 // Pi to 1000 decimal places
