@@ -34,15 +34,13 @@ export default async function PrimeNumbersPage({ params }: { params: Promise<{ l
     <div className="mx-auto max-w-4xl px-4 py-10">
       <h1 className="text-3xl font-bold mb-2">{titles[l]}</h1>
       <p className="text-muted-foreground mb-8">
-        {l === 'it'
-          ? `Ci sono ${primes.length} numeri primi fino a 1000.`
-          : `There are ${primes.length} prime numbers up to 1000.`}
+        {{ en: `There are ${primes.length} prime numbers up to 1000.`, it: `Ci sono ${primes.length} numeri primi fino a 1000.`, de: `Es gibt ${primes.length} Primzahlen bis 1000.`, fr: `Il y a ${primes.length} nombres premiers jusqu'à 1000.`, es: `Hay ${primes.length} números primos hasta 1000.` }[l]}
       </p>
 
       {ranges.map(range => (
         <section key={range.label} className="mb-10">
           <h2 className="text-xl font-semibold mb-4">
-            {l === 'it' ? 'Numeri primi' : 'Prime numbers'} {range.label} ({range.primes.length})
+            {{ en: 'Prime numbers', it: 'Numeri primi', de: 'Primzahlen', fr: 'Nombres premiers', es: 'Números primos' }[l]} {range.label} ({range.primes.length})
           </h2>
           <div className="flex flex-wrap gap-2">
             {range.primes.map(p => (
@@ -57,14 +55,14 @@ export default async function PrimeNumbersPage({ params }: { params: Promise<{ l
       {/* First 50 primes table */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'I primi 50 numeri primi' : 'First 50 Prime Numbers'}
+          {{ en: 'First 50 Prime Numbers', it: 'I primi 50 numeri primi', de: 'Die ersten 50 Primzahlen', fr: 'Les 50 premiers nombres premiers', es: 'Los primeros 50 números primos' }[l]}
         </h2>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-muted/50">
                 <th className="px-4 py-2 text-left font-medium">#</th>
-                <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Numero primo' : 'Prime'}</th>
+                <th className="px-4 py-2 text-left font-medium">{{ en: 'Prime', it: 'Numero primo', de: 'Primzahl', fr: 'Nombre premier', es: 'Número primo' }[l]}</th>
               </tr>
             </thead>
             <tbody>

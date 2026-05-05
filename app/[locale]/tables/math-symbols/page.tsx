@@ -21,10 +21,10 @@ export default async function MathSymbolsPage({ params }: { params: Promise<{ lo
   const l = locale as Locale
 
   const categories = [
-    { label: l === 'it' ? 'Aritmetica' : 'Arithmetic', symbols: MATH_SYMBOLS.slice(0, 12) },
-    { label: l === 'it' ? 'Algebra e Analisi' : 'Algebra & Calculus', symbols: MATH_SYMBOLS.slice(12, 28) },
-    { label: l === 'it' ? 'Insiemistica e Logica' : 'Set Theory & Logic', symbols: MATH_SYMBOLS.slice(28, 40) },
-    { label: l === 'it' ? 'Geometria' : 'Geometry', symbols: MATH_SYMBOLS.slice(40) },
+    { label: { en: 'Arithmetic', it: 'Aritmetica', de: 'Arithmetik', fr: 'Arithmétique', es: 'Aritmética' }[l], symbols: MATH_SYMBOLS.slice(0, 12) },
+    { label: { en: 'Algebra & Calculus', it: 'Algebra e Analisi', de: 'Algebra & Analysis', fr: 'Algèbre et Analyse', es: 'Álgebra y Cálculo' }[l], symbols: MATH_SYMBOLS.slice(12, 28) },
+    { label: { en: 'Set Theory & Logic', it: 'Insiemistica e Logica', de: 'Mengenlehre & Logik', fr: 'Théorie des ensembles et Logique', es: 'Teoría de conjuntos y Lógica' }[l], symbols: MATH_SYMBOLS.slice(28, 40) },
+    { label: { en: 'Geometry', it: 'Geometria', de: 'Geometrie', fr: 'Géométrie', es: 'Geometría' }[l], symbols: MATH_SYMBOLS.slice(40) },
   ]
 
   return (
@@ -34,7 +34,7 @@ export default async function MathSymbolsPage({ params }: { params: Promise<{ lo
 
       {/* Quick copy grid */}
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Copia rapida' : 'Quick Copy'}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: 'Quick Copy', it: 'Copia rapida', de: 'Schnellkopie', fr: 'Copie rapide', es: 'Copia rápida' }[l]}</h2>
         <div className="flex flex-wrap gap-2">
           {MATH_SYMBOLS.map(s => (
             <span key={s.name} className="rounded border px-3 py-2 text-xl font-mono cursor-pointer hover:bg-accent transition-colors" title={s.name}>
@@ -51,10 +51,10 @@ export default async function MathSymbolsPage({ params }: { params: Promise<{ lo
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-muted/50">
-                  <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Simbolo' : 'Symbol'}</th>
-                  <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Nome' : 'Name'}</th>
-                  <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Significato' : 'Meaning'}</th>
-                  <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Esempio' : 'Example'}</th>
+                  <th className="px-4 py-2 text-left font-medium">{{ en: 'Symbol', it: 'Simbolo', de: 'Symbol', fr: 'Symbole', es: 'Símbolo' }[l]}</th>
+                  <th className="px-4 py-2 text-left font-medium">{{ en: 'Name', it: 'Nome', de: 'Name', fr: 'Nom', es: 'Nombre' }[l]}</th>
+                  <th className="px-4 py-2 text-left font-medium">{{ en: 'Meaning', it: 'Significato', de: 'Bedeutung', fr: 'Signification', es: 'Significado' }[l]}</th>
+                  <th className="px-4 py-2 text-left font-medium">{{ en: 'Example', it: 'Esempio', de: 'Beispiel', fr: 'Exemple', es: 'Ejemplo' }[l]}</th>
                   <th className="px-4 py-2 text-left font-medium">HTML</th>
                 </tr>
               </thead>

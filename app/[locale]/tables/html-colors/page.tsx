@@ -29,8 +29,8 @@ export default async function HtmlColorsPage({ params }: { params: Promise<{ loc
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-muted/50">
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Anteprima' : 'Preview'}</th>
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Nome' : 'Name'}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Preview', it: 'Anteprima', de: 'Vorschau', fr: 'Aperçu', es: 'Vista previa' }[l]}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Name', it: 'Nome', de: 'Name', fr: 'Nom', es: 'Nombre' }[l]}</th>
               <th className="px-4 py-2 text-left font-medium">HEX</th>
               <th className="px-4 py-2 text-left font-medium">RGB</th>
             </tr>

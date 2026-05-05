@@ -16,12 +16,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const color = COLOR_PAGES.find(c => c.slug === slug)
   if (!color) return {}
   return {
-    title: l === 'it'
-      ? `Colore ${color.name[l]} — Codice HEX, RGB, Sfumature`
-      : `${color.name[l]} Color — HEX Code, RGB, Shades`,
-    description: l === 'it'
-      ? `${color.name[l]}: codice esadecimale ${color.hex}, RGB(${color.rgb.join(', ')}). Tabella completa delle sfumature.`
-      : `${color.name[l]} color: hex code ${color.hex}, RGB(${color.rgb.join(', ')}). Complete shades chart.`,
+    title: {
+      en: `${color.name[l]} Color — HEX Code, RGB, Shades`,
+      it: `Colore ${color.name[l]} — Codice HEX, RGB, Sfumature`,
+      de: `Farbe ${color.name[l]} — HEX-Code, RGB, Schattierungen`,
+      fr: `Couleur ${color.name[l]} — Code HEX, RGB, Nuances`,
+      es: `Color ${color.name[l]} — Código HEX, RGB, Tonos`,
+    }[l],
+    description: {
+      en: `${color.name[l]} color: hex code ${color.hex}, RGB(${color.rgb.join(', ')}). Complete shades chart.`,
+      it: `${color.name[l]}: codice esadecimale ${color.hex}, RGB(${color.rgb.join(', ')}). Tabella completa delle sfumature.`,
+      de: `Farbe ${color.name[l]}: Hex-Code ${color.hex}, RGB(${color.rgb.join(', ')}). Vollständige Schattierungstabelle.`,
+      fr: `Couleur ${color.name[l]} : code hexadécimal ${color.hex}, RGB(${color.rgb.join(', ')}). Tableau complet des nuances.`,
+      es: `Color ${color.name[l]}: código hexadecimal ${color.hex}, RGB(${color.rgb.join(', ')}). Tabla completa de tonos.`,
+    }[l],
   }
 }
 
@@ -34,9 +42,9 @@ export default async function ColorPage({ params }: { params: Promise<{ locale: 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href={`/${locale}`} className="hover:text-foreground">Home</Link>
+        <Link href={`/${locale}`} className="hover:text-foreground">{{ en: 'Home', it: 'Home', de: 'Startseite', fr: 'Accueil', es: 'Inicio' }[l]}</Link>
         {' / '}
-        <Link href={`/${locale}/tables/html-colors`} className="hover:text-foreground">{l === 'it' ? 'Colori' : 'Colors'}</Link>
+        <Link href={`/${locale}/tables/html-colors`} className="hover:text-foreground">{{ en: 'Colors', it: 'Colori', de: 'Farben', fr: 'Couleurs', es: 'Colores' }[l]}</Link>
         {' / '}
         <span className="text-foreground">{color.name[l]}</span>
       </nav>
@@ -44,7 +52,7 @@ export default async function ColorPage({ params }: { params: Promise<{ locale: 
       <div className="flex items-center gap-4 mb-6">
         <div className="w-20 h-20 rounded-lg border-2" style={{ backgroundColor: color.hex }} />
         <div>
-          <h1 className="text-3xl font-bold">{l === 'it' ? `Colore ${color.name[l]}` : `${color.name[l]} Color`}</h1>
+          <h1 className="text-3xl font-bold">{{ en: `${color.name[l]} Color`, it: `Colore ${color.name[l]}`, de: `Farbe ${color.name[l]}`, fr: `Couleur ${color.name[l]}`, es: `Color ${color.name[l]}` }[l]}</h1>
           <p className="text-muted-foreground font-mono">{color.hex} · RGB({color.rgb.join(', ')})</p>
         </div>
       </div>
@@ -83,7 +91,7 @@ export default async function ColorPage({ params }: { params: Promise<{ locale: 
 
       {/* Shades */}
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? `Sfumature di ${color.name[l]}` : `Shades of ${color.name[l]}`}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: `Shades of ${color.name[l]}`, it: `Sfumature di ${color.name[l]}`, de: `Schattierungen von ${color.name[l]}`, fr: `Nuances de ${color.name[l]}`, es: `Tonos de ${color.name[l]}` }[l]}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {color.shades.map(shade => (
             <div key={shade.hex} className="flex items-center gap-3 rounded-lg border p-3">
@@ -99,7 +107,7 @@ export default async function ColorPage({ params }: { params: Promise<{ locale: 
 
       {/* Other colors */}
       <section>
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Altri colori' : 'Other Colors'}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: 'Other Colors', it: 'Altri colori', de: 'Andere Farben', fr: 'Autres couleurs', es: 'Otros colores' }[l]}</h2>
         <div className="flex flex-wrap gap-2">
           {COLOR_PAGES.filter(c => c.slug !== slug).map(c => (
             <Link

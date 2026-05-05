@@ -32,44 +32,44 @@ export default async function PiPage({ params }: { params: Promise<{ locale: str
       </div>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Proprietà' : 'Properties'}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: 'Properties', it: 'Proprietà', de: 'Eigenschaften', fr: 'Propriétés', es: 'Propiedades' }[l]}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="rounded-lg border p-4">
-            <div className="text-sm text-muted-foreground mb-1">{l === 'it' ? 'Tipo' : 'Type'}</div>
-            <div className="font-semibold">{l === 'it' ? 'Numero irrazionale e trascendente' : 'Irrational and transcendental number'}</div>
+            <div className="text-sm text-muted-foreground mb-1">{{ en: 'Type', it: 'Tipo', de: 'Typ', fr: 'Type', es: 'Tipo' }[l]}</div>
+            <div className="font-semibold">{{ en: 'Irrational and transcendental number', it: 'Numero irrazionale e trascendente', de: 'Irrationale und transzendente Zahl', fr: 'Nombre irrationnel et transcendant', es: 'Número irracional y trascendente' }[l]}</div>
           </div>
           <div className="rounded-lg border p-4">
-            <div className="text-sm text-muted-foreground mb-1">{l === 'it' ? 'Definizione' : 'Definition'}</div>
-            <div className="font-semibold">{l === 'it' ? 'Rapporto circonferenza/diametro' : 'Ratio of circumference to diameter'}</div>
+            <div className="text-sm text-muted-foreground mb-1">{{ en: 'Definition', it: 'Definizione', de: 'Definition', fr: 'Définition', es: 'Definición' }[l]}</div>
+            <div className="font-semibold">{{ en: 'Ratio of circumference to diameter', it: 'Rapporto circonferenza/diametro', de: 'Verhältnis von Umfang zu Durchmesser', fr: 'Rapport de la circonférence au diamètre', es: 'Razón de la circunferencia al diámetro' }[l]}</div>
           </div>
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Formule chiave' : 'Key Formulas'}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: 'Key Formulas', it: 'Formule chiave', de: 'Wichtige Formeln', fr: 'Formules clés', es: 'Fórmulas clave' }[l]}</h2>
         <div className="space-y-3 font-mono text-sm">
-          <div className="rounded border p-3">{l === 'it' ? 'Circonferenza' : 'Circumference'}: C = 2πr</div>
-          <div className="rounded border p-3">{l === 'it' ? 'Area cerchio' : 'Area of circle'}: A = πr²</div>
-          <div className="rounded border p-3">{l === 'it' ? 'Volume sfera' : 'Volume of sphere'}: V = (4/3)πr³</div>
-          <div className="rounded border p-3">{l === 'it' ? 'Identità di Eulero' : "Euler's identity"}: e^(iπ) + 1 = 0</div>
+          <div className="rounded border p-3">{{ en: 'Circumference', it: 'Circonferenza', de: 'Umfang', fr: 'Circonférence', es: 'Circunferencia' }[l]}: C = 2πr</div>
+          <div className="rounded border p-3">{{ en: 'Area of circle', it: 'Area cerchio', de: 'Kreisfläche', fr: 'Aire du cercle', es: 'Área del círculo' }[l]}: A = πr²</div>
+          <div className="rounded border p-3">{{ en: 'Volume of sphere', it: 'Volume sfera', de: 'Kugelvolumen', fr: 'Volume de la sphère', es: 'Volumen de la esfera' }[l]}: V = (4/3)πr³</div>
+          <div className="rounded border p-3">{{ en: "Euler's identity", it: 'Identità di Eulero', de: 'Eulersche Identität', fr: "Identité d'Euler", es: 'Identidad de Euler' }[l]}: e^(iπ) + 1 = 0</div>
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">π {l === 'it' ? 'con 1000 decimali' : 'to 1000 decimal places'}</h2>
+        <h2 className="text-xl font-semibold mb-4">π {{ en: 'to 1000 decimal places', it: 'con 1000 decimali', de: 'mit 1000 Dezimalstellen', fr: 'avec 1000 décimales', es: 'con 1000 decimales' }[l]}</h2>
         <div className="rounded-lg border bg-muted/30 p-6 font-mono text-sm leading-relaxed break-all">
           {PI_1000}
         </div>
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Approssimazioni comuni' : 'Common Approximations'}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: 'Common Approximations', it: 'Approssimazioni comuni', de: 'Häufige Näherungen', fr: 'Approximations courantes', es: 'Aproximaciones comunes' }[l]}</h2>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
             <thead><tr className="bg-muted/50">
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Frazione' : 'Fraction'}</th>
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Valore' : 'Value'}</th>
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Errore' : 'Error'}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Fraction', it: 'Frazione', de: 'Bruch', fr: 'Fraction', es: 'Fracción' }[l]}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Value', it: 'Valore', de: 'Wert', fr: 'Valeur', es: 'Valor' }[l]}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Error', it: 'Errore', de: 'Fehler', fr: 'Erreur', es: 'Error' }[l]}</th>
             </tr></thead>
             <tbody>
               {[

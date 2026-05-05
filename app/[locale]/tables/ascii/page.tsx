@@ -33,7 +33,7 @@ export default async function AsciiPage({ params }: { params: Promise<{ locale: 
       {/* Printable characters */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Caratteri stampabili ASCII (32-126)' : 'Printable ASCII Characters (32-126)'}
+          {{ en: 'Printable ASCII Characters (32-126)', it: 'Caratteri stampabili ASCII (32-126)', de: 'Druckbare ASCII-Zeichen (32-126)', fr: 'Caractères ASCII imprimables (32-126)', es: 'Caracteres ASCII imprimibles (32-126)' }[l]}
         </h2>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
@@ -43,7 +43,7 @@ export default async function AsciiPage({ params }: { params: Promise<{ locale: 
                 <th className="px-3 py-2 text-left font-medium">HEX</th>
                 <th className="px-3 py-2 text-left font-medium">OCT</th>
                 <th className="px-3 py-2 text-left font-medium">CHAR</th>
-                <th className="px-3 py-2 text-left font-medium">{l === 'it' ? 'Descrizione' : 'Description'}</th>
+                <th className="px-3 py-2 text-left font-medium">{{ en: 'Description', it: 'Descrizione', de: 'Beschreibung', fr: 'Description', es: 'Descripción' }[l]}</th>
               </tr>
             </thead>
             <tbody>
@@ -64,7 +64,7 @@ export default async function AsciiPage({ params }: { params: Promise<{ locale: 
       {/* Control characters */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Caratteri di controllo ASCII (0-31, 127)' : 'ASCII Control Characters (0-31, 127)'}
+          {{ en: 'ASCII Control Characters (0-31, 127)', it: 'Caratteri di controllo ASCII (0-31, 127)', de: 'ASCII-Steuerzeichen (0-31, 127)', fr: 'Caractères de contrôle ASCII (0-31, 127)', es: 'Caracteres de control ASCII (0-31, 127)' }[l]}
         </h2>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
@@ -73,7 +73,7 @@ export default async function AsciiPage({ params }: { params: Promise<{ locale: 
                 <th className="px-3 py-2 text-left font-medium">DEC</th>
                 <th className="px-3 py-2 text-left font-medium">HEX</th>
                 <th className="px-3 py-2 text-left font-medium">OCT</th>
-                <th className="px-3 py-2 text-left font-medium">{l === 'it' ? 'Descrizione' : 'Description'}</th>
+                <th className="px-3 py-2 text-left font-medium">{{ en: 'Description', it: 'Descrizione', de: 'Beschreibung', fr: 'Description', es: 'Descripción' }[l]}</th>
               </tr>
             </thead>
             <tbody>
@@ -93,7 +93,7 @@ export default async function AsciiPage({ params }: { params: Promise<{ locale: 
       {/* Extended ASCII */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'ASCII Esteso (128-255)' : 'Extended ASCII (128-255)'}
+          {{ en: 'Extended ASCII (128-255)', it: 'ASCII Esteso (128-255)', de: 'Erweitertes ASCII (128-255)', fr: 'ASCII Étendu (128-255)', es: 'ASCII Extendido (128-255)' }[l]}
         </h2>
         <div className="overflow-x-auto rounded-lg border">
           <div className="grid grid-cols-4 sm:grid-cols-8 text-sm">

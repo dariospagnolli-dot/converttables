@@ -35,7 +35,7 @@ export default async function LogarithmPage({ params }: { params: Promise<{ loca
       {/* Key values */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Valori chiave' : 'Key Values'}
+          {{ en: 'Key Values', it: 'Valori chiave', de: 'Schlüsselwerte', fr: 'Valeurs clés', es: 'Valores clave' }[l]}
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
@@ -58,7 +58,7 @@ export default async function LogarithmPage({ params }: { params: Promise<{ loca
         return (
           <section key={range.label} className="mb-10">
             <h2 className="text-xl font-semibold mb-4">
-              {l === 'it' ? 'Logaritmi' : 'Logarithms'} {range.label}
+              {{ en: 'Logarithms', it: 'Logaritmi', de: 'Logarithmen', fr: 'Logarithmes', es: 'Logaritmos' }[l]} {range.label}
             </h2>
             <div className="overflow-x-auto rounded-lg border">
               <table className="w-full text-sm">

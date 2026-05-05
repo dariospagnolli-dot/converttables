@@ -36,14 +36,14 @@ export default async function TrigonometryPage({ params }: { params: Promise<{ l
       {/* Key angles */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Angoli notevoli' : 'Key Angles'}
+          {{ en: 'Key Angles', it: 'Angoli notevoli', de: 'Wichtige Winkel', fr: 'Angles remarquables', es: 'Ángulos notables' }[l]}
         </h2>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-muted/50">
-                <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Gradi' : 'Degrees'} (°)</th>
-                <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Radianti' : 'Radians'}</th>
+                <th className="px-4 py-2 text-left font-medium">{{ en: 'Degrees', it: 'Gradi', de: 'Grad', fr: 'Degrés', es: 'Grados' }[l]} (°)</th>
+                <th className="px-4 py-2 text-left font-medium">{{ en: 'Radians', it: 'Radianti', de: 'Bogenmaß', fr: 'Radians', es: 'Radianes' }[l]}</th>
                 <th className="px-4 py-2 text-left font-medium">sin</th>
                 <th className="px-4 py-2 text-left font-medium">cos</th>
                 <th className="px-4 py-2 text-left font-medium">tan</th>
@@ -71,7 +71,7 @@ export default async function TrigonometryPage({ params }: { params: Promise<{ l
       {/* Full table 0-360 */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Tabella completa 0°–360°' : 'Complete Table 0°–360°'}
+          {{ en: 'Complete Table 0°–360°', it: 'Tabella completa 0°–360°', de: 'Vollständige Tabelle 0°–360°', fr: 'Tableau complet 0°–360°', es: 'Tabla completa 0°–360°' }[l]}
         </h2>
         <div className="overflow-x-auto rounded-lg border max-h-[600px] overflow-y-auto">
           <table className="w-full text-sm">

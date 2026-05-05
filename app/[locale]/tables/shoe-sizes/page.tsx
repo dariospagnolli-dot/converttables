@@ -87,24 +87,24 @@ export default async function ShoeSizesPage({ params }: { params: Promise<{ loca
       <p className="text-muted-foreground mb-8">{descs[l]}</p>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Uomo' : 'Men\'s Shoe Sizes'}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: "Men's Shoe Sizes", it: 'Uomo', de: 'Herrenschuhe', fr: 'Pointures Homme', es: 'Tallas Hombre' }[l]}</h2>
         {renderTable(MEN_SIZES)}
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Donna' : 'Women\'s Shoe Sizes'}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: "Women's Shoe Sizes", it: 'Donna', de: 'Damenschuhe', fr: 'Pointures Femme', es: 'Tallas Mujer' }[l]}</h2>
         {renderTable(WOMEN_SIZES)}
       </section>
 
       <section>
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Come misurare il piede' : 'How to Measure Your Foot'}
+          {{ en: 'How to Measure Your Foot', it: 'Come misurare il piede', de: 'So messen Sie Ihren Fuß', fr: 'Comment mesurer votre pied', es: 'Cómo medir tu pie' }[l]}
         </h2>
         <div className="rounded-lg border p-6 text-sm space-y-2">
-          <p>1. {l === 'it' ? 'Appoggia il piede su un foglio di carta' : 'Stand on a piece of paper'}</p>
-          <p>2. {l === 'it' ? 'Segna la punta del dito più lungo e il tallone' : 'Mark the tip of your longest toe and your heel'}</p>
-          <p>3. {l === 'it' ? 'Misura la distanza in cm' : 'Measure the distance in cm'}</p>
-          <p>4. {l === 'it' ? 'Usa la tabella sopra per trovare la taglia' : 'Use the table above to find your size'}</p>
+          <p>1. {{ en: 'Stand on a piece of paper', it: 'Appoggia il piede su un foglio di carta', de: 'Stellen Sie sich auf ein Blatt Papier', fr: 'Posez votre pied sur une feuille de papier', es: 'Coloca el pie sobre una hoja de papel' }[l]}</p>
+          <p>2. {{ en: 'Mark the tip of your longest toe and your heel', it: 'Segna la punta del dito più lungo e il tallone', de: 'Markieren Sie die Spitze Ihres längsten Zehs und Ihre Ferse', fr: 'Marquez le bout de votre orteil le plus long et votre talon', es: 'Marca la punta del dedo más largo y el talón' }[l]}</p>
+          <p>3. {{ en: 'Measure the distance in cm', it: 'Misura la distanza in cm', de: 'Messen Sie den Abstand in cm', fr: 'Mesurez la distance en cm', es: 'Mide la distancia en cm' }[l]}</p>
+          <p>4. {{ en: 'Use the table above to find your size', it: 'Usa la tabella sopra per trovare la taglia', de: 'Verwenden Sie die obige Tabelle, um Ihre Größe zu finden', fr: 'Utilisez le tableau ci-dessus pour trouver votre pointure', es: 'Usa la tabla de arriba para encontrar tu talla' }[l]}</p>
         </div>
       </section>
     </div>

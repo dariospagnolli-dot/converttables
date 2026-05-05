@@ -71,7 +71,7 @@ export default async function AsciiCodePage({ params }: { params: Promise<{ loca
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href={`/${locale}`} className="hover:text-foreground">Home</Link>
+        <Link href={`/${locale}`} className="hover:text-foreground">{{ en: 'Home', it: 'Home', de: 'Startseite', fr: 'Accueil', es: 'Inicio' }[l]}</Link>
         {' / '}
         <Link href={`/${locale}/tables/ascii`} className="hover:text-foreground">{lbl.back}</Link>
         {' / '}

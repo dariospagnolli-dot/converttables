@@ -30,9 +30,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const result = formatResult(pair.convert(numVal))
 
   const title = `${value} ${from.symbol} ${t(l, 'to')} ${to.symbol} — ${result} ${to.symbol}`
-  const desc = l === 'it'
-    ? `${value} ${from.names[l]} equivalgono a ${result} ${to.names[l]}. Conversione e formula.`
-    : `${value} ${from.names[l]} equals ${result} ${to.names[l]}. Conversion and formula.`
+  const desc = {
+    en: `${value} ${from.names[l]} equals ${result} ${to.names[l]}. Conversion and formula.`,
+    it: `${value} ${from.names[l]} equivalgono a ${result} ${to.names[l]}. Conversione e formula.`,
+    de: `${value} ${from.names[l]} entspricht ${result} ${to.names[l]}. Umrechnung und Formel.`,
+    fr: `${value} ${from.names[l]} équivaut à ${result} ${to.names[l]}. Conversion et formule.`,
+    es: `${value} ${from.names[l]} equivale a ${result} ${to.names[l]}. Conversión y fórmula.`,
+  }[l]!
 
   return { title, description: desc }
 }
@@ -63,7 +67,7 @@ export default async function SpecificValuePage({ params }: { params: Promise<{ 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href={`/${locale}`} className="hover:text-foreground">Home</Link>
+        <Link href={`/${locale}`} className="hover:text-foreground">{t(l, 'home')}</Link>
         {' / '}
         <Link href={`/${locale}/convert/${slug}`} className="hover:text-foreground">{from.names[l]} → {to.names[l]}</Link>
         {' / '}
@@ -96,7 +100,7 @@ export default async function SpecificValuePage({ params }: { params: Promise<{ 
       {/* Formula */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-3">
-          {l === 'it' ? 'Formula' : 'Formula'}
+          Formula
         </h2>
         <div className="rounded-lg border bg-muted/30 p-4 font-mono text-sm">
           {value} {from.symbol} × {formatResult(pair.convert(1))} = {formatResult(result)} {to.symbol}
@@ -106,7 +110,7 @@ export default async function SpecificValuePage({ params }: { params: Promise<{ 
       {/* Nearby values */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Altre conversioni' : 'More conversions'}
+          {{ en: 'More conversions', it: 'Altre conversioni', de: 'Weitere Umrechnungen', fr: 'Plus de conversions', es: 'Más conversiones' }[l]}
         </h2>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
@@ -129,7 +133,7 @@ export default async function SpecificValuePage({ params }: { params: Promise<{ 
       </section>
 
       <Link href={`/${locale}/convert/${slug}`} className="text-primary hover:underline text-sm">
-        &larr; {l === 'it' ? 'Tutte le conversioni' : 'All conversions'} {from.names[l]} → {to.names[l]}
+        &larr; {{ en: 'All conversions', it: 'Tutte le conversioni', de: 'Alle Umrechnungen', fr: 'Toutes les conversions', es: 'Todas las conversiones' }[l]} {from.names[l]} → {to.names[l]}
       </Link>
     </div>
   )

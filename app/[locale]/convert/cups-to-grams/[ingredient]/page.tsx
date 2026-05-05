@@ -19,13 +19,21 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const ing = getIngredientBySlug(slug)
   if (!ing) return {}
 
-  const title = l === 'it'
-    ? `Tazze in Grammi ${ing.names[l]} — Tabella di Conversione`
-    : `Cups to Grams ${ing.names[l]} — Conversion Chart`
+  const title = {
+    en: `Cups to Grams ${ing.names[l]} — Conversion Chart`,
+    it: `Tazze in Grammi ${ing.names[l]} — Tabella di Conversione`,
+    de: `Tassen in Gramm ${ing.names[l]} — Umrechnungstabelle`,
+    fr: `Tasses en Grammes ${ing.names[l]} — Tableau de Conversion`,
+    es: `Tazas a Gramos ${ing.names[l]} — Tabla de Conversión`,
+  }[l]!
 
-  const desc = l === 'it'
-    ? `Converti tazze in grammi per ${ing.names[l]}. 1 tazza = ${cupsToGrams(1, ing)}g. Tabella completa con tazza US e metrica.`
-    : `Convert cups to grams for ${ing.names[l]}. 1 cup = ${cupsToGrams(1, ing)}g. Complete chart with US and metric cups.`
+  const desc = {
+    en: `Convert cups to grams for ${ing.names[l]}. 1 cup = ${cupsToGrams(1, ing)}g. Complete chart with US and metric cups.`,
+    it: `Converti tazze in grammi per ${ing.names[l]}. 1 tazza = ${cupsToGrams(1, ing)}g. Tabella completa con tazza US e metrica.`,
+    de: `Tassen in Gramm umrechnen für ${ing.names[l]}. 1 Tasse = ${cupsToGrams(1, ing)}g. Vollständige Tabelle mit US- und metrischen Tassen.`,
+    fr: `Convertir tasses en grammes pour ${ing.names[l]}. 1 tasse = ${cupsToGrams(1, ing)}g. Tableau complet avec tasses US et métriques.`,
+    es: `Convierte tazas a gramos para ${ing.names[l]}. 1 taza = ${cupsToGrams(1, ing)}g. Tabla completa con tazas US y métricas.`,
+  }[l]!
 
   return {
     title,
@@ -72,7 +80,7 @@ export default async function IngredientPage({ params }: { params: Promise<{ loc
       />
 
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href={`/${locale}`} className="hover:text-foreground">Home</Link>
+        <Link href={`/${locale}`} className="hover:text-foreground">{t(l, 'home')}</Link>
         {' / '}
         <Link href={`/${locale}/convert/cups-to-grams`} className="hover:text-foreground">{t(l, 'cupsToGrams')}</Link>
         {' / '}

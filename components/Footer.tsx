@@ -21,10 +21,10 @@ export function Footer({ locale }: { locale: Locale }) {
             <h3 className="font-semibold mb-3">{t(locale, 'generalConversions')}</h3>
             <ul className="space-y-1.5 text-muted-foreground">
               <li><Link href={`/${locale}/convert`} className="hover:text-foreground">{t(locale, 'conversions')}</Link></li>
-              <li><Link href={`/${locale}/convert/inches-to-cm`} className="hover:text-foreground">Inches → cm</Link></li>
-              <li><Link href={`/${locale}/convert/kg-to-pounds`} className="hover:text-foreground">kg → Pounds</Link></li>
+              <li><Link href={`/${locale}/convert/inches-to-cm`} className="hover:text-foreground">{{ en: 'Inches → cm', it: 'Pollici → cm', de: 'Zoll → cm', fr: 'Pouces → cm', es: 'Pulgadas → cm' }[locale]}</Link></li>
+              <li><Link href={`/${locale}/convert/kg-to-pounds`} className="hover:text-foreground">{{ en: 'kg → Pounds', it: 'kg → Libbre', de: 'kg → Pfund', fr: 'kg → Livres', es: 'kg → Libras' }[locale]}</Link></li>
               <li><Link href={`/${locale}/convert/fahrenheit-to-celsius`} className="hover:text-foreground">°F → °C</Link></li>
-              <li><Link href={`/${locale}/convert/miles-to-km`} className="hover:text-foreground">Miles → km</Link></li>
+              <li><Link href={`/${locale}/convert/miles-to-km`} className="hover:text-foreground">{{ en: 'Miles → km', it: 'Miglia → km', de: 'Meilen → km', fr: 'Miles → km', es: 'Millas → km' }[locale]}</Link></li>
             </ul>
           </div>
           <div>

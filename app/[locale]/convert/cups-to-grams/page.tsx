@@ -10,9 +10,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const l = locale as Locale
   return {
     title: t(l, 'cupsToGrams'),
-    description: l === 'it'
-      ? 'Converti tazze in grammi per ogni ingrediente. Tabella di conversione precisa con tazza US e metrica.'
-      : 'Convert cups to grams for any ingredient. Accurate conversion chart with US and metric cup sizes.',
+    description: {
+      en: 'Convert cups to grams for any ingredient. Accurate conversion chart with US and metric cup sizes.',
+      it: 'Converti tazze in grammi per ogni ingrediente. Tabella di conversione precisa con tazza US e metrica.',
+      de: 'Tassen in Gramm umrechnen für jede Zutat. Genaue Umrechnungstabelle mit US- und metrischen Tassen.',
+      fr: 'Convertir tasses en grammes pour tout ingrédient. Tableau de conversion précis avec tasses US et métriques.',
+      es: 'Convierte tazas a gramos para cualquier ingrediente. Tabla de conversión precisa con tazas US y métricas.',
+    }[l],
   }
 }
 

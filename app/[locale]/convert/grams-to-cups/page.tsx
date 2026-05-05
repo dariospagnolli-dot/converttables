@@ -10,9 +10,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const l = locale as Locale
   return {
     title: t(l, 'gramsToCups'),
-    description: l === 'it'
-      ? 'Converti grammi in tazze per ogni ingrediente. Tabella di conversione precisa.'
-      : 'Convert grams to cups for any ingredient. Accurate conversion chart.',
+    description: {
+      en: 'Convert grams to cups for any ingredient. Accurate conversion chart.',
+      it: 'Converti grammi in tazze per ogni ingrediente. Tabella di conversione precisa.',
+      de: 'Gramm in Tassen umrechnen für jede Zutat. Genaue Umrechnungstabelle.',
+      fr: 'Convertir grammes en tasses pour tout ingrédient. Tableau de conversion précis.',
+      es: 'Convierte gramos a tazas para cualquier ingrediente. Tabla de conversión precisa.',
+    }[l],
   }
 }
 

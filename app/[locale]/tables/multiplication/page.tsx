@@ -8,9 +8,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const l = locale as Locale
   return {
     title: t(l, 'multiplicationTable'),
-    description: l === 'it'
-      ? 'Tavola pitagorica completa da 1 a 12. Tabella di moltiplicazione stampabile.'
-      : 'Complete multiplication table from 1 to 12. Printable times table chart.',
+    description: {
+      en: 'Complete multiplication table from 1 to 12. Printable times table chart.',
+      it: 'Tavola pitagorica completa da 1 a 12. Tabella di moltiplicazione stampabile.',
+      de: 'Vollständiges Einmaleins von 1 bis 12. Druckbare Multiplikationstabelle.',
+      fr: 'Table de multiplication complète de 1 à 12. Tableau imprimable.',
+      es: 'Tabla de multiplicar completa del 1 al 12. Tabla imprimible.',
+    }[l],
   }
 }
 

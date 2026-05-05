@@ -18,13 +18,21 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const ing = getIngredientBySlug(slug)
   if (!ing) return {}
 
-  const title = l === 'it'
-    ? `Grammi in Tazze ${ing.names[l]} — Tabella di Conversione`
-    : `Grams to Cups ${ing.names[l]} — Conversion Chart`
+  const title = {
+    en: `Grams to Cups ${ing.names[l]} — Conversion Chart`,
+    it: `Grammi in Tazze ${ing.names[l]} — Tabella di Conversione`,
+    de: `Gramm in Tassen ${ing.names[l]} — Umrechnungstabelle`,
+    fr: `Grammes en Tasses ${ing.names[l]} — Tableau de Conversion`,
+    es: `Gramos a Tazas ${ing.names[l]} — Tabla de Conversión`,
+  }[l]!
 
-  const desc = l === 'it'
-    ? `Converti grammi in tazze per ${ing.names[l]}. 100g = ${gramsToCups(100, ing)} tazze. Tabella completa.`
-    : `Convert grams to cups for ${ing.names[l]}. 100g = ${gramsToCups(100, ing)} cups. Complete chart.`
+  const desc = {
+    en: `Convert grams to cups for ${ing.names[l]}. 100g = ${gramsToCups(100, ing)} cups. Complete chart.`,
+    it: `Converti grammi in tazze per ${ing.names[l]}. 100g = ${gramsToCups(100, ing)} tazze. Tabella completa.`,
+    de: `Gramm in Tassen umrechnen für ${ing.names[l]}. 100g = ${gramsToCups(100, ing)} Tassen. Vollständige Tabelle.`,
+    fr: `Convertir grammes en tasses pour ${ing.names[l]}. 100g = ${gramsToCups(100, ing)} tasses. Tableau complet.`,
+    es: `Convierte gramos a tazas para ${ing.names[l]}. 100g = ${gramsToCups(100, ing)} tazas. Tabla completa.`,
+  }[l]!
 
   return {
     title,
@@ -60,7 +68,7 @@ export default async function GramsToCupsIngredient({ params }: { params: Promis
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href={`/${locale}`} className="hover:text-foreground">Home</Link>
+        <Link href={`/${locale}`} className="hover:text-foreground">{t(l, 'home')}</Link>
         {' / '}
         <Link href={`/${locale}/convert/grams-to-cups`} className="hover:text-foreground">{t(l, 'gramsToCups')}</Link>
         {' / '}
@@ -68,7 +76,7 @@ export default async function GramsToCupsIngredient({ params }: { params: Promis
       </nav>
 
       <h1 className="text-3xl font-bold mb-2">
-        {l === 'it' ? `${ing.names[l]} — Grammi in Tazze` : `${ing.names[l]} — Grams to Cups`}
+        {ing.names[l]} — {{ en: 'Grams to Cups', it: 'Grammi in Tazze', de: 'Gramm in Tassen', fr: 'Grammes en Tasses', es: 'Gramos a Tazas' }[l]}
       </h1>
       <p className="text-lg text-muted-foreground mb-8">
         100g {ing.names[l]} = <strong className="text-foreground">{gramsToCups(100, ing)} {t(l, 'cups').toLowerCase()}</strong> (US)

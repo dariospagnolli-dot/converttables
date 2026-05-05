@@ -30,9 +30,9 @@ export default async function PowersOf2Page({ params }: { params: Promise<{ loca
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-muted/50">
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Esponente' : 'Exponent'}</th>
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Potenza' : 'Power'}</th>
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Valore' : 'Value'}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Exponent', it: 'Esponente', de: 'Exponent', fr: 'Exposant', es: 'Exponente' }[l]}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Power', it: 'Potenza', de: 'Potenz', fr: 'Puissance', es: 'Potencia' }[l]}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Value', it: 'Valore', de: 'Wert', fr: 'Valeur', es: 'Valor' }[l]}</th>
             </tr>
           </thead>
           <tbody>
@@ -50,7 +50,7 @@ export default async function PowersOf2Page({ params }: { params: Promise<{ loca
       {/* Common data sizes */}
       <section className="mt-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Dimensioni dati comuni' : 'Common Data Sizes'}
+          {{ en: 'Common Data Sizes', it: 'Dimensioni dati comuni', de: 'Gängige Datengrößen', fr: 'Tailles de données courantes', es: 'Tamaños de datos comunes' }[l]}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[

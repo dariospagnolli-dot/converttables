@@ -36,11 +36,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <h2 className="text-xl font-semibold mb-4">{t(l, 'generalConversions')}</h2>
           <ul className="space-y-2 text-sm">
             {[
-              { slug: 'inches-to-cm', label: 'Inches → cm' },
-              { slug: 'kg-to-pounds', label: 'kg → Pounds' },
-              { slug: 'miles-to-km', label: 'Miles → km' },
+              { slug: 'inches-to-cm', label: { en: 'Inches → cm', it: 'Pollici → cm', de: 'Zoll → cm', fr: 'Pouces → cm', es: 'Pulgadas → cm' }[l]! },
+              { slug: 'kg-to-pounds', label: { en: 'kg → Pounds', it: 'kg → Libbre', de: 'kg → Pfund', fr: 'kg → Livres', es: 'kg → Libras' }[l]! },
+              { slug: 'miles-to-km', label: { en: 'Miles → km', it: 'Miglia → km', de: 'Meilen → km', fr: 'Miles → km', es: 'Millas → km' }[l]! },
               { slug: 'fahrenheit-to-celsius', label: '°F → °C' },
-              { slug: 'gallons-to-liters', label: 'Gallons → Liters' },
+              { slug: 'gallons-to-liters', label: { en: 'Gallons → Liters', it: 'Galloni → Litri', de: 'Gallonen → Liter', fr: 'Gallons → Litres', es: 'Galones → Litros' }[l]! },
               { slug: 'hp-to-kw', label: 'HP → kW' },
               { slug: 'bar-to-psi', label: 'Bar → PSI' },
               { slug: 'kmh-to-mph', label: 'km/h → mph' },
@@ -60,24 +60,24 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <li><Link href={`/${locale}/tables/multiplication`} className="text-muted-foreground hover:text-foreground">{t(l, 'multiplicationTable')}</Link></li>
             <li><Link href={`/${locale}/tables/roman-numerals`} className="text-muted-foreground hover:text-foreground">{t(l, 'romanNumerals')}</Link></li>
             <li><Link href={`/${locale}/tables/binary-hex`} className="text-muted-foreground hover:text-foreground">{t(l, 'binaryHex')}</Link></li>
-            <li><Link href={`/${locale}/tables/squares-cubes`} className="text-muted-foreground hover:text-foreground">{l === 'it' ? 'Quadrati e Cubi' : 'Squares & Cubes'}</Link></li>
-            <li><Link href={`/${locale}/tables/prime-numbers`} className="text-muted-foreground hover:text-foreground">{l === 'it' ? 'Numeri Primi' : 'Prime Numbers'}</Link></li>
-            <li><Link href={`/${locale}/tables/powers-of-2`} className="text-muted-foreground hover:text-foreground">{l === 'it' ? 'Potenze di 2' : 'Powers of 2'}</Link></li>
-            <li><Link href={`/${locale}/tables/logarithm`} className="text-muted-foreground hover:text-foreground">{l === 'it' ? 'Tabella Logaritmi' : 'Logarithm Table'}</Link></li>
+            <li><Link href={`/${locale}/tables/squares-cubes`} className="text-muted-foreground hover:text-foreground">{{ en: 'Squares & Cubes', it: 'Quadrati e Cubi', de: 'Quadrate & Kuben', fr: 'Carrés et Cubes', es: 'Cuadrados y Cubos' }[l]}</Link></li>
+            <li><Link href={`/${locale}/tables/prime-numbers`} className="text-muted-foreground hover:text-foreground">{{ en: 'Prime Numbers', it: 'Numeri Primi', de: 'Primzahlen', fr: 'Nombres Premiers', es: 'Números Primos' }[l]}</Link></li>
+            <li><Link href={`/${locale}/tables/powers-of-2`} className="text-muted-foreground hover:text-foreground">{{ en: 'Powers of 2', it: 'Potenze di 2', de: 'Zweierpotenzen', fr: 'Puissances de 2', es: 'Potencias de 2' }[l]}</Link></li>
+            <li><Link href={`/${locale}/tables/logarithm`} className="text-muted-foreground hover:text-foreground">{{ en: 'Logarithm Table', it: 'Tabella Logaritmi', de: 'Logarithmentafel', fr: 'Table de Logarithmes', es: 'Tabla de Logaritmos' }[l]}</Link></li>
           </ul>
         </div>
 
         {/* How Many */}
         <div className="rounded-lg border bg-card p-6">
-          <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Quanti/e...?' : 'How Many...?'}</h2>
+          <h2 className="text-xl font-semibold mb-4">{{ en: 'How Many...?', it: 'Quanti/e...?', de: 'Wie viele...?', fr: 'Combien de...?', es: '¿Cuántos...?' }[l]}</h2>
           <ul className="space-y-2 text-sm">
             {[
-              { slug: 'cm-in-inch', label: l === 'it' ? 'cm in un pollice?' : 'cm in an inch?' },
-              { slug: 'grams-in-pound', label: l === 'it' ? 'grammi in una libbra?' : 'grams in a pound?' },
-              { slug: 'cups-in-gallon', label: l === 'it' ? 'tazze in un gallone?' : 'cups in a gallon?' },
-              { slug: 'feet-in-mile', label: l === 'it' ? 'piedi in un miglio?' : 'feet in a mile?' },
-              { slug: 'mb-in-gb', label: l === 'it' ? 'MB in un GB?' : 'MB in a GB?' },
-              { slug: 'ounces-in-pound', label: l === 'it' ? 'once in una libbra?' : 'ounces in a pound?' },
+              { slug: 'cm-in-inch', label: { en: 'cm in an inch?', it: 'cm in un pollice?', de: 'cm in einem Zoll?', fr: 'cm dans un pouce ?', es: 'cm en una pulgada?' }[l]! },
+              { slug: 'grams-in-pound', label: { en: 'grams in a pound?', it: 'grammi in una libbra?', de: 'Gramm in einem Pfund?', fr: 'grammes dans une livre ?', es: 'gramos en una libra?' }[l]! },
+              { slug: 'cups-in-gallon', label: { en: 'cups in a gallon?', it: 'tazze in un gallone?', de: 'Tassen in einer Gallone?', fr: 'tasses dans un gallon ?', es: 'tazas en un galón?' }[l]! },
+              { slug: 'feet-in-mile', label: { en: 'feet in a mile?', it: 'piedi in un miglio?', de: 'Fuß in einer Meile?', fr: 'pieds dans un mile ?', es: 'pies en una milla?' }[l]! },
+              { slug: 'mb-in-gb', label: { en: 'MB in a GB?', it: 'MB in un GB?', de: 'MB in einem GB?', fr: 'Mo dans un Go ?', es: 'MB en un GB?' }[l]! },
+              { slug: 'ounces-in-pound', label: { en: 'ounces in a pound?', it: 'once in una libbra?', de: 'Unzen in einem Pfund?', fr: 'onces dans une livre ?', es: 'onzas en una libra?' }[l]! },
             ].map(item => (
               <li key={item.slug}>
                 <Link href={`/${locale}/convert/how-many/${item.slug}`} className="text-muted-foreground hover:text-foreground">{item.label}</Link>

@@ -11,9 +11,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const l = locale as Locale
   return {
     title: t(l, 'conversions'),
-    description: l === 'it'
-      ? 'Convertitore di unità online gratuito: lunghezza, peso, volume, temperatura, energia, velocità e altro.'
-      : 'Free online unit converter: length, weight, volume, temperature, energy, speed and more.',
+    description: {
+      en: 'Free online unit converter: length, weight, volume, temperature, energy, speed and more.',
+      it: 'Convertitore di unità online gratuito: lunghezza, peso, volume, temperatura, energia, velocità e altro.',
+      de: 'Kostenloser Online-Einheitenumrechner: Länge, Gewicht, Volumen, Temperatur, Energie, Geschwindigkeit und mehr.',
+      fr: 'Convertisseur d\'unités en ligne gratuit : longueur, poids, volume, température, énergie, vitesse et plus.',
+      es: 'Convertidor de unidades en línea gratuito: longitud, peso, volumen, temperatura, energía, velocidad y más.',
+    }[l],
   }
 }
 
@@ -26,7 +30,7 @@ export default async function ConvertIndex({ params }: { params: Promise<{ local
     <div className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-bold mb-2">{t(l, 'conversions')}</h1>
       <p className="text-muted-foreground mb-10">
-        {l === 'it' ? 'Seleziona una categoria di conversione.' : 'Select a conversion category.'}
+        {{ en: 'Select a conversion category.', it: 'Seleziona una categoria di conversione.', de: 'Wählen Sie eine Umrechnungskategorie.', fr: 'Sélectionnez une catégorie de conversion.', es: 'Seleccione una categoría de conversión.' }[l]}
       </p>
 
       {categories.map(cat => {

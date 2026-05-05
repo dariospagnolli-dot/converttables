@@ -64,15 +64,15 @@ export default async function FractionsPage({ params }: { params: Promise<{ loca
         return (
           <section key={den} className="mb-8">
             <h2 className="text-lg font-semibold mb-3">
-              {l === 'it' ? `Frazioni con denominatore ${den}` : `Fractions with denominator ${den}`}
+              {{ en: `Fractions with denominator ${den}`, it: `Frazioni con denominatore ${den}`, de: `Brüche mit Nenner ${den}`, fr: `Fractions avec dénominateur ${den}`, es: `Fracciones con denominador ${den}` }[l]}
             </h2>
             <div className="overflow-x-auto rounded-lg border">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-muted/50">
-                    <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Frazione' : 'Fraction'}</th>
-                    <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Decimale' : 'Decimal'}</th>
-                    <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Percentuale' : 'Percent'}</th>
+                    <th className="px-4 py-2 text-left font-medium">{{ en: 'Fraction', it: 'Frazione', de: 'Bruch', fr: 'Fraction', es: 'Fracción' }[l]}</th>
+                    <th className="px-4 py-2 text-left font-medium">{{ en: 'Decimal', it: 'Decimale', de: 'Dezimal', fr: 'Décimal', es: 'Decimal' }[l]}</th>
+                    <th className="px-4 py-2 text-left font-medium">{{ en: 'Percent', it: 'Percentuale', de: 'Prozent', fr: 'Pourcentage', es: 'Porcentaje' }[l]}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -93,15 +93,15 @@ export default async function FractionsPage({ params }: { params: Promise<{ loca
       {/* Complete table */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Tabella completa (tutte le frazioni)' : 'Complete Table (all fractions)'}
+          {{ en: 'Complete Table (all fractions)', it: 'Tabella completa (tutte le frazioni)', de: 'Vollständige Tabelle (alle Brüche)', fr: 'Tableau complet (toutes les fractions)', es: 'Tabla completa (todas las fracciones)' }[l]}
         </h2>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-muted/50">
-                <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Frazione' : 'Fraction'}</th>
-                <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Decimale' : 'Decimal'}</th>
-                <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Percentuale' : 'Percent'}</th>
+                <th className="px-4 py-2 text-left font-medium">{{ en: 'Fraction', it: 'Frazione', de: 'Bruch', fr: 'Fraction', es: 'Fracción' }[l]}</th>
+                <th className="px-4 py-2 text-left font-medium">{{ en: 'Decimal', it: 'Decimale', de: 'Dezimal', fr: 'Décimal', es: 'Decimal' }[l]}</th>
+                <th className="px-4 py-2 text-left font-medium">{{ en: 'Percent', it: 'Percentuale', de: 'Prozent', fr: 'Pourcentage', es: 'Porcentaje' }[l]}</th>
               </tr>
             </thead>
             <tbody>

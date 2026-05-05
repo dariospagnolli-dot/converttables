@@ -69,20 +69,18 @@ export default async function AltCodesPage({ params }: { params: Promise<{ local
       <h1 className="text-3xl font-bold mb-2">{titles[l]}</h1>
       <p className="text-muted-foreground mb-4">{descs[l]}</p>
       <div className="rounded-lg border bg-muted/30 p-4 mb-8 text-sm">
-        <strong>{l === 'it' ? 'Come usare' : 'How to use'}:</strong>{' '}
-        {l === 'it'
-          ? 'Tieni premuto ALT, digita il codice sul tastierino numerico, rilascia ALT.'
-          : 'Hold ALT, type the code on the numeric keypad, release ALT.'}
+        <strong>{{ en: 'How to use', it: 'Come usare', de: 'Verwendung', fr: 'Comment utiliser', es: 'Cómo usar' }[l]}:</strong>{' '}
+        {{ en: 'Hold ALT, type the code on the numeric keypad, release ALT.', it: 'Tieni premuto ALT, digita il codice sul tastierino numerico, rilascia ALT.', de: 'Halte ALT gedrückt, gib den Code auf dem Ziffernblock ein, lasse ALT los.', fr: 'Maintenez ALT, tapez le code sur le pavé numérique, relâchez ALT.', es: 'Mantén presionado ALT, escribe el código en el teclado numérico, suelta ALT.' }[l]}
       </div>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Simboli (ALT + numero)' : 'Symbols (ALT + number)'}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: 'Symbols (ALT + number)', it: 'Simboli (ALT + numero)', de: 'Symbole (ALT + Nummer)', fr: 'Symboles (ALT + numéro)', es: 'Símbolos (ALT + número)' }[l]}</h2>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
             <thead><tr className="bg-muted/50">
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Codice' : 'Code'}</th>
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Simbolo' : 'Symbol'}</th>
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Descrizione' : 'Description'}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Code', it: 'Codice', de: 'Code', fr: 'Code', es: 'Código' }[l]}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Symbol', it: 'Simbolo', de: 'Symbol', fr: 'Symbole', es: 'Símbolo' }[l]}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Description', it: 'Descrizione', de: 'Beschreibung', fr: 'Description', es: 'Descripción' }[l]}</th>
             </tr></thead>
             <tbody>
               {symbols.map(a => (
@@ -98,13 +96,13 @@ export default async function AltCodesPage({ params }: { params: Promise<{ local
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Caratteri speciali (ALT + 0xxx)' : 'Special Characters (ALT + 0xxx)'}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: 'Special Characters (ALT + 0xxx)', it: 'Caratteri speciali (ALT + 0xxx)', de: 'Sonderzeichen (ALT + 0xxx)', fr: 'Caractères spéciaux (ALT + 0xxx)', es: 'Caracteres especiales (ALT + 0xxx)' }[l]}</h2>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
             <thead><tr className="bg-muted/50">
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Codice' : 'Code'}</th>
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Simbolo' : 'Symbol'}</th>
-              <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Descrizione' : 'Description'}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Code', it: 'Codice', de: 'Code', fr: 'Code', es: 'Código' }[l]}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Symbol', it: 'Simbolo', de: 'Symbol', fr: 'Symbole', es: 'Símbolo' }[l]}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Description', it: 'Descrizione', de: 'Beschreibung', fr: 'Description', es: 'Descripción' }[l]}</th>
             </tr></thead>
             <tbody>
               {special.map(a => (

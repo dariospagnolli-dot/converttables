@@ -30,10 +30,10 @@ export default async function AwgPage({ params }: { params: Promise<{ locale: st
           <thead>
             <tr className="bg-muted/50">
               <th className="px-3 py-2 text-left font-medium">AWG</th>
-              <th className="px-3 py-2 text-left font-medium">{l === 'it' ? 'Diametro' : 'Diameter'} (mm)</th>
-              <th className="px-3 py-2 text-left font-medium">{l === 'it' ? 'Diametro' : 'Diameter'} (in)</th>
-              <th className="px-3 py-2 text-left font-medium">{l === 'it' ? 'Sezione' : 'Area'} (mm²)</th>
-              <th className="px-3 py-2 text-left font-medium">{l === 'it' ? 'Resistenza' : 'Resistance'} (Ω/km)</th>
+              <th className="px-3 py-2 text-left font-medium">{{ en: 'Diameter', it: 'Diametro', de: 'Durchmesser', fr: 'Diamètre', es: 'Diámetro' }[l]} (mm)</th>
+              <th className="px-3 py-2 text-left font-medium">{{ en: 'Diameter', it: 'Diametro', de: 'Durchmesser', fr: 'Diamètre', es: 'Diámetro' }[l]} (in)</th>
+              <th className="px-3 py-2 text-left font-medium">{{ en: 'Area', it: 'Sezione', de: 'Querschnitt', fr: 'Section', es: 'Sección' }[l]} (mm²)</th>
+              <th className="px-3 py-2 text-left font-medium">{{ en: 'Resistance', it: 'Resistenza', de: 'Widerstand', fr: 'Résistance', es: 'Resistencia' }[l]} (Ω/km)</th>
               <th className="px-3 py-2 text-left font-medium">Max A</th>
             </tr>
           </thead>

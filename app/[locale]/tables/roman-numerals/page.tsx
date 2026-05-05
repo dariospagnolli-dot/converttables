@@ -8,9 +8,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const l = locale as Locale
   return {
     title: t(l, 'romanNumeralsTable'),
-    description: l === 'it'
-      ? 'Tabella completa dei numeri romani da 1 a 3999. Converti numeri arabi in numeri romani.'
-      : 'Complete Roman numerals table from 1 to 3999. Convert Arabic numbers to Roman numerals.',
+    description: {
+      en: 'Complete Roman numerals table from 1 to 3999. Convert Arabic numbers to Roman numerals.',
+      it: 'Tabella completa dei numeri romani da 1 a 3999. Converti numeri arabi in numeri romani.',
+      de: 'Vollständige Tabelle der römischen Zahlen von 1 bis 3999. Arabische Zahlen in römische Zahlen umwandeln.',
+      fr: 'Table complète des chiffres romains de 1 à 3999. Convertir les chiffres arabes en chiffres romains.',
+      es: 'Tabla completa de números romanos del 1 al 3999. Convierte números arábigos a números romanos.',
+    }[l],
   }
 }
 

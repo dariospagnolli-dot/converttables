@@ -24,9 +24,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const to = getUnit(pair.to)!
 
   const title = `${from.names[l]} ${t(l, 'to')} ${to.names[l]} — ${t(l, 'convert')}`
-  const desc = l === 'it'
-    ? `Converti ${from.names[l]} in ${to.names[l]}. Calcolatrice e tabella di conversione ${from.symbol} → ${to.symbol}.`
-    : `Convert ${from.names[l]} to ${to.names[l]}. Calculator and conversion table ${from.symbol} → ${to.symbol}.`
+  const desc = {
+    en: `Convert ${from.names[l]} to ${to.names[l]}. Calculator and conversion table ${from.symbol} → ${to.symbol}.`,
+    it: `Converti ${from.names[l]} in ${to.names[l]}. Calcolatrice e tabella di conversione ${from.symbol} → ${to.symbol}.`,
+    de: `${from.names[l]} in ${to.names[l]} umrechnen. Rechner und Umrechnungstabelle ${from.symbol} → ${to.symbol}.`,
+    fr: `Convertir ${from.names[l]} en ${to.names[l]}. Calculatrice et tableau de conversion ${from.symbol} → ${to.symbol}.`,
+    es: `Convierte ${from.names[l]} a ${to.names[l]}. Calculadora y tabla de conversión ${from.symbol} → ${to.symbol}.`,
+  }[l]!
 
   return {
     title,
@@ -63,7 +67,7 @@ export default async function ConversionPage({ params }: { params: Promise<{ loc
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href={`/${locale}`} className="hover:text-foreground">Home</Link>
+        <Link href={`/${locale}`} className="hover:text-foreground">{t(l, 'home')}</Link>
         {' / '}
         <Link href={`/${locale}/convert`} className="hover:text-foreground">{t(l, 'conversions')}</Link>
         {' / '}
@@ -116,7 +120,7 @@ export default async function ConversionPage({ params }: { params: Promise<{ loc
       {pair.popularValues && pair.popularValues.length > 0 && (
         <section className="mb-10">
           <h2 className="text-xl font-semibold mb-4">
-            {l === 'it' ? 'Conversioni Popolari' : 'Popular Conversions'}
+            {{ en: 'Popular Conversions', it: 'Conversioni Popolari', de: 'Beliebte Umrechnungen', fr: 'Conversions Populaires', es: 'Conversiones Populares' }[l]}
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
             {pair.popularValues.map(val => (

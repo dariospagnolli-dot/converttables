@@ -71,7 +71,7 @@ export default async function RomanNumeralPage({ params }: { params: Promise<{ l
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href={`/${locale}`} className="hover:text-foreground">Home</Link>
+        <Link href={`/${locale}`} className="hover:text-foreground">{{ en: 'Home', it: 'Home', de: 'Startseite', fr: 'Accueil', es: 'Inicio' }[l]}</Link>
         {' / '}
         <Link href={`/${locale}/tables/roman-numerals`} className="hover:text-foreground">{lbl.backToTable}</Link>
         {' / '}
@@ -92,7 +92,7 @@ export default async function RomanNumeralPage({ params }: { params: Promise<{ l
           <table className="w-full text-sm">
             <thead><tr className="bg-muted/50">
               <th className="px-4 py-2 text-left font-medium">#</th>
-              <th className="px-4 py-2 text-left font-medium">Roman</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Roman', it: 'Romano', de: 'Römisch', fr: 'Romain', es: 'Romano' }[l]}</th>
             </tr></thead>
             <tbody>
               {nearby.map(n => (

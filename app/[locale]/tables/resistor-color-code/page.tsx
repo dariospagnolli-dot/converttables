@@ -30,11 +30,11 @@ export default async function ResistorPage({ params }: { params: Promise<{ local
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-muted/50">
-                <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Colore' : 'Color'}</th>
+                <th className="px-4 py-2 text-left font-medium">{{ en: 'Color', it: 'Colore', de: 'Farbe', fr: 'Couleur', es: 'Color' }[l]}</th>
                 <th className="px-4 py-2 text-left font-medium"></th>
-                <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Cifra' : 'Digit'}</th>
-                <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Moltiplicatore' : 'Multiplier'}</th>
-                <th className="px-4 py-2 text-left font-medium">{l === 'it' ? 'Tolleranza' : 'Tolerance'}</th>
+                <th className="px-4 py-2 text-left font-medium">{{ en: 'Digit', it: 'Cifra', de: 'Ziffer', fr: 'Chiffre', es: 'Dígito' }[l]}</th>
+                <th className="px-4 py-2 text-left font-medium">{{ en: 'Multiplier', it: 'Moltiplicatore', de: 'Multiplikator', fr: 'Multiplicateur', es: 'Multiplicador' }[l]}</th>
+                <th className="px-4 py-2 text-left font-medium">{{ en: 'Tolerance', it: 'Tolleranza', de: 'Toleranz', fr: 'Tolérance', es: 'Tolerancia' }[l]}</th>
               </tr>
             </thead>
             <tbody>
@@ -60,15 +60,15 @@ export default async function ResistorPage({ params }: { params: Promise<{ local
       {/* How to read */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Come leggere un resistore a 4 bande' : 'How to Read a 4-Band Resistor'}
+          {{ en: 'How to Read a 4-Band Resistor', it: 'Come leggere un resistore a 4 bande', de: 'Wie man einen 4-Band-Widerstand liest', fr: 'Comment lire une résistance à 4 bandes', es: 'Cómo leer un resistor de 4 bandas' }[l]}
         </h2>
         <div className="rounded-lg border p-6 space-y-3 text-sm">
-          <p><strong>{l === 'it' ? 'Banda 1' : 'Band 1'}:</strong> {l === 'it' ? 'Prima cifra' : 'First digit'}</p>
-          <p><strong>{l === 'it' ? 'Banda 2' : 'Band 2'}:</strong> {l === 'it' ? 'Seconda cifra' : 'Second digit'}</p>
-          <p><strong>{l === 'it' ? 'Banda 3' : 'Band 3'}:</strong> {l === 'it' ? 'Moltiplicatore' : 'Multiplier'}</p>
-          <p><strong>{l === 'it' ? 'Banda 4' : 'Band 4'}:</strong> {l === 'it' ? 'Tolleranza' : 'Tolerance'}</p>
+          <p><strong>{{ en: 'Band 1', it: 'Banda 1', de: 'Band 1', fr: 'Bande 1', es: 'Banda 1' }[l]}:</strong> {{ en: 'First digit', it: 'Prima cifra', de: 'Erste Ziffer', fr: 'Premier chiffre', es: 'Primer dígito' }[l]}</p>
+          <p><strong>{{ en: 'Band 2', it: 'Banda 2', de: 'Band 2', fr: 'Bande 2', es: 'Banda 2' }[l]}:</strong> {{ en: 'Second digit', it: 'Seconda cifra', de: 'Zweite Ziffer', fr: 'Deuxième chiffre', es: 'Segundo dígito' }[l]}</p>
+          <p><strong>{{ en: 'Band 3', it: 'Banda 3', de: 'Band 3', fr: 'Bande 3', es: 'Banda 3' }[l]}:</strong> {{ en: 'Multiplier', it: 'Moltiplicatore', de: 'Multiplikator', fr: 'Multiplicateur', es: 'Multiplicador' }[l]}</p>
+          <p><strong>{{ en: 'Band 4', it: 'Banda 4', de: 'Band 4', fr: 'Bande 4', es: 'Banda 4' }[l]}:</strong> {{ en: 'Tolerance', it: 'Tolleranza', de: 'Toleranz', fr: 'Tolérance', es: 'Tolerancia' }[l]}</p>
           <div className="mt-4 p-4 bg-muted/50 rounded font-mono">
-            {l === 'it' ? 'Esempio' : 'Example'}: Brown-Black-Red-Gold = 10 × 100 = 1000Ω (1kΩ) ±5%
+            {{ en: 'Example', it: 'Esempio', de: 'Beispiel', fr: 'Exemple', es: 'Ejemplo' }[l]}: Brown-Black-Red-Gold = 10 × 100 = 1000Ω (1kΩ) ±5%
           </div>
         </div>
       </section>
@@ -76,7 +76,7 @@ export default async function ResistorPage({ params }: { params: Promise<{ local
       {/* Common values */}
       <section>
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Valori standard comuni (serie E12)' : 'Common Standard Values (E12 Series)'}
+          {{ en: 'Common Standard Values (E12 Series)', it: 'Valori standard comuni (serie E12)', de: 'Gängige Standardwerte (E12-Reihe)', fr: 'Valeurs standard courantes (série E12)', es: 'Valores estándar comunes (serie E12)' }[l]}
         </h2>
         <div className="flex flex-wrap gap-2">
           {[10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82, 100, 120, 150, 180, 220, 270, 330, 390, 470, 560, 680, 820, 1000, 1200, 1500, 1800, 2200, 2700, 3300, 3900, 4700, 5600, 6800, 8200, 10000].map(v => (

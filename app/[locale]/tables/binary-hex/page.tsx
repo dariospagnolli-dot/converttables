@@ -8,9 +8,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const l = locale as Locale
   return {
     title: t(l, 'binaryHex'),
-    description: l === 'it'
-      ? 'Tabella di conversione decimale, binario ed esadecimale da 0 a 255.'
-      : 'Decimal, binary and hexadecimal conversion table from 0 to 255.',
+    description: {
+      en: 'Decimal, binary and hexadecimal conversion table from 0 to 255.',
+      it: 'Tabella di conversione decimale, binario ed esadecimale da 0 a 255.',
+      de: 'Dezimal-, Binär- und Hexadezimal-Umrechnungstabelle von 0 bis 255.',
+      fr: 'Table de conversion décimal, binaire et hexadécimal de 0 à 255.',
+      es: 'Tabla de conversión decimal, binario y hexadecimal de 0 a 255.',
+    }[l],
   }
 }
 

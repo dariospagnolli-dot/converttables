@@ -91,7 +91,7 @@ export default async function FractionPage({ params }: { params: Promise<{ local
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href={`/${locale}`} className="hover:text-foreground">Home</Link>
+        <Link href={`/${locale}`} className="hover:text-foreground">{{ en: 'Home', it: 'Home', de: 'Startseite', fr: 'Accueil', es: 'Inicio' }[l]}</Link>
         {' / '}
         <Link href={`/${locale}/tables/fractions`} className="hover:text-foreground">{lbl.back}</Link>
         {' / '}
@@ -125,8 +125,8 @@ export default async function FractionPage({ params }: { params: Promise<{ local
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
             <thead><tr className="bg-muted/50">
-              <th className="px-4 py-2 text-left font-medium">Fraction</th>
-              <th className="px-4 py-2 text-left font-medium">Decimal</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Fraction', it: 'Frazione', de: 'Bruch', fr: 'Fraction', es: 'Fracción' }[l]}</th>
+              <th className="px-4 py-2 text-left font-medium">{{ en: 'Decimal', it: 'Decimale', de: 'Dezimal', fr: 'Décimal', es: 'Decimal' }[l]}</th>
             </tr></thead>
             <tbody>
               {multiples.map(m => (

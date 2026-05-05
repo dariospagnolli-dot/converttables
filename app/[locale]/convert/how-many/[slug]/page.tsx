@@ -50,10 +50,10 @@ export default async function HowManyPage({ params }: { params: Promise<{ locale
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <nav className="text-sm text-muted-foreground mb-6">
-        <Link href={`/${locale}`} className="hover:text-foreground">Home</Link>
+        <Link href={`/${locale}`} className="hover:text-foreground">{{ en: 'Home', it: 'Home', de: 'Startseite', fr: 'Accueil', es: 'Inicio' }[l]}</Link>
         {' / '}
         <Link href={`/${locale}/convert`} className="hover:text-foreground">
-          {l === 'it' ? 'Conversioni' : 'Conversions'}
+          {{ en: 'Conversions', it: 'Conversioni', de: 'Umrechnungen', fr: 'Conversions', es: 'Conversiones' }[l]}
         </Link>
         {' / '}
         <span className="text-foreground">{entry.titles[l]}</span>
@@ -64,15 +64,13 @@ export default async function HowManyPage({ params }: { params: Promise<{ locale
       <div className="rounded-lg border bg-card p-8 mb-10 text-center">
         <div className="text-5xl font-bold font-mono mb-3">{entry.answer}</div>
         <p className="text-lg text-muted-foreground">
-          {l === 'it'
-            ? `Ci sono ${entry.answer} ${entry.unit1} in 1 ${entry.unit2}`
-            : `There are ${entry.answer} ${entry.unit1} in 1 ${entry.unit2}`}
+          {{ en: `There are ${entry.answer} ${entry.unit1} in 1 ${entry.unit2}`, it: `Ci sono ${entry.answer} ${entry.unit1} in 1 ${entry.unit2}`, de: `Es gibt ${entry.answer} ${entry.unit1} in 1 ${entry.unit2}`, fr: `Il y a ${entry.answer} ${entry.unit1} dans 1 ${entry.unit2}`, es: `Hay ${entry.answer} ${entry.unit1} en 1 ${entry.unit2}` }[l]}
         </p>
       </div>
 
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Tabella di Riferimento' : 'Reference Table'}
+          {{ en: 'Reference Table', it: 'Tabella di Riferimento', de: 'Referenztabelle', fr: 'Tableau de Référence', es: 'Tabla de Referencia' }[l]}
         </h2>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full text-sm">
@@ -99,7 +97,7 @@ export default async function HowManyPage({ params }: { params: Promise<{ locale
       {/* Related how-many */}
       <section>
         <h2 className="text-xl font-semibold mb-4">
-          {l === 'it' ? 'Domande correlate' : 'Related Questions'}
+          {{ en: 'Related Questions', it: 'Domande correlate', de: 'Verwandte Fragen', fr: 'Questions connexes', es: 'Preguntas relacionadas' }[l]}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {HOW_MANY_ENTRIES.filter(e => e.slug !== slug).slice(0, 12).map(e => (

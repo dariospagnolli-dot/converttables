@@ -27,15 +27,15 @@ export default async function GreekAlphabetPage({ params }: { params: Promise<{ 
 
       {/* Quick copy */}
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Copia rapida' : 'Quick Copy'}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: 'Quick Copy', it: 'Copia rapida', de: 'Schnellkopie', fr: 'Copie rapide', es: 'Copia rápida' }[l]}</h2>
         <div className="flex flex-wrap gap-2 mb-3">
-          <span className="text-sm text-muted-foreground mr-2">{l === 'it' ? 'Maiuscole:' : 'Uppercase:'}</span>
+          <span className="text-sm text-muted-foreground mr-2">{{ en: 'Uppercase:', it: 'Maiuscole:', de: 'Großbuchstaben:', fr: 'Majuscules :', es: 'Mayúsculas:' }[l]}</span>
           {GREEK_ALPHABET.map(g => (
             <span key={g.upper} className="rounded border px-2 py-1 text-lg font-mono cursor-pointer hover:bg-accent" title={g.name}>{g.upper}</span>
           ))}
         </div>
         <div className="flex flex-wrap gap-2">
-          <span className="text-sm text-muted-foreground mr-2">{l === 'it' ? 'Minuscole:' : 'Lowercase:'}</span>
+          <span className="text-sm text-muted-foreground mr-2">{{ en: 'Lowercase:', it: 'Minuscole:', de: 'Kleinbuchstaben:', fr: 'Minuscules :', es: 'Minúsculas:' }[l]}</span>
           {GREEK_ALPHABET.map(g => (
             <span key={g.lower} className="rounded border px-2 py-1 text-lg font-mono cursor-pointer hover:bg-accent" title={g.name}>{g.lower}</span>
           ))}
@@ -48,12 +48,12 @@ export default async function GreekAlphabetPage({ params }: { params: Promise<{ 
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-muted/50">
-                <th className="px-3 py-2 text-left font-medium">{l === 'it' ? 'Maiusc.' : 'Upper'}</th>
-                <th className="px-3 py-2 text-left font-medium">{l === 'it' ? 'Minusc.' : 'Lower'}</th>
-                <th className="px-3 py-2 text-left font-medium">{l === 'it' ? 'Nome' : 'Name'}</th>
-                <th className="px-3 py-2 text-left font-medium">{l === 'it' ? 'Pronuncia' : 'Pronunciation'}</th>
+                <th className="px-3 py-2 text-left font-medium">{{ en: 'Upper', it: 'Maiusc.', de: 'Groß', fr: 'Maj.', es: 'Mayús.' }[l]}</th>
+                <th className="px-3 py-2 text-left font-medium">{{ en: 'Lower', it: 'Minusc.', de: 'Klein', fr: 'Min.', es: 'Minús.' }[l]}</th>
+                <th className="px-3 py-2 text-left font-medium">{{ en: 'Name', it: 'Nome', de: 'Name', fr: 'Nom', es: 'Nombre' }[l]}</th>
+                <th className="px-3 py-2 text-left font-medium">{{ en: 'Pronunciation', it: 'Pronuncia', de: 'Aussprache', fr: 'Prononciation', es: 'Pronunciación' }[l]}</th>
                 <th className="px-3 py-2 text-left font-medium">HTML</th>
-                <th className="px-3 py-2 text-left font-medium">{l === 'it' ? 'Uso comune' : 'Common Use'}</th>
+                <th className="px-3 py-2 text-left font-medium">{{ en: 'Common Use', it: 'Uso comune', de: 'Übliche Verwendung', fr: 'Usage courant', es: 'Uso común' }[l]}</th>
               </tr>
             </thead>
             <tbody>

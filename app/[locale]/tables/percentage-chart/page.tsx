@@ -26,10 +26,10 @@ export default async function PercentageChartPage({ params }: { params: Promise<
     <div className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-bold mb-2">{titles[l]}</h1>
       <p className="text-muted-foreground mb-4">
-        {l === 'it' ? 'Formula: X% di Y = (X × Y) / 100' : 'Formula: X% of Y = (X × Y) / 100'}
+        {{ en: 'Formula: X% of Y = (X × Y) / 100', it: 'Formula: X% di Y = (X × Y) / 100', de: 'Formel: X% von Y = (X × Y) / 100', fr: 'Formule : X% de Y = (X × Y) / 100', es: 'Fórmula: X% de Y = (X × Y) / 100' }[l]}
       </p>
       <div className="rounded-lg border bg-muted/30 p-4 mb-8 text-sm font-mono">
-        {l === 'it' ? 'Esempio' : 'Example'}: 15% {l === 'it' ? 'di' : 'of'} 200 = (15 × 200) / 100 = 30
+        {{ en: 'Example', it: 'Esempio', de: 'Beispiel', fr: 'Exemple', es: 'Ejemplo' }[l]}: 15% {{ en: 'of', it: 'di', de: 'von', fr: 'de', es: 'de' }[l]} 200 = (15 × 200) / 100 = 30
       </div>
 
       <div className="overflow-x-auto rounded-lg border">
@@ -39,7 +39,7 @@ export default async function PercentageChartPage({ params }: { params: Promise<
               <th className="px-3 py-2 text-left font-medium sticky left-0 bg-muted/50 border-r">%</th>
               {bases.map(b => (
                 <th key={b} className="px-3 py-2 text-center font-medium min-w-[70px]">
-                  {l === 'it' ? 'di' : 'of'} {b}
+                  {{ en: 'of', it: 'di', de: 'von', fr: 'de', es: 'de' }[l]} {b}
                 </th>
               ))}
             </tr>
@@ -64,7 +64,7 @@ export default async function PercentageChartPage({ params }: { params: Promise<
 
       {/* Percentage ↔ Fraction quick reference */}
       <section className="mt-10">
-        <h2 className="text-xl font-semibold mb-4">{l === 'it' ? 'Percentuali e frazioni' : 'Percentages & Fractions'}</h2>
+        <h2 className="text-xl font-semibold mb-4">{{ en: 'Percentages & Fractions', it: 'Percentuali e frazioni', de: 'Prozentsätze & Brüche', fr: 'Pourcentages et Fractions', es: 'Porcentajes y Fracciones' }[l]}</h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-2">
           {[
             { p: '10%', f: '1/10' }, { p: '12.5%', f: '1/8' }, { p: '20%', f: '1/5' }, { p: '25%', f: '1/4' },
