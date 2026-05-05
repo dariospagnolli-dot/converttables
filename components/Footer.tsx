@@ -6,7 +6,7 @@ export function Footer({ locale }: { locale: Locale }) {
   return (
     <footer className="border-t bg-muted/30 mt-auto">
       <div className="mx-auto max-w-6xl px-4 py-8">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
           <div>
             <h3 className="font-semibold mb-3">{t(locale, 'cookingConversions')}</h3>
             <ul className="space-y-1.5 text-muted-foreground">

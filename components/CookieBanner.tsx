@@ -89,16 +89,16 @@ export function CookieBanner({ locale }: { locale: Locale }) {
             {t.policy}
           </Link>
         </div>
-        <div className="flex gap-2 shrink-0">
+        <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto shrink-0">
           <button
             onClick={() => handleConsent('rejected')}
-            className="px-4 py-2 text-sm font-medium text-zinc-700 bg-zinc-100 hover:bg-zinc-200 rounded-full transition-colors"
+            className="w-full sm:w-auto px-4 py-2 text-sm font-medium text-zinc-700 bg-zinc-100 hover:bg-zinc-200 rounded-full transition-colors"
           >
             {t.rejectAll}
           </button>
           <button
             onClick={() => handleConsent('accepted')}
-            className="px-5 py-2 text-sm font-semibold text-white bg-emerald-500 hover:bg-emerald-600 rounded-full transition-colors"
+            className="w-full sm:w-auto px-5 py-2 text-sm font-semibold text-white bg-emerald-500 hover:bg-emerald-600 rounded-full transition-colors"
           >
             {t.acceptAll}
           </button>

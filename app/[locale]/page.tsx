@@ -185,7 +185,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           {/* Quick Reference */}
           <div className="rounded-xl border border-zinc-100 bg-white p-6 shadow-sm md:col-span-2">
             <h2 className="text-base font-semibold text-zinc-900 mb-4">{t(l, 'quickReference')}</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm text-zinc-500">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm text-zinc-500">
               {[
                 ['1 US cup', '236.59 ml'],
                 ['1 metric cup', '250 ml'],

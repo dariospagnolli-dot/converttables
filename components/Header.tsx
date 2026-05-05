@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Locale } from '@/lib/i18n/config'
 import { LocaleSwitcher } from './LocaleSwitcher'
+import { MobileMenu } from './MobileMenu'
 
 function BrandIcon() {
   return (
@@ -23,7 +24,7 @@ const nav: Record<string, Record<Locale, string>> = {
 
 export function Header({ locale }: { locale: Locale }) {
   return (
-    <header className="border-b border-zinc-100 bg-white">
+    <header className="relative border-b border-zinc-100 bg-white">
       <div className="mx-auto max-w-6xl flex items-center justify-between px-4 py-3">
 
         {/* Logo */}
@@ -58,8 +59,11 @@ export function Header({ locale }: { locale: Locale }) {
           </Link>
         </nav>
 
-        {/* Locale switcher */}
-        <LocaleSwitcher currentLocale={locale} />
+        {/* Locale switcher + mobile menu */}
+        <div className="flex items-center gap-1">
+          <LocaleSwitcher currentLocale={locale} />
+          <MobileMenu locale={locale} />
+        </div>
 
       </div>
     </header>

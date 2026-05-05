@@ -96,7 +96,7 @@ export default async function AsciiPage({ params }: { params: Promise<{ locale: 
           {{ en: 'Extended ASCII (128-255)', it: 'ASCII Esteso (128-255)', de: 'Erweitertes ASCII (128-255)', fr: 'ASCII Étendu (128-255)', es: 'ASCII Extendido (128-255)' }[l]}
         </h2>
         <div className="overflow-x-auto rounded-lg border">
-          <div className="grid grid-cols-4 sm:grid-cols-8 text-sm">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 text-sm">
             {extended.map(e => (
               <div key={e.dec} className="flex flex-col items-center border-b border-r p-2">
                 <span className="text-lg font-mono">{e.char}</span>

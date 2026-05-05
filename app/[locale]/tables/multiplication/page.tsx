@@ -34,16 +34,16 @@ export default async function MultiplicationPage({ params }: { params: Promise<{
             <tr className="bg-muted/50">
               <th className="px-3 py-2 font-bold text-center border-r">×</th>
               {numbers.map(n => (
-                <th key={n} className="px-3 py-2 font-bold text-center min-w-[48px]">{n}</th>
+                <th key={n} className="px-1.5 sm:px-3 py-2 font-bold text-center min-w-[32px] sm:min-w-[48px]">{n}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {table.map((row, i) => (
               <tr key={i} className="border-t">
-                <td className="px-3 py-2 font-bold text-center bg-muted/50 border-r">{i + 1}</td>
+                <td className="px-1.5 sm:px-3 py-2 font-bold text-center bg-muted/50 border-r">{i + 1}</td>
                 {row.map((val, j) => (
-                  <td key={j} className="px-3 py-2 text-center font-mono">{val}</td>
+                  <td key={j} className="px-1.5 sm:px-3 py-2 text-center font-mono">{val}</td>
                 ))}
               </tr>
             ))}
