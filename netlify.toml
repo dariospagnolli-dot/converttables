@@ -3,12 +3,12 @@
   publish = "out"
 
 [build.environment]
-  NEXT_PUBLIC_SITE_URL = "https://converttables.com"
+  NEXT_PUBLIC_SITE_URL = "https://www.converttables.com"
 
-# ── www → non-www (301 permanente) ────────────────────────────
+# ── non-www → www (301 permanente) ────────────────────────────
 [[redirects]]
-  from    = "https://www.converttables.com/*"
-  to      = "https://converttables.com/:splat"
+  from    = "https://converttables.com/*"
+  to      = "https://www.converttables.com/:splat"
   status  = 301
   force   = true
 

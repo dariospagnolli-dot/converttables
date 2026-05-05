@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://converttables.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.converttables.com'
 
 export const metadata: Metadata = {
   title: 'convert·tables — Unit Converter & Math Tables',

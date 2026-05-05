@@ -7,7 +7,7 @@ import { CONVERSION_PAIRS } from '@/lib/conversions/general'
 import { HOW_MANY_ENTRIES } from '@/lib/data/how-many'
 import { COLOR_PAGES } from '@/lib/data/colors'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://converttables.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.converttables.com'
 
 const TABLE_PAGES = [
   'multiplication', 'roman-numerals', 'binary-hex', 'squares-cubes',

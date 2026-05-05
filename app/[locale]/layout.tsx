@@ -5,7 +5,7 @@ import type { Locale } from '@/lib/i18n/config'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://converttables.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.converttables.com'
 
 const dmSans = DM_Sans({
   variable: '--font-dm-sans',
