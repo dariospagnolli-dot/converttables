@@ -4,6 +4,7 @@ import { t } from '@/lib/i18n'
 import type { Locale } from '@/lib/i18n/config'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { CookieBanner } from '@/components/CookieBanner'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.converttables.com'
 
@@ -61,6 +62,7 @@ export default async function LocaleLayout({
         <Header locale={locale as Locale} />
         <main className="flex-1">{children}</main>
         <Footer locale={locale as Locale} />
+        <CookieBanner locale={locale as Locale} />
       </body>
     </html>
   )
