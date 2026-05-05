@@ -29,14 +29,19 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     metadataBase: new URL(BASE_URL),
     icons: { icon: '/favicon.svg' },
     alternates: {
-      languages: Object.fromEntries(
-        locales.map(loc => [loc, `/${loc}`])
-      ),
+      languages: {
+        ...Object.fromEntries(locales.map(loc => [loc, `/${loc}`])),
+        'x-default': '/en',
+      },
     },
     openGraph: {
       siteName: 'convert·tables',
       locale: locale,
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@converttables',
     },
   }
 }

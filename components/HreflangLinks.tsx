@@ -1,6 +1,6 @@
 import { locales } from '@/lib/i18n/config'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://convertmath.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://converttables.com'
 
 /**
  * Generates hreflang <link> tags for all locales.

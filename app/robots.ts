@@ -1,6 +1,8 @@
 import type { MetadataRoute } from 'next'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://convertmath.com'
+export const dynamic = 'force-static'
+
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://converttables.com'
 
 export default function robots(): MetadataRoute.Robots {
   return {

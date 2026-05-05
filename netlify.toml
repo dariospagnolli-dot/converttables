@@ -1,0 +1,70 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NEXT_PUBLIC_SITE_URL = "https://converttables.com"
+
+# ── www → non-www (301 permanente) ────────────────────────────
+[[redirects]]
+  from    = "https://www.converttables.com/*"
+  to      = "https://converttables.com/:splat"
+  status  = 301
+  force   = true
+
+# ── Locale detection sulla root ───────────────────────────────
+[[redirects]]
+  from = "/"
+  to   = "/it"
+  status = 302
+  conditions = {Language = ["it"]}
+
+[[redirects]]
+  from = "/"
+  to   = "/de"
+  status = 302
+  conditions = {Language = ["de"]}
+
+[[redirects]]
+  from = "/"
+  to   = "/fr"
+  status = 302
+  conditions = {Language = ["fr"]}
+
+[[redirects]]
+  from = "/"
+  to   = "/es"
+  status = 302
+  conditions = {Language = ["es"]}
+
+[[redirects]]
+  from   = "/"
+  to     = "/en"
+  status = 302
+
+# ── Fallback per path senza prefisso locale ───────────────────
+[[redirects]]
+  from   = "/convert/*"
+  to     = "/en/convert/:splat"
+  status = 302
+
+[[redirects]]
+  from   = "/tables/*"
+  to     = "/en/tables/:splat"
+  status = 302
+
+# ── Security headers ──────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options       = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy       = "strict-origin-when-cross-origin"
+    Permissions-Policy    = "camera=(), microphone=(), geolocation=()"
+    X-XSS-Protection      = "1; mode=block"
+
+# Cache aggressiva per asset statici Next.js
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
