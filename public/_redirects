@@ -1,0 +1,10 @@
+# Locale detection sulla root (Language condition)
+/   /it   302   Language=it
+/   /de   302   Language=de
+/   /fr   302   Language=fr
+/   /es   302   Language=es
+/   /en   302
+
+# Fallback per path senza prefisso locale
+/convert/*   /en/convert/:splat   302
+/tables/*    /en/tables/:splat    302

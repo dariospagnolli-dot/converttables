@@ -12,50 +12,7 @@
   status = 301
   force  = true
 
-# ── Locale detection sulla root ───────────────────────────────
-[[redirects]]
-  from   = "/"
-  to     = "/it"
-  status = 302
-  [redirects.conditions]
-    Language = ["it", "it-IT"]
-
-[[redirects]]
-  from   = "/"
-  to     = "/de"
-  status = 302
-  [redirects.conditions]
-    Language = ["de", "de-DE", "de-AT", "de-CH"]
-
-[[redirects]]
-  from   = "/"
-  to     = "/fr"
-  status = 302
-  [redirects.conditions]
-    Language = ["fr", "fr-FR", "fr-BE", "fr-CH", "fr-CA"]
-
-[[redirects]]
-  from   = "/"
-  to     = "/es"
-  status = 302
-  [redirects.conditions]
-    Language = ["es", "es-ES", "es-MX", "es-AR", "es-CO"]
-
-[[redirects]]
-  from   = "/"
-  to     = "/en"
-  status = 302
-
-# ── Fallback per path senza prefisso locale ───────────────────
-[[redirects]]
-  from   = "/convert/*"
-  to     = "/en/convert/:splat"
-  status = 302
-
-[[redirects]]
-  from   = "/tables/*"
-  to     = "/en/tables/:splat"
-  status = 302
+# ── Locale detection e fallback → gestiti da public/_redirects ─
 
 # ── Security headers ──────────────────────────────────────────
 [[headers]]
