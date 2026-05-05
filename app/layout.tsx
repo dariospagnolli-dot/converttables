@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ConvertMath — Unit Converter & Math Tables',
+  title: 'convert·tables — Unit Converter & Math Tables',
   description: 'Free online unit converter, cooking measurement charts, and math reference tables.',
 }
 

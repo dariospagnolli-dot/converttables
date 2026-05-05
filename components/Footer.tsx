@@ -38,7 +38,7 @@ export function Footer({ locale }: { locale: Locale }) {
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold mb-3">ConvertMath</h3>
+            <h3 className="font-semibold mb-3">convert·tables</h3>
             <p className="text-muted-foreground text-xs leading-relaxed mb-3">
               {t(locale, 'source')}
             </p>
@@ -48,7 +48,7 @@ export function Footer({ locale }: { locale: Locale }) {
           </div>
         </div>
         <div className="border-t mt-8 pt-4 text-center text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} ConvertMath
+          &copy; {new Date().getFullYear()} convert·tables
         </div>
       </div>
     </footer>
