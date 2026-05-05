@@ -13,7 +13,8 @@
       "Bash(grep -rn \"'Home'\" app/[locale]/ --include=\"*.tsx\")",
       "Bash(grep -rn \">Home<\" app/[locale]/ --include=\"*.tsx\")",
       "Bash(grep -rn \"Conversions\\\\|conversions\" app/[locale]/convert/how-many/ --include=\"*.tsx\")",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(grep -rL \"alternates\" app/[locale]/ --include=\"*.tsx\")"
     ]
   }
 }

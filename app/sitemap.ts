@@ -54,6 +54,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const table of TABLE_PAGES) {
       entries.push({ url: `${BASE_URL}/${locale}/tables/${table}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.8 })
     }
+
+    // Individual Roman numeral pages (1-100 + key numbers)
+    const romanNumbers = [...Array.from({ length: 100 }, (_, i) => i + 1), 150, 200, 250, 300, 400, 500, 600, 700, 800, 900, 1000, 1500, 1776, 1900, 1999, 2000, 2024, 2025, 2026, 3000, 3999]
+    for (const n of romanNumbers) {
+      entries.push({ url: `${BASE_URL}/${locale}/tables/roman-numerals/${n}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 })
+    }
+
+    // Individual fraction pages
+    const fractions = ['1-2','1-3','2-3','1-4','3-4','1-5','2-5','3-5','4-5','1-6','5-6','1-7','2-7','3-7','4-7','5-7','6-7','1-8','3-8','5-8','7-8','1-9','2-9','4-9','5-9','7-9','8-9','1-10','3-10','7-10','9-10','1-12','5-12','7-12','11-12','1-16','3-16','5-16','7-16','9-16','11-16','13-16','15-16','1-32','1-64','1-100','1-1000']
+    for (const f of fractions) {
+      entries.push({ url: `${BASE_URL}/${locale}/tables/fractions/${f}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 })
+    }
+
+    // Individual ASCII code pages (0-127)
+    for (let i = 0; i < 128; i++) {
+      entries.push({ url: `${BASE_URL}/${locale}/tables/ascii/${i}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.4 })
+    }
   }
 
   return entries
