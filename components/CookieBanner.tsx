@@ -64,8 +64,16 @@ export function CookieBanner({ locale }: { locale: Locale }) {
   function handleConsent(consent: Consent) {
     localStorage.setItem(STORAGE_KEY, consent)
     setVisible(false)
+    const granted = consent === 'accepted' ? 'granted' : 'denied'
+    // Update Google Consent Mode v2
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ;(window as any).gtag?.('consent', 'update', {
+      analytics_storage: granted,
+      ad_storage: granted,
+      ad_user_data: granted,
+      ad_personalization: granted,
+    })
     if (consent === 'accepted') {
-      // Dispatch event so AdSense/analytics can initialize
       window.dispatchEvent(new CustomEvent('ct:cookie-consent', { detail: consent }))
     }
   }
