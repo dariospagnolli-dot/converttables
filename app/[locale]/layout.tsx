@@ -61,7 +61,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${dmSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+      <body suppressHydrationWarning className="min-h-full flex flex-col bg-background text-foreground font-sans">
         {/* Consent Mode v2 — must run before GTM */}
         <script dangerouslySetInnerHTML={{ __html: `
           window.dataLayer=window.dataLayer||[];

@@ -179,6 +179,9 @@ export default async function TablespoonsIngredientPage({ params }: { params: Pr
           <Link href={`/${locale}/convert/teaspoons-to-grams/${slug}`} className="rounded-lg border px-4 py-2 text-sm hover:bg-accent transition-colors">
             {lb.tspLink} — {ing.names[l]}
           </Link>
+          <Link href={`/${locale}/convert/oz-to-grams/${slug}`} className="rounded-lg border px-4 py-2 text-sm hover:bg-accent transition-colors">
+            {t(l, 'ouncesToGrams')} — {ing.names[l]}
+          </Link>
         </div>
       </section>
 
