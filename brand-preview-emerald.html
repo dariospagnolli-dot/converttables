@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>convert·tables — Brand Guide (Emerald)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/*
+  ICON GEOMETRY (viewBox 0 0 56 56)
+  ─────────────────────────────────
+  Cells:  16×16 px (square), gap 12 px → grid 44×44
+  Offset: (56−44)/2 = 6 px on all sides → perfectly centered
+  Rows:   y=6…22 (top)   |  y=34…50 (bottom)
+  Cols:   x=6…22 (left)  |  x=34…50 (right)
+  H-gap:  x=22…34 (12px) — arrow lives here
+  V-gap:  y=22…34 (12px) — arrow centered at y=28
+  Arrow:  x=23…32, y=24…32 — NO overlap with any cell
+*/
+
+:root {
+  --e50:  #ecfdf5;
+  --e100: #d1fae5;
+  --e200: #a7f3d0;
+  --e300: #6ee7b7;
+  --e400: #34d399;
+  --e500: #10b981;
+  --e600: #059669;
+  --e700: #047857;
+  --e800: #065f46;
+  --e900: #064e3b;
+  --n50:  #fafafa;
+  --n100: #f4f4f5;
+  --n200: #e4e4e7;
+  --n400: #a1a1aa;
+  --n600: #52525b;
+  --n800: #27272a;
+  --n900: #18181b;
+}
+
+body { background: #ecf0eb; font-family: 'DM Sans', sans-serif; color: var(--n900); line-height: 1.5; }
+.page { max-width: 1040px; margin: 0 auto; padding: 60px 24px 100px; }
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--n400); margin-bottom: 20px; margin-top: 56px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--n200);
+}
+.section-label:first-of-type { margin-top: 0; }
+
+/* ─── ICON helper ─────────────────────────────────────────
+   One reusable SVG shape.
+   Place inside any .icon-wrap with appropriate size.
+──────────────────────────────────────────────────────── */
+
+/* ─── HERO ──────────────────────────────────────────────── */
+.hero {
+  background: var(--e500); border-radius: 20px;
+  padding: 64px 48px; display: flex; align-items: center; gap: 24px;
+}
+.hero-icon {
+  width: 80px; height: 80px; border-radius: 20px;
+  background: rgba(255,255,255,.15);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.hero-wordmark { font-size: 52px; font-weight: 600; letter-spacing: -1px; color: white; }
+.hero-wordmark .dot { color: rgba(255,255,255,.5); font-weight: 700; }
+.hero-sub { margin-top: 10px; font-size: 15px; color: rgba(255,255,255,.6); font-weight: 400; }
+
+/* ─── LOGO GRID ─────────────────────────────────────────── */
+.logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.logo-card {
+  border-radius: 16px; padding: 36px 28px 24px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.logo-card.bg-white  { background: #fff; border: 1px solid var(--n200); }
+.logo-card.bg-gray   { background: var(--n100); border: 1px solid var(--n200); }
+.logo-card.bg-light  { background: var(--e50);  border: 1px solid var(--e100); }
+.logo-card.bg-green  { background: var(--e500); }
+.logo-card.bg-dark   { background: var(--n900); }
+
+.lc-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; letter-spacing: .15em; text-transform: uppercase; font-weight: 500;
+}
+.logo-card.bg-white .lc-label,
+.logo-card.bg-gray  .lc-label,
+.logo-card.bg-light .lc-label { color: var(--n400); }
+.logo-card.bg-green .lc-label,
+.logo-card.bg-dark  .lc-label { color: rgba(255,255,255,.4); }
+
+.logo-lockup { display: flex; align-items: center; gap: 14px; }
+.icon-box {
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; background: var(--e500);
+}
+.wm { font-size: 22px; font-weight: 600; letter-spacing: -.4px; }
+
+/* ─── COLOR PALETTE ─────────────────────────────────────── */
+.palette-row { display: flex; gap: 6px; }
+.swatch { flex:1; border-radius:10px; aspect-ratio:1; display:flex; align-items:flex-end; padding:8px; }
+.swatch span { font-family:'Inter',monospace; font-size:9px; font-weight:600; opacity:.7; }
+.neutral-row { display:flex; gap:6px; margin-top:6px; }
+.nswatch { flex:1; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; }
+.nswatch span { font-family:'Inter',monospace; font-size:9px; font-weight:600; }
+
+/* ─── COMPONENTS ────────────────────────────────────────── */
+.components-card {
+  background: white; border-radius: 16px; padding: 36px 32px;
+  border: 1px solid var(--n200); display: flex; flex-direction: column; gap: 28px;
+}
+.comp-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.comp-label {
+  font-family: 'Inter', sans-serif; font-size: 10px; color: var(--n400);
+  letter-spacing: .12em; text-transform: uppercase; width: 80px; flex-shrink: 0;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0 20px; height: 40px; border-radius: 10px;
+  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
+  cursor: pointer; border: none;
+}
+.btn-primary   { background: var(--e500); color: white; }
+.btn-secondary { background: var(--e100); color: var(--e700); }
+.btn-outline   { background: transparent; color: var(--e600); border: 1.5px solid var(--e300); }
+.btn-sm { padding: 0 14px; height: 32px; font-size: 13px; border-radius: 8px; }
+.btn-lg { padding: 0 28px; height: 48px; font-size: 16px; border-radius: 12px; }
+.badge { display:inline-flex; align-items:center; padding:3px 10px; border-radius:99px; font-size:12px; font-weight:600; }
+.badge-green   { background: var(--e100); color: var(--e700); }
+.badge-neutral { background: var(--n100); color: var(--n600); }
+.badge-white   { background: white; color: var(--e600); border: 1px solid var(--e200); }
+.link-e { color: var(--e600); font-weight: 500; text-decoration: underline; text-decoration-color: var(--e200); }
+.inp {
+  height: 40px; border-radius: 10px; border: 1.5px solid var(--n200);
+  padding: 0 14px; font-family: 'DM Sans', sans-serif; font-size: 14px;
+  color: var(--n900); outline: none; width: 200px;
+}
+
+/* ─── BROWSER MOCKUP ────────────────────────────────────── */
+.mockup-browser { background: white; border-radius: 16px; overflow: hidden; border: 1px solid var(--n200); }
+.mockup-bar {
+  background: var(--n100); padding: 10px 16px;
+  display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--n200);
+}
+.dot-r { width:12px; height:12px; border-radius:50%; background:#fc605c; }
+.dot-y { width:12px; height:12px; border-radius:50%; background:#fdbc40; }
+.dot-g { width:12px; height:12px; border-radius:50%; background:#34c84a; }
+.url-bar {
+  flex:1; background:white; border-radius:6px; border:1px solid var(--n200);
+  padding:4px 12px; font-family:'Inter',sans-serif; font-size:12px;
+  color:var(--n600); max-width:320px; margin:0 auto;
+}
+.site-header { padding:14px 28px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--n100); }
+.site-nav { display:flex; align-items:center; gap:24px; }
+.site-nav a { font-size:14px; font-weight:500; color:var(--n600); text-decoration:none; }
+.site-nav a.active { color:var(--e600); }
+.site-hero-area {
+  padding:52px 28px 40px;
+  background: linear-gradient(160deg, var(--e50) 0%, white 60%);
+  text-align:center;
+}
+.site-hero-area h1 { font-size:34px; font-weight:700; letter-spacing:-.6px; color:var(--n900); margin-bottom:10px; }
+.site-hero-area h1 em { font-style:normal; color:var(--e600); }
+.site-hero-area p { font-size:15px; color:var(--n600); max-width:400px; margin:0 auto 24px; }
+.site-cards { display:flex; gap:8px; padding:0 28px 28px; }
+.site-card { flex:1; border:1px solid var(--n200); border-radius:12px; padding:16px; background:white; }
+.site-card-icon { width:34px; height:34px; background:var(--e100); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:10px; }
+.site-card h3 { font-size:13px; font-weight:600; color:var(--n900); margin-bottom:4px; }
+.site-card p  { font-size:12px; color:var(--n400); }
+
+/* ─── FAVICON STRIP ─────────────────────────────────────── */
+.favicon-strip {
+  background:white; border-radius:16px; border:1px solid var(--n200);
+  padding:28px 32px; display:flex; align-items:center; gap:32px; flex-wrap:wrap;
+}
+.fav-item { display:flex; flex-direction:column; align-items:center; gap:10px; }
+.fav-label { font-family:'Inter',sans-serif; font-size:10px; color:var(--n400); letter-spacing:.1em; text-transform:uppercase; }
+
+/* ─── OG CARD ───────────────────────────────────────────── */
+.og-card { border-radius:16px; overflow:hidden; border:1px solid var(--n200); max-width:600px; }
+.og-body {
+  background: linear-gradient(135deg, var(--e700) 0%, var(--e500) 50%, var(--e400) 100%);
+  padding:48px 48px 36px; display:flex; flex-direction:column; gap:20px;
+}
+.og-logo { display:flex; align-items:center; gap:16px; }
+.og-icon { width:60px; height:60px; border-radius:15px; background:rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; }
+.og-wm  { font-size:32px; font-weight:600; letter-spacing:-.6px; color:white; }
+.og-wm .dot { color:rgba(255,255,255,.5); }
+.og-headline { font-size:28px; font-weight:700; color:white; letter-spacing:-.4px; line-height:1.2; }
+.og-sub { font-size:15px; color:rgba(255,255,255,.65); }
+.og-footer { background:white; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; }
+.og-footer-domain { font-family:'Inter',sans-serif; font-size:12px; color:var(--n400); }
+.og-footer-badge  { font-family:'Inter',sans-serif; font-size:11px; font-weight:600; color:var(--e600); background:var(--e100); padding:3px 10px; border-radius:99px; }
+
+/* ─── DARK STRIP ────────────────────────────────────────── */
+.dark-preview {
+  background:var(--n900); border-radius:16px; padding:36px 32px;
+  display:flex; align-items:center; gap:32px; flex-wrap:wrap;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══════ HERO ══════════════════════════════════════════ -->
+  <div class="section-label">Brand Identity — convert·tables · Emerald</div>
+  <div class="hero">
+    <div class="hero-icon">
+      <!-- 80px display -->
+      <svg width="52" height="52" viewBox="0 0 56 56" fill="none">
+        <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+        <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+        <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+        <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+        <path d="M23 28h5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M28 24l4 4-4 4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <div class="hero-wordmark">convert<span class="dot">·</span>tables</div>
+      <div class="hero-sub">Unit converter &amp; math reference tables</div>
+    </div>
+  </div>
+
+
+  <!-- ══════ LOGO VARIATIONS ══════════════════════════════ -->
+  <div class="section-label">Logo — varianti di sfondo</div>
+  <div class="logo-grid">
+
+    <!-- Su bianco -->
+    <div class="logo-card bg-white">
+      <div class="logo-lockup">
+        <div class="icon-box" style="width:44px;height:44px;border-radius:11px;">
+          <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+            <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <path d="M23 28h5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M28 24l4 4-4 4" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="wm" style="color:var(--n900);">convert<span style="color:var(--e500);font-weight:700;">·</span>tables</div>
+      </div>
+      <div class="lc-label">Su bianco</div>
+    </div>
+
+    <!-- Su grigio -->
+    <div class="logo-card bg-gray">
+      <div class="logo-lockup">
+        <div class="icon-box" style="width:44px;height:44px;border-radius:11px;">
+          <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+            <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <path d="M23 28h5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M28 24l4 4-4 4" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="wm" style="color:var(--n900);">convert<span style="color:var(--e500);font-weight:700;">·</span>tables</div>
+      </div>
+      <div class="lc-label">Su grigio</div>
+    </div>
+
+    <!-- Su emerald chiaro -->
+    <div class="logo-card bg-light">
+      <div class="logo-lockup">
+        <div class="icon-box" style="width:44px;height:44px;border-radius:11px;">
+          <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+            <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <path d="M23 28h5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M28 24l4 4-4 4" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="wm" style="color:var(--e700);">convert<span style="color:var(--e400);font-weight:700;">·</span>tables</div>
+      </div>
+      <div class="lc-label">Su emerald chiaro</div>
+    </div>
+
+    <!-- Su emerald pieno -->
+    <div class="logo-card bg-green">
+      <div class="logo-lockup">
+        <div class="icon-box" style="width:44px;height:44px;border-radius:11px;background:rgba(255,255,255,.18);">
+          <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+            <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <path d="M23 28h5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M28 24l4 4-4 4" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="wm" style="color:white;">convert<span style="color:rgba(255,255,255,.5);font-weight:700;">·</span>tables</div>
+      </div>
+      <div class="lc-label">Su emerald pieno</div>
+    </div>
+
+    <!-- Su nero -->
+    <div class="logo-card bg-dark">
+      <div class="logo-lockup">
+        <div class="icon-box" style="width:44px;height:44px;border-radius:11px;">
+          <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+            <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <path d="M23 28h5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M28 24l4 4-4 4" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="wm" style="color:white;">convert<span style="color:var(--e400);font-weight:700;">·</span>tables</div>
+      </div>
+      <div class="lc-label">Su nero</div>
+    </div>
+
+    <!-- Taglie icona -->
+    <div class="logo-card bg-white" style="justify-content:space-between;">
+      <div style="display:flex;align-items:flex-end;gap:16px;">
+        <!-- 24px -->
+        <div class="icon-box" style="width:24px;height:24px;border-radius:6px;">
+          <svg width="16" height="16" viewBox="0 0 56 56" fill="none">
+            <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <path d="M23 28h5" stroke="white" stroke-width="4" stroke-linecap="round"/>
+            <path d="M28 24l4 4-4 4" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <!-- 40px -->
+        <div class="icon-box" style="width:40px;height:40px;border-radius:9px;">
+          <svg width="26" height="26" viewBox="0 0 56 56" fill="none">
+            <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <path d="M23 28h5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M28 24l4 4-4 4" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <!-- 64px -->
+        <div class="icon-box" style="width:64px;height:64px;border-radius:14px;">
+          <svg width="42" height="42" viewBox="0 0 56 56" fill="none">
+            <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <path d="M23 28h5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M28 24l4 4-4 4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="lc-label" style="color:var(--n400);">Icona — 24 / 40 / 64px</div>
+    </div>
+
+  </div><!-- /logo-grid -->
+
+
+  <!-- ══════ COLOR SYSTEM ══════════════════════════════════ -->
+  <div class="section-label">Color System</div>
+  <div style="background:white;border-radius:16px;padding:28px 28px 24px;border:1px solid var(--n200);">
+    <div style="font-size:12px;font-weight:600;color:var(--n600);margin-bottom:12px;font-family:'Inter',sans-serif;">Emerald — primary</div>
+    <div class="palette-row" style="margin-bottom:20px;">
+      <div class="swatch" style="background:var(--e50);"><span style="color:var(--e400);">50</span></div>
+      <div class="swatch" style="background:var(--e100);"><span style="color:var(--e500);">100</span></div>
+      <div class="swatch" style="background:var(--e200);"><span style="color:var(--e700);">200</span></div>
+      <div class="swatch" style="background:var(--e300);"><span style="color:var(--e800);">300</span></div>
+      <div class="swatch" style="background:var(--e400);"><span style="color:white;">400</span></div>
+      <div class="swatch" style="background:var(--e500);border:3px solid var(--e700);"><span style="color:white;">500 ✓</span></div>
+      <div class="swatch" style="background:var(--e600);"><span style="color:white;">600</span></div>
+      <div class="swatch" style="background:var(--e700);"><span style="color:rgba(255,255,255,.7);">700</span></div>
+      <div class="swatch" style="background:var(--e800);"><span style="color:rgba(255,255,255,.6);">800</span></div>
+      <div class="swatch" style="background:var(--e900);"><span style="color:rgba(255,255,255,.5);">900</span></div>
+    </div>
+    <div style="font-size:12px;font-weight:600;color:var(--n600);margin-bottom:12px;font-family:'Inter',sans-serif;">Neutral</div>
+    <div class="neutral-row">
+      <div class="nswatch" style="background:var(--n50);border:1px solid var(--n200);"><span style="color:var(--n400);">50</span></div>
+      <div class="nswatch" style="background:var(--n100);border:1px solid var(--n200);"><span style="color:var(--n400);">100</span></div>
+      <div class="nswatch" style="background:var(--n200);"><span style="color:var(--n600);">200</span></div>
+      <div class="nswatch" style="background:var(--n400);"><span style="color:white;">400</span></div>
+      <div class="nswatch" style="background:var(--n600);"><span style="color:white;">600</span></div>
+      <div class="nswatch" style="background:var(--n800);"><span style="color:rgba(255,255,255,.7);">800</span></div>
+      <div class="nswatch" style="background:var(--n900);"><span style="color:rgba(255,255,255,.6);">900</span></div>
+    </div>
+    <div style="margin-top:20px;padding:14px 18px;background:var(--e50);border-radius:10px;border:1px solid var(--e100);font-size:12px;font-family:'Inter',sans-serif;color:var(--e700);">
+      <strong>Icona:</strong> Celle in <code style="background:var(--e100);padding:2px 6px;border-radius:4px;">#a7f3d0</code> (emerald-200) su sfondo <code style="background:var(--e100);padding:2px 6px;border-radius:4px;">#10b981</code> (emerald-500) · Freccia <code style="background:var(--e100);padding:2px 6px;border-radius:4px;">white</code>
+    </div>
+  </div>
+
+
+  <!-- ══════ UI COMPONENTS ══════════════════════════════════ -->
+  <div class="section-label">UI Components</div>
+  <div class="components-card">
+    <div class="comp-row">
+      <div class="comp-label">Buttons</div>
+      <button class="btn btn-primary">Convert now</button>
+      <button class="btn btn-secondary">View tables</button>
+      <button class="btn btn-outline">Learn more</button>
+    </div>
+    <div class="comp-row">
+      <div class="comp-label">Sizes</div>
+      <button class="btn btn-primary btn-sm">Small</button>
+      <button class="btn btn-primary">Default</button>
+      <button class="btn btn-primary btn-lg">Large</button>
+    </div>
+    <div class="comp-row">
+      <div class="comp-label">Badges</div>
+      <span class="badge badge-green">Conversion</span>
+      <span class="badge badge-neutral">Reference</span>
+      <span class="badge badge-white">Math Tables</span>
+      <span class="badge badge-green">5 languages</span>
+    </div>
+    <div class="comp-row">
+      <div class="comp-label">Links</div>
+      <a class="link-e" href="#">Inches to cm</a>
+      <a class="link-e" href="#">Kg to lbs</a>
+      <a class="link-e" href="#">All conversions →</a>
+    </div>
+    <div class="comp-row">
+      <div class="comp-label">Input</div>
+      <input class="inp" type="text" value="100" placeholder="Enter value…">
+      <div style="font-size:14px;color:var(--n600);">kg →</div>
+      <input class="inp" type="text" value="220.46" style="border-color:var(--e300);background:var(--e50);">
+    </div>
+  </div>
+
+
+  <!-- ══════ SITE MOCKUP ═══════════════════════════════════ -->
+  <div class="section-label">Site Mockup — Homepage</div>
+  <div class="mockup-browser">
+    <div class="mockup-bar">
+      <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
+      <div class="url-bar">converttables.com/en</div>
+    </div>
+
+    <div class="site-header">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="icon-box" style="width:32px;height:32px;border-radius:8px;">
+          <svg width="20" height="20" viewBox="0 0 56 56" fill="none">
+            <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <path d="M23 28h5" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M28 24l4 4-4 4" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span style="font-size:16px;font-weight:600;color:var(--n900);">convert<span style="color:var(--e500);">·</span>tables</span>
+      </div>
+      <div class="site-nav">
+        <a href="#" class="active">Convert</a>
+        <a href="#">Tables</a>
+        <a href="#">How Many</a>
+        <button class="btn btn-primary btn-sm" style="margin-left:8px;">EN ▾</button>
+      </div>
+    </div>
+
+    <div class="site-hero-area">
+      <div style="display:inline-flex;align-items:center;gap:6px;background:var(--e100);color:var(--e700);padding:4px 12px;border-radius:99px;font-size:12px;font-weight:600;margin-bottom:16px;">
+        ✦ 5 languages · 5000+ pages
+      </div>
+      <h1>Unit Converter &amp;<br><em>Math Reference Tables</em></h1>
+      <p>Instant conversions, formulas, and reference tables for everyday calculations.</p>
+      <button class="btn btn-primary btn-lg">Start converting</button>
+    </div>
+
+    <div class="site-cards">
+      <div class="site-card">
+        <div class="site-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M4 12h16" stroke="var(--e600)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M15 7l5 5-5 5" stroke="var(--e600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Conversions</h3>
+        <p>Length, weight, temperature, volume…</p>
+      </div>
+      <div class="site-card">
+        <div class="site-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="8" height="7" rx="1.5" fill="var(--e500)" fill-opacity=".35"/>
+            <rect x="13" y="3" width="8" height="7" rx="1.5" fill="var(--e500)" fill-opacity=".35"/>
+            <rect x="3" y="14" width="8" height="7" rx="1.5" fill="var(--e500)" fill-opacity=".35"/>
+            <rect x="13" y="14" width="8" height="7" rx="1.5" fill="var(--e500)" fill-opacity=".35"/>
+          </svg>
+        </div>
+        <h3>Math Tables</h3>
+        <p>ASCII, trigonometry, powers, primes…</p>
+      </div>
+      <div class="site-card">
+        <div class="site-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="var(--e600)" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="var(--e600)" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>How Many?</h3>
+        <p>Cups to grams, inches to cm…</p>
+      </div>
+    </div>
+  </div><!-- /mockup-browser -->
+
+
+  <!-- ══════ FAVICON ════════════════════════════════════════ -->
+  <div class="section-label">Favicon &amp; App Icon</div>
+  <div class="favicon-strip">
+
+    <div class="fav-item">
+      <div class="icon-box" style="width:16px;height:16px;border-radius:3px;">
+        <svg width="10" height="10" viewBox="0 0 56 56" fill="none">
+          <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <path d="M23 28h5" stroke="white" stroke-width="5" stroke-linecap="round"/>
+          <path d="M28 24l4 4-4 4" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="fav-label">16px</div>
+    </div>
+
+    <div class="fav-item">
+      <div class="icon-box" style="width:32px;height:32px;border-radius:6px;">
+        <svg width="22" height="22" viewBox="0 0 56 56" fill="none">
+          <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <path d="M23 28h5" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M28 24l4 4-4 4" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="fav-label">32px</div>
+    </div>
+
+    <div class="fav-item">
+      <div class="icon-box" style="width:64px;height:64px;border-radius:14px;">
+        <svg width="42" height="42" viewBox="0 0 56 56" fill="none">
+          <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <path d="M23 28h5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M28 24l4 4-4 4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="fav-label">64px</div>
+    </div>
+
+    <div class="fav-item">
+      <div class="icon-box" style="width:120px;height:120px;border-radius:27px;">
+        <svg width="78" height="78" viewBox="0 0 56 56" fill="none">
+          <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <path d="M23 28h5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M28 24l4 4-4 4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="fav-label">App Icon 120px</div>
+    </div>
+
+    <div class="fav-item">
+      <div style="width:180px;height:36px;background:white;border:1px solid var(--n200);border-radius:6px;display:flex;align-items:center;padding:0 10px;gap:6px;">
+        <div class="icon-box" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;">
+          <svg width="10" height="10" viewBox="0 0 56 56" fill="none">
+            <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <path d="M23 28h5" stroke="white" stroke-width="5" stroke-linecap="round"/>
+            <path d="M28 24l4 4-4 4" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span style="font-size:12px;color:var(--n600);font-family:'Inter',sans-serif;">converttables.com</span>
+      </div>
+      <div class="fav-label">Browser tab</div>
+    </div>
+
+  </div><!-- /favicon-strip -->
+
+
+  <!-- ══════ OG CARD ═══════════════════════════════════════ -->
+  <div class="section-label">Open Graph — Social Share Card</div>
+  <div class="og-card">
+    <div class="og-body">
+      <div class="og-logo">
+        <div class="og-icon">
+          <svg width="38" height="38" viewBox="0 0 56 56" fill="none">
+            <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+            <path d="M23 28h5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M28 24l4 4-4 4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="og-wm">convert<span class="dot">·</span>tables</div>
+      </div>
+      <div class="og-headline">100 kg → 220.46 lbs</div>
+      <div class="og-sub">Instant unit converter with formulas &amp; reference tables in 5 languages.</div>
+    </div>
+    <div class="og-footer">
+      <div class="og-footer-domain">converttables.com</div>
+      <div class="og-footer-badge">Free · No signup</div>
+    </div>
+  </div>
+
+
+  <!-- ══════ DARK ═══════════════════════════════════════════ -->
+  <div class="section-label">Dark Background</div>
+  <div class="dark-preview">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div class="icon-box" style="width:44px;height:44px;border-radius:11px;">
+        <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+          <rect x="6"  y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="6"  y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="34" y="6"  width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <rect x="34" y="34" width="16" height="16" rx="3" fill="#a7f3d0"/>
+          <path d="M23 28h5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          <path d="M28 24l4 4-4 4" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div style="font-size:22px;font-weight:600;letter-spacing:-.4px;color:white;">convert<span style="color:var(--e400);">·</span>tables</div>
+    </div>
+    <div style="height:1px;background:rgba(255,255,255,.08);flex:1;min-width:20px;"></div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-primary btn-sm">Convert</button>
+      <button class="btn btn-sm" style="background:rgba(255,255,255,.08);color:white;">Tables</button>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -130,6 +130,22 @@ export default async function GramsToCupsIngredient({ params }: { params: Promis
         {t(l, 'source')} — {ing.names.en} density: {ing.density_g_per_ml} g/ml
       </p>
 
+      {/* Related conversions for this ingredient */}
+      <section className="mb-10">
+        <h2 className="text-xl font-semibold mb-4">{t(l, 'relatedConversions')}</h2>
+        <div className="flex flex-wrap gap-3">
+          <Link href={`/${locale}/convert/cups-to-grams/${slug}`} className="rounded-lg border px-4 py-2 text-sm hover:bg-accent transition-colors">
+            {t(l, 'cupsToGrams')} — {ing.names[l]}
+          </Link>
+          <Link href={`/${locale}/convert/tablespoons-to-grams/${slug}`} className="rounded-lg border px-4 py-2 text-sm hover:bg-accent transition-colors">
+            {t(l, 'tablespoonsToGrams')} — {ing.names[l]}
+          </Link>
+          <Link href={`/${locale}/convert/teaspoons-to-grams/${slug}`} className="rounded-lg border px-4 py-2 text-sm hover:bg-accent transition-colors">
+            {t(l, 'teaspoonsToGrams')} — {ing.names[l]}
+          </Link>
+        </div>
+      </section>
+
       {/* Other ingredients */}
       <section>
         <h2 className="text-xl font-semibold mb-4">{t(l, 'otherIngredients')}</h2>

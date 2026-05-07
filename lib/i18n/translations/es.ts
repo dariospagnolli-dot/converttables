@@ -51,4 +51,10 @@ export const es = {
   selectIngredient: 'Seleccionar un ingrediente',
   allIngredients: 'Todos los Ingredientes',
   source: 'Fuente: FAO Density Database v2.0',
+
+  // New conversion pages
+  tablespoonsToGrams: 'Cucharadas a Gramos',
+  teaspoonsToGrams: 'Cucharaditas a Gramos',
+  stickOfButter: 'Conversiones de Barra de Mantequilla',
+  ovenTemperature: 'Conversión Temperatura Horno',
 } as const

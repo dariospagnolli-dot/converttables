@@ -51,4 +51,10 @@ export const de = {
   selectIngredient: 'Zutat auswählen',
   allIngredients: 'Alle Zutaten',
   source: 'Quelle: FAO Density Database v2.0',
+
+  // New conversion pages
+  tablespoonsToGrams: 'Esslöffel in Gramm',
+  teaspoonsToGrams: 'Teelöffel in Gramm',
+  stickOfButter: 'Butterstück-Umrechnungen',
+  ovenTemperature: 'Backofentemperatur Umrechnung',
 } as const

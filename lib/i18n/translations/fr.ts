@@ -51,4 +51,10 @@ export const fr = {
   selectIngredient: 'Sélectionner un ingrédient',
   allIngredients: 'Tous les Ingrédients',
   source: 'Source : FAO Density Database v2.0',
+
+  // New conversion pages
+  tablespoonsToGrams: 'Cuillères à soupe en grammes',
+  teaspoonsToGrams: 'Cuillères à café en grammes',
+  stickOfButter: 'Conversions bâtonnet de beurre',
+  ovenTemperature: 'Conversion température four',
 } as const

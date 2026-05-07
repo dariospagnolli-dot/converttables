@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>convert·tables — Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --v50:  #f5f3ff;
+  --v100: #ede9fe;
+  --v200: #ddd6fe;
+  --v300: #c4b5fd;
+  --v400: #a78bfa;
+  --v500: #8b5cf6;
+  --v600: #7c3aed;
+  --v700: #6d28d9;
+  --v800: #5b21b6;
+  --v900: #4c1d95;
+  --n50:  #fafafa;
+  --n100: #f4f4f5;
+  --n200: #e4e4e7;
+  --n400: #a1a1aa;
+  --n600: #52525b;
+  --n800: #27272a;
+  --n900: #18181b;
+}
+body {
+  background: #f0eff4;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--n900);
+  line-height: 1.5;
+}
+
+/* ─── LAYOUT ──────────────────────────── */
+.page { max-width: 1040px; margin: 0 auto; padding: 60px 24px 100px; }
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--n400); margin-bottom: 20px; margin-top: 56px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--n200);
+}
+.section-label:first-of-type { margin-top: 0; }
+
+/* ─── HERO ───────────────────────────── */
+.hero {
+  background: var(--v500);
+  border-radius: 20px;
+  padding: 64px 48px;
+  display: flex; align-items: center; gap: 24px;
+  margin-bottom: 0;
+}
+.hero-icon {
+  width: 80px; height: 80px; border-radius: 20px;
+  background: rgba(255,255,255,.15);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.hero-wordmark {
+  font-size: 52px; font-weight: 600; letter-spacing: -1px; color: white;
+}
+.hero-wordmark .dot { color: rgba(255,255,255,.55); font-weight: 700; }
+.hero-sub {
+  margin-top: 10px; font-size: 15px; color: rgba(255,255,255,.6); font-weight: 400;
+}
+
+/* ─── LOGO VARIATIONS ────────────────── */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.logo-card {
+  border-radius: 16px; padding: 36px 28px 24px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.logo-card.on-white  { background: #ffffff; border: 1px solid var(--n200); }
+.logo-card.on-light  { background: var(--v50); border: 1px solid var(--v100); }
+.logo-card.on-dark   { background: var(--n900); }
+.logo-card.on-violet { background: var(--v500); }
+.logo-card.on-light-gray { background: var(--n100); border: 1px solid var(--n200); }
+.logo-card.on-mid    { background: var(--v700); }
+
+.logo-card .lc-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; letter-spacing: .15em; text-transform: uppercase;
+  font-weight: 500;
+}
+.logo-card.on-white .lc-label,
+.logo-card.on-light .lc-label,
+.logo-card.on-light-gray .lc-label { color: var(--n400); }
+.logo-card.on-dark .lc-label,
+.logo-card.on-violet .lc-label,
+.logo-card.on-mid .lc-label { color: rgba(255,255,255,.4); }
+
+.logo-lockup { display: flex; align-items: center; gap: 14px; }
+.icon-sm {
+  width: 44px; height: 44px; border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* wordmark helpers */
+.wm { font-size: 22px; font-weight: 600; letter-spacing: -.4px; }
+.wm .dot { font-weight: 700; }
+
+/* ─── COLOR SYSTEM ───────────────────── */
+.palette-row { display: flex; gap: 6px; }
+.swatch {
+  flex: 1; border-radius: 10px; aspect-ratio: 1;
+  display: flex; align-items: flex-end; padding: 8px;
+}
+.swatch span {
+  font-family: 'Inter', monospace; font-size: 9px;
+  font-weight: 600; letter-spacing: .04em; opacity: .7;
+}
+
+.neutral-row { display: flex; gap: 6px; margin-top: 6px; }
+.nswatch {
+  flex: 1; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.nswatch span {
+  font-family: 'Inter', monospace; font-size: 9px; font-weight: 600;
+}
+
+/* ─── TYPOGRAPHY ─────────────────────── */
+.type-card {
+  background: white; border-radius: 16px; padding: 32px 28px;
+  border: 1px solid var(--n200);
+}
+.type-spec {
+  font-family: 'Inter', sans-serif; font-size: 11px; color: var(--n400);
+  margin-top: 8px; letter-spacing: .04em;
+}
+
+/* ─── UI COMPONENTS ──────────────────── */
+.components-card {
+  background: white; border-radius: 16px; padding: 36px 32px;
+  border: 1px solid var(--n200);
+  display: flex; flex-direction: column; gap: 28px;
+}
+.comp-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.comp-label {
+  font-family: 'Inter', sans-serif; font-size: 10px; color: var(--n400);
+  letter-spacing: .12em; text-transform: uppercase; width: 80px; flex-shrink: 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0 20px; height: 40px; border-radius: 10px;
+  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
+  cursor: pointer; border: none; text-decoration: none;
+  transition: opacity .15s;
+}
+.btn-primary { background: var(--v500); color: white; }
+.btn-secondary { background: var(--v100); color: var(--v700); }
+.btn-outline { background: transparent; color: var(--v600); border: 1.5px solid var(--v300); }
+.btn-sm { padding: 0 14px; height: 32px; font-size: 13px; border-radius: 8px; }
+.btn-lg { padding: 0 28px; height: 48px; font-size: 16px; border-radius: 12px; }
+
+/* Badge */
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 3px 10px; border-radius: 99px;
+  font-size: 12px; font-weight: 600;
+}
+.badge-violet { background: var(--v100); color: var(--v700); }
+.badge-neutral { background: var(--n100); color: var(--n600); }
+.badge-white { background: white; color: var(--v600); border: 1px solid var(--v200); }
+
+/* Link */
+.link-v { color: var(--v600); font-weight: 500; text-decoration: underline; text-decoration-color: var(--v200); }
+
+/* Input */
+.inp {
+  height: 40px; border-radius: 10px; border: 1.5px solid var(--n200);
+  padding: 0 14px; font-family: 'DM Sans', sans-serif; font-size: 14px;
+  color: var(--n900); outline: none; width: 200px;
+}
+.inp:focus { border-color: var(--v400); box-shadow: 0 0 0 3px var(--v100); }
+
+/* ─── HEADER MOCKUP ──────────────────── */
+.mockup-browser {
+  background: white; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--n200);
+}
+.mockup-bar {
+  background: var(--n100); padding: 10px 16px;
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid var(--n200);
+}
+.dot-r { width: 12px; height: 12px; border-radius: 50%; background: #fc605c; }
+.dot-y { width: 12px; height: 12px; border-radius: 50%; background: #fdbc40; }
+.dot-g { width: 12px; height: 12px; border-radius: 50%; background: #34c84a; }
+.url-bar {
+  flex: 1; background: white; border-radius: 6px; border: 1px solid var(--n200);
+  padding: 4px 12px; font-family: 'Inter', sans-serif; font-size: 12px;
+  color: var(--n600); max-width: 320px; margin: 0 auto;
+}
+
+.site-header {
+  padding: 14px 28px; display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--n100);
+}
+.site-nav { display: flex; align-items: center; gap: 24px; }
+.site-nav a {
+  font-size: 14px; font-weight: 500; color: var(--n600);
+  text-decoration: none;
+}
+.site-nav a.active { color: var(--v600); }
+
+.site-hero-area {
+  padding: 52px 28px 40px;
+  background: linear-gradient(160deg, var(--v50) 0%, white 60%);
+  text-align: center;
+}
+.site-hero-area h1 {
+  font-size: 34px; font-weight: 700; letter-spacing: -.6px; color: var(--n900);
+  margin-bottom: 10px;
+}
+.site-hero-area h1 em { font-style: normal; color: var(--v600); }
+.site-hero-area p { font-size: 15px; color: var(--n600); max-width: 400px; margin: 0 auto 24px; }
+
+.site-cards { display: flex; gap: 8px; padding: 0 28px 28px; }
+.site-card {
+  flex: 1; border: 1px solid var(--n200); border-radius: 12px; padding: 16px;
+  background: white;
+}
+.site-card-icon {
+  width: 34px; height: 34px; background: var(--v100); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 10px;
+}
+.site-card h3 { font-size: 13px; font-weight: 600; color: var(--n900); margin-bottom: 4px; }
+.site-card p  { font-size: 12px; color: var(--n400); }
+
+/* ─── FAVICON STRIP ──────────────────── */
+.favicon-strip {
+  background: white; border-radius: 16px; border: 1px solid var(--n200);
+  padding: 28px 32px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+}
+.fav-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.fav-label { font-family: 'Inter', sans-serif; font-size: 10px; color: var(--n400); letter-spacing: .1em; text-transform: uppercase; }
+.fav-icon { background: var(--v500); display: flex; align-items: center; justify-content: center; }
+
+/* ─── OG CARD ────────────────────────── */
+.og-card {
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--n200);
+  max-width: 600px;
+}
+.og-body {
+  background: linear-gradient(135deg, var(--v600) 0%, var(--v500) 50%, var(--v400) 100%);
+  padding: 48px 48px 36px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.og-logo { display: flex; align-items: center; gap: 16px; }
+.og-icon {
+  width: 60px; height: 60px; border-radius: 15px;
+  background: rgba(255,255,255,.18);
+  display: flex; align-items: center; justify-content: center;
+}
+.og-wm { font-size: 32px; font-weight: 600; letter-spacing: -.6px; color: white; }
+.og-wm .dot { color: rgba(255,255,255,.5); }
+.og-headline {
+  font-size: 28px; font-weight: 700; color: white; letter-spacing: -.4px;
+  line-height: 1.2;
+}
+.og-sub { font-size: 15px; color: rgba(255,255,255,.65); }
+.og-footer {
+  background: white; padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.og-footer-domain {
+  font-family: 'Inter', sans-serif; font-size: 12px; color: var(--n400);
+}
+.og-footer-badge {
+  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600;
+  color: var(--v600); background: var(--v100); padding: 3px 10px; border-radius: 99px;
+}
+
+/* ─── DARK BG SECTION ────────────────── */
+.dark-preview {
+  background: var(--n900); border-radius: 16px; padding: 36px 32px;
+  display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+  .logo-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 40px 28px; }
+  .hero-wordmark { font-size: 36px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══════ HERO ══════ -->
+  <div class="section-label">Brand Identity — convert·tables · Violet</div>
+  <div class="hero">
+    <div class="hero-icon">
+      <svg width="52" height="52" viewBox="0 0 56 56" fill="none">
+        <rect x="7"  y="7"  width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+        <rect x="7"  y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+        <rect x="31" y="7"  width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+        <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+        <path d="M20 28h16" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <div class="hero-wordmark">convert<span class="dot">·</span>tables</div>
+      <div class="hero-sub">Unit converter &amp; math reference tables</div>
+    </div>
+  </div>
+
+
+  <!-- ══════ LOGO VARIATIONS ══════ -->
+  <div class="section-label">Logo — varianti di sfondo</div>
+  <div class="logo-grid">
+
+    <!-- Su bianco -->
+    <div class="logo-card on-white">
+      <div class="logo-lockup">
+        <div class="icon-sm" style="background:var(--v500);">
+          <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+            <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <path d="M20 28h16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="wm" style="color:var(--n900);">convert<span class="dot" style="color:var(--v500);">·</span>tables</div>
+      </div>
+      <div class="lc-label">Su bianco</div>
+    </div>
+
+    <!-- Su grigio chiaro -->
+    <div class="logo-card on-light-gray">
+      <div class="logo-lockup">
+        <div class="icon-sm" style="background:var(--v500);">
+          <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+            <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <path d="M20 28h16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="wm" style="color:var(--n900);">convert<span class="dot" style="color:var(--v500);">·</span>tables</div>
+      </div>
+      <div class="lc-label">Su grigio</div>
+    </div>
+
+    <!-- Su violet chiaro -->
+    <div class="logo-card on-light">
+      <div class="logo-lockup">
+        <div class="icon-sm" style="background:var(--v500);">
+          <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+            <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <path d="M20 28h16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="wm" style="color:var(--v700);">convert<span class="dot" style="color:var(--v400);">·</span>tables</div>
+      </div>
+      <div class="lc-label">Su violet chiaro</div>
+    </div>
+
+    <!-- Su violet pieno -->
+    <div class="logo-card on-violet">
+      <div class="logo-lockup">
+        <div class="icon-sm" style="background:rgba(255,255,255,.18);">
+          <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+            <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+            <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+            <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+            <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+            <path d="M20 28h16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="wm" style="color:white;">convert<span class="dot" style="color:rgba(255,255,255,.5);">·</span>tables</div>
+      </div>
+      <div class="lc-label">Su violet pieno</div>
+    </div>
+
+    <!-- Su scuro -->
+    <div class="logo-card on-dark">
+      <div class="logo-lockup">
+        <div class="icon-sm" style="background:var(--v500);">
+          <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+            <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <path d="M20 28h16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="wm" style="color:white;">convert<span class="dot" style="color:var(--v400);">·</span>tables</div>
+      </div>
+      <div class="lc-label">Su nero</div>
+    </div>
+
+    <!-- Solo icona — taglie -->
+    <div class="logo-card on-white" style="justify-content:space-between;">
+      <div style="display:flex;align-items:flex-end;gap:16px;">
+        <div style="background:var(--v500);border-radius:6px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;">
+          <svg width="16" height="16" viewBox="0 0 56 56" fill="none">
+            <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+            <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+            <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+            <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+            <path d="M20 28h16" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div style="background:var(--v500);border-radius:9px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;">
+          <svg width="26" height="26" viewBox="0 0 56 56" fill="none">
+            <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <path d="M20 28h16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div style="background:var(--v500);border-radius:14px;width:64px;height:64px;display:flex;align-items:center;justify-content:center;">
+          <svg width="42" height="42" viewBox="0 0 56 56" fill="none">
+            <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <path d="M20 28h16" stroke="white" stroke-width="2.8" stroke-linecap="round"/>
+            <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="lc-label">Icona — 24 / 40 / 64px</div>
+    </div>
+
+  </div><!-- /logo-grid -->
+
+
+  <!-- ══════ COLOR SYSTEM ══════ -->
+  <div class="section-label">Color System</div>
+  <div style="background:white;border-radius:16px;padding:28px 28px 24px;border:1px solid var(--n200);">
+    <div style="font-size:12px;font-weight:600;color:var(--n600);margin-bottom:12px;font-family:'Inter',sans-serif;">Violet — primary</div>
+    <div class="palette-row" style="margin-bottom:20px;">
+      <div class="swatch" style="background:var(--v50);"><span style="color:var(--v400);">50</span></div>
+      <div class="swatch" style="background:var(--v100);"><span style="color:var(--v500);">100</span></div>
+      <div class="swatch" style="background:var(--v200);"><span style="color:var(--v600);">200</span></div>
+      <div class="swatch" style="background:var(--v300);"><span style="color:var(--v700);">300</span></div>
+      <div class="swatch" style="background:var(--v400);"><span style="color:white;">400</span></div>
+      <div class="swatch" style="background:var(--v500);border:3px solid var(--v700);"><span style="color:white;">500 ✓</span></div>
+      <div class="swatch" style="background:var(--v600);"><span style="color:white;">600</span></div>
+      <div class="swatch" style="background:var(--v700);"><span style="color:rgba(255,255,255,.7);">700</span></div>
+      <div class="swatch" style="background:var(--v800);"><span style="color:rgba(255,255,255,.6);">800</span></div>
+      <div class="swatch" style="background:var(--v900);"><span style="color:rgba(255,255,255,.5);">900</span></div>
+    </div>
+    <div style="font-size:12px;font-weight:600;color:var(--n600);margin-bottom:12px;font-family:'Inter',sans-serif;">Neutral — testo e superfici</div>
+    <div class="neutral-row">
+      <div class="nswatch" style="background:var(--n50);border:1px solid var(--n200);"><span style="color:var(--n400);">50</span></div>
+      <div class="nswatch" style="background:var(--n100);border:1px solid var(--n200);"><span style="color:var(--n400);">100</span></div>
+      <div class="nswatch" style="background:var(--n200);"><span style="color:var(--n600);">200</span></div>
+      <div class="nswatch" style="background:var(--n400);"><span style="color:white;">400</span></div>
+      <div class="nswatch" style="background:var(--n600);"><span style="color:white;">600</span></div>
+      <div class="nswatch" style="background:var(--n800);"><span style="color:rgba(255,255,255,.7);">800</span></div>
+      <div class="nswatch" style="background:var(--n900);"><span style="color:rgba(255,255,255,.6);">900</span></div>
+    </div>
+  </div>
+
+
+  <!-- ══════ TYPOGRAPHY ══════ -->
+  <div class="section-label">Typography — DM Sans</div>
+  <div class="type-card">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
+      <div>
+        <div style="font-size:40px;font-weight:700;letter-spacing:-.8px;color:var(--n900);line-height:1.1;">Aa</div>
+        <div class="type-spec">Display · 700 · −0.8px</div>
+      </div>
+      <div>
+        <div style="font-size:26px;font-weight:600;color:var(--n900);">Page Title</div>
+        <div class="type-spec">H1 · 600 · −0.4px</div>
+      </div>
+      <div>
+        <div style="font-size:20px;font-weight:600;color:var(--n900);">Section</div>
+        <div class="type-spec">H2 · 600</div>
+      </div>
+      <div>
+        <div style="font-size:15px;font-weight:400;color:var(--n600);line-height:1.6;">Body text for descriptions and longer content passages.</div>
+        <div class="type-spec">Body · 400 · 1.6</div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:500;color:var(--n600);">Label / Caption text</div>
+        <div class="type-spec">Small · 500</div>
+      </div>
+      <div>
+        <div style="font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--n400);font-weight:600;">Overline label</div>
+        <div class="type-spec">Inter · Overline · 600</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════ UI COMPONENTS ══════ -->
+  <div class="section-label">UI Components</div>
+  <div class="components-card">
+
+    <div class="comp-row">
+      <div class="comp-label">Buttons</div>
+      <button class="btn btn-primary">Convert now</button>
+      <button class="btn btn-secondary">View tables</button>
+      <button class="btn btn-outline">Learn more</button>
+    </div>
+
+    <div class="comp-row">
+      <div class="comp-label">Sizes</div>
+      <button class="btn btn-primary btn-sm">Small</button>
+      <button class="btn btn-primary">Default</button>
+      <button class="btn btn-primary btn-lg">Large</button>
+    </div>
+
+    <div class="comp-row">
+      <div class="comp-label">Badges</div>
+      <span class="badge badge-violet">Conversion</span>
+      <span class="badge badge-neutral">Reference</span>
+      <span class="badge badge-white">Math Tables</span>
+      <span class="badge badge-violet">5 languages</span>
+    </div>
+
+    <div class="comp-row">
+      <div class="comp-label">Links</div>
+      <a class="link-v" href="#">Inches to cm</a>
+      <a class="link-v" href="#">Kg to lbs</a>
+      <a class="link-v" href="#">All conversions →</a>
+    </div>
+
+    <div class="comp-row">
+      <div class="comp-label">Input</div>
+      <input class="inp" type="text" value="100" placeholder="Enter value…">
+      <div style="font-size:14px;color:var(--n600);">kg →</div>
+      <input class="inp" type="text" value="220.46" placeholder="Result" style="border-color:var(--v300);background:var(--v50);">
+    </div>
+
+  </div>
+
+
+  <!-- ══════ HEADER / SITE MOCKUP ══════ -->
+  <div class="section-label">Site Mockup — Homepage</div>
+  <div class="mockup-browser">
+    <div class="mockup-bar">
+      <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
+      <div class="url-bar">converttables.com/en</div>
+    </div>
+
+    <!-- Header -->
+    <div class="site-header">
+      <div class="logo-lockup" style="gap:10px;">
+        <div style="background:var(--v500);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" viewBox="0 0 56 56" fill="none">
+            <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+            <path d="M20 28h16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span style="font-size:16px;font-weight:600;color:var(--n900);">convert<span style="color:var(--v500);">·</span>tables</span>
+      </div>
+      <div class="site-nav">
+        <a href="#" class="active">Convert</a>
+        <a href="#">Tables</a>
+        <a href="#">How Many</a>
+        <button class="btn btn-primary btn-sm" style="margin-left:8px;">EN ▾</button>
+      </div>
+    </div>
+
+    <!-- Hero area -->
+    <div class="site-hero-area">
+      <div style="display:inline-flex;align-items:center;gap:6px;background:var(--v100);color:var(--v700);padding:4px 12px;border-radius:99px;font-size:12px;font-weight:600;margin-bottom:16px;">
+        ✦ 5 languages · 5000+ pages
+      </div>
+      <h1>Unit Converter &amp;<br><em>Math Reference Tables</em></h1>
+      <p>Instant conversions, formulas, and reference tables for everyday calculations.</p>
+      <button class="btn btn-primary btn-lg">Start converting</button>
+    </div>
+
+    <!-- Cards row -->
+    <div class="site-cards">
+      <div class="site-card">
+        <div class="site-card-icon">
+          <svg width="18" height="18" viewBox="0 0 56 56" fill="none">
+            <path d="M14 28h28" stroke="var(--v600)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M36 20l8 8-8 8" stroke="var(--v600)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Conversions</h3>
+        <p>Length, weight, temperature, volume…</p>
+      </div>
+      <div class="site-card">
+        <div class="site-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="8" height="7" rx="1.5" fill="var(--v500)" fill-opacity=".3"/>
+            <rect x="13" y="3" width="8" height="7" rx="1.5" fill="var(--v500)" fill-opacity=".3"/>
+            <rect x="3" y="14" width="8" height="7" rx="1.5" fill="var(--v500)" fill-opacity=".3"/>
+            <rect x="13" y="14" width="8" height="7" rx="1.5" fill="var(--v500)" fill-opacity=".3"/>
+          </svg>
+        </div>
+        <h3>Math Tables</h3>
+        <p>ASCII, trigonometry, powers, primes…</p>
+      </div>
+      <div class="site-card">
+        <div class="site-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="var(--v600)" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M2 17l10 5 10-5" stroke="var(--v600)" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M2 12l10 5 10-5" stroke="var(--v600)" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>How Many?</h3>
+        <p>Cups to grams, inches to cm recipes…</p>
+      </div>
+    </div>
+  </div><!-- /mockup-browser -->
+
+
+  <!-- ══════ FAVICON ══════ -->
+  <div class="section-label">Favicon &amp; App Icon</div>
+  <div class="favicon-strip">
+
+    <div class="fav-item">
+      <div class="fav-icon" style="width:16px;height:16px;border-radius:3px;">
+        <svg width="12" height="12" viewBox="0 0 56 56" fill="none">
+          <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+          <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+          <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+          <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+          <path d="M20 28h16" stroke="white" stroke-width="4" stroke-linecap="round"/>
+          <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="fav-label">16px</div>
+    </div>
+
+    <div class="fav-item">
+      <div class="fav-icon" style="width:32px;height:32px;border-radius:6px;">
+        <svg width="22" height="22" viewBox="0 0 56 56" fill="none">
+          <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+          <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+          <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+          <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+          <path d="M20 28h16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="fav-label">32px</div>
+    </div>
+
+    <div class="fav-item">
+      <div class="fav-icon" style="width:64px;height:64px;border-radius:14px;">
+        <svg width="42" height="42" viewBox="0 0 56 56" fill="none">
+          <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <path d="M20 28h16" stroke="white" stroke-width="2.8" stroke-linecap="round"/>
+          <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="fav-label">64px</div>
+    </div>
+
+    <div class="fav-item">
+      <div class="fav-icon" style="width:120px;height:120px;border-radius:27px;">
+        <svg width="78" height="78" viewBox="0 0 56 56" fill="none">
+          <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <path d="M20 28h16" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="fav-label">App Icon 120px</div>
+    </div>
+
+    <div class="fav-item">
+      <div style="position:relative;">
+        <div style="width:180px;height:36px;background:white;border:1px solid var(--n200);border-radius:6px;display:flex;align-items:center;padding:0 10px;gap:6px;">
+          <div class="fav-icon" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;">
+            <svg width="10" height="10" viewBox="0 0 56 56" fill="none">
+              <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+              <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+              <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+              <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".3"/>
+              <path d="M20 28h16" stroke="white" stroke-width="5" stroke-linecap="round"/>
+              <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span style="font-size:12px;color:var(--n600);font-family:'Inter',sans-serif;">converttables.com</span>
+        </div>
+      </div>
+      <div class="fav-label">Browser tab</div>
+    </div>
+
+  </div><!-- /favicon-strip -->
+
+
+  <!-- ══════ OG / SOCIAL CARD ══════ -->
+  <div class="section-label">Open Graph — Social Share Card</div>
+  <div class="og-card">
+    <div class="og-body">
+      <div class="og-logo">
+        <div class="og-icon">
+          <svg width="38" height="38" viewBox="0 0 56 56" fill="none">
+            <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".28"/>
+            <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".28"/>
+            <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".28"/>
+            <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".28"/>
+            <path d="M20 28h16" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="og-wm">convert<span class="dot">·</span>tables</div>
+      </div>
+      <div class="og-headline">100 kg → 220.46 lbs</div>
+      <div class="og-sub">Instant unit converter with formulas &amp; reference tables in 5 languages.</div>
+    </div>
+    <div class="og-footer">
+      <div class="og-footer-domain">converttables.com</div>
+      <div class="og-footer-badge">Free · No signup</div>
+    </div>
+  </div>
+
+
+  <!-- ══════ DARK MODE PREVIEW ══════ -->
+  <div class="section-label">Dark Background</div>
+  <div class="dark-preview">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="background:var(--v500);width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;">
+        <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
+          <rect x="7" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <rect x="7" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <rect x="31" y="7" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <rect x="31" y="27" width="18" height="15" rx="3" fill="white" fill-opacity=".25"/>
+          <path d="M20 28h16" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          <path d="M33 23.5l4.5 4.5-4.5 4.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div style="font-size:22px;font-weight:600;letter-spacing:-.4px;color:white;">convert<span style="color:var(--v400);">·</span>tables</div>
+    </div>
+    <div style="height:1px;background:rgba(255,255,255,.08);flex:1;min-width:20px;"></div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-primary btn-sm">Convert</button>
+      <button class="btn btn-sm" style="background:rgba(255,255,255,.08);color:white;">Tables</button>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

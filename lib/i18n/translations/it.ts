@@ -64,4 +64,10 @@ export const it = {
   selectIngredient: 'Seleziona un ingrediente',
   allIngredients: 'Tutti gli Ingredienti',
   source: 'Fonte: FAO Density Database v2.0',
+
+  // New conversion pages
+  tablespoonsToGrams: 'Cucchiai in Grammi',
+  teaspoonsToGrams: 'Cucchiaini in Grammi',
+  stickOfButter: 'Conversioni Panetto di Burro',
+  ovenTemperature: 'Conversione Temperatura Forno',
 } as const

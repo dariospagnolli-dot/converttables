@@ -64,4 +64,10 @@ export const en = {
   selectIngredient: 'Select an ingredient',
   allIngredients: 'All Ingredients',
   source: 'Source: FAO Density Database v2.0',
+
+  // New conversion pages
+  tablespoonsToGrams: 'Tablespoons to Grams',
+  teaspoonsToGrams: 'Teaspoons to Grams',
+  stickOfButter: 'Stick of Butter Conversions',
+  ovenTemperature: 'Oven Temperature Conversion',
 } as const

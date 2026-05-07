@@ -74,6 +74,14 @@ export const INGREDIENTS: Ingredient[] = [
   { id: 'cinnamon', slug: 'cinnamon', density_g_per_ml: 0.560, names: { en: 'Cinnamon (ground)', it: 'Cannella (in polvere)', de: 'Zimt (gemahlen)', fr: 'Cannelle (moulue)', es: 'Canela (molida)' }, category: 'spice' },
   { id: 'nutmeg', slug: 'nutmeg', density_g_per_ml: 0.530, names: { en: 'Nutmeg (ground)', it: 'Noce moscata (in polvere)', de: 'Muskatnuss (gemahlen)', fr: 'Muscade (moulue)', es: 'Nuez moscada (molida)' }, category: 'spice' },
 
+  // SPECIALTY FLOURS
+  { id: 'oat-flour', slug: 'oat-flour', density_g_per_ml: 0.430, names: { en: 'Oat Flour', it: 'Farina di avena', de: 'Hafermehl', fr: 'Farine d\'avoine', es: 'Harina de avena' }, category: 'flour' },
+  { id: 'buckwheat-flour', slug: 'buckwheat-flour', density_g_per_ml: 0.520, names: { en: 'Buckwheat Flour', it: 'Farina di grano saraceno', de: 'Buchweizenmehl', fr: 'Farine de sarrasin', es: 'Harina de trigo sarraceno' }, category: 'flour' },
+  { id: 'spelt-flour', slug: 'spelt-flour', density_g_per_ml: 0.510, names: { en: 'Spelt Flour', it: 'Farina di farro', de: 'Dinkelmehl', fr: 'Farine d\'épeautre', es: 'Harina de espelta' }, category: 'flour' },
+  { id: 'teff-flour', slug: 'teff-flour', density_g_per_ml: 0.550, names: { en: 'Teff Flour', it: 'Farina di teff', de: 'Teffmehl', fr: 'Farine de teff', es: 'Harina de teff' }, category: 'flour' },
+  { id: 'soy-flour', slug: 'soy-flour', density_g_per_ml: 0.470, names: { en: 'Soy Flour', it: 'Farina di soia', de: 'Sojamel', fr: 'Farine de soja', es: 'Harina de soja' }, category: 'flour' },
+  { id: 'chickpea-flour', slug: 'chickpea-flour', density_g_per_ml: 0.480, names: { en: 'Chickpea Flour', it: 'Farina di ceci', de: 'Kichererbsenmehl', fr: 'Farine de pois chiches', es: 'Harina de garbanzos' }, category: 'flour' },
+
   // OTHER
   { id: 'cocoa-powder', slug: 'cocoa-powder', density_g_per_ml: 0.520, names: { en: 'Cocoa Powder', it: 'Cacao in polvere', de: 'Kakaopulver', fr: 'Cacao en poudre', es: 'Cacao en polvo' }, category: 'other' },
   { id: 'cornstarch', slug: 'cornstarch', density_g_per_ml: 0.540, names: { en: 'Cornstarch', it: 'Amido di mais', de: 'Speisestärke', fr: 'Fécule de maïs', es: 'Maicena' }, category: 'other' },
@@ -83,6 +91,29 @@ export const INGREDIENTS: Ingredient[] = [
   { id: 'dried-cranberries', slug: 'dried-cranberries', density_g_per_ml: 0.530, names: { en: 'Dried Cranberries', it: 'Mirtilli rossi essiccati', de: 'Getrocknete Cranberries', fr: 'Canneberges séchées', es: 'Arándanos rojos secos' }, category: 'other' },
   { id: 'poppy-seeds', slug: 'poppy-seeds', density_g_per_ml: 0.610, names: { en: 'Poppy Seeds', it: 'Semi di papavero', de: 'Mohnsamen', fr: 'Graines de pavot', es: 'Semillas de amapola' }, category: 'other' },
   { id: 'protein-powder', slug: 'protein-powder', density_g_per_ml: 0.400, names: { en: 'Protein Powder (whey)', it: 'Proteine in polvere (whey)', de: 'Proteinpulver (Whey)', fr: 'Protéine en poudre (whey)', es: 'Proteína en polvo (whey)' }, category: 'other' },
+  { id: 'tapioca-starch', slug: 'tapioca-starch', density_g_per_ml: 0.580, names: { en: 'Tapioca Starch', it: 'Amido di tapioca', de: 'Tapiokastärke', fr: 'Fécule de tapioca', es: 'Almidón de tapioca' }, category: 'other' },
+  { id: 'arrowroot-starch', slug: 'arrowroot-starch', density_g_per_ml: 0.670, names: { en: 'Arrowroot Starch', it: 'Amido di maranta', de: 'Pfeilwurzstärke', fr: 'Fécule d\'arrow-root', es: 'Almidón de arrurruz' }, category: 'other' },
+  { id: 'potato-starch', slug: 'potato-starch', density_g_per_ml: 0.630, names: { en: 'Potato Starch', it: 'Fecola di patate', de: 'Kartoffelstärke', fr: 'Fécule de pomme de terre', es: 'Fécula de patata' }, category: 'other' },
+  { id: 'wheat-germ', slug: 'wheat-germ', density_g_per_ml: 0.380, names: { en: 'Wheat Germ', it: 'Germe di grano', de: 'Weizenkeime', fr: 'Germe de blé', es: 'Germen de trigo' }, category: 'other' },
+  { id: 'nutritional-yeast', slug: 'nutritional-yeast', density_g_per_ml: 0.350, names: { en: 'Nutritional Yeast', it: 'Lievito alimentare', de: 'Nährhefe', fr: 'Levure nutritionnelle', es: 'Levadura nutricional' }, category: 'other' },
+  { id: 'psyllium-husk', slug: 'psyllium-husk', density_g_per_ml: 0.220, names: { en: 'Psyllium Husk', it: 'Psillio', de: 'Flohsamenschalen', fr: 'Cosse de psyllium', es: 'Cáscara de psyllium' }, category: 'other' },
+  { id: 'tahini', slug: 'tahini', density_g_per_ml: 1.060, names: { en: 'Tahini', it: 'Tahini', de: 'Tahini', fr: 'Tahini', es: 'Tahini' }, category: 'other' },
+  { id: 'molasses', slug: 'molasses', density_g_per_ml: 1.400, names: { en: 'Molasses', it: 'Melassa', de: 'Melasse', fr: 'Mélasse', es: 'Melaza' }, category: 'liquid' },
+  { id: 'golden-syrup', slug: 'golden-syrup', density_g_per_ml: 1.340, names: { en: 'Golden Syrup', it: 'Sciroppo dorato', de: 'Goldsirup', fr: 'Sirop doré', es: 'Sirope dorado' }, category: 'liquid' },
+  { id: 'mascarpone', slug: 'mascarpone', density_g_per_ml: 0.980, names: { en: 'Mascarpone', it: 'Mascarpone', de: 'Mascarpone', fr: 'Mascarpone', es: 'Mascarpone' }, category: 'dairy' },
+  { id: 'creme-fraiche', slug: 'creme-fraiche', density_g_per_ml: 0.960, names: { en: 'Crème Fraîche', it: 'Crème fraîche', de: 'Crème fraîche', fr: 'Crème fraîche', es: 'Crème fraîche' }, category: 'dairy' },
+  { id: 'ground-almonds', slug: 'ground-almonds', density_g_per_ml: 0.420, names: { en: 'Ground Almonds', it: 'Mandorle in polvere', de: 'Gemahlene Mandeln', fr: 'Amandes en poudre', es: 'Almendras molidas' }, category: 'nut' },
+  { id: 'hemp-seeds', slug: 'hemp-seeds', density_g_per_ml: 0.680, names: { en: 'Hemp Seeds', it: 'Semi di canapa', de: 'Hanfsamen', fr: 'Graines de chanvre', es: 'Semillas de cáñamo' }, category: 'grain' },
+  { id: 'sunflower-seeds', slug: 'sunflower-seeds', density_g_per_ml: 0.550, names: { en: 'Sunflower Seeds', it: 'Semi di girasole', de: 'Sonnenblumenkerne', fr: 'Graines de tournesol', es: 'Semillas de girasol' }, category: 'grain' },
+  { id: 'pumpkin-seeds', slug: 'pumpkin-seeds', density_g_per_ml: 0.630, names: { en: 'Pumpkin Seeds', it: 'Semi di zucca', de: 'Kürbiskerne', fr: 'Graines de citrouille', es: 'Semillas de calabaza' }, category: 'grain' },
+  { id: 'sesame-seeds', slug: 'sesame-seeds', density_g_per_ml: 0.650, names: { en: 'Sesame Seeds', it: 'Semi di sesamo', de: 'Sesamsamen', fr: 'Graines de sésame', es: 'Semillas de sésamo' }, category: 'grain' },
+  { id: 'millet', slug: 'millet', density_g_per_ml: 0.840, names: { en: 'Millet', it: 'Miglio', de: 'Hirse', fr: 'Millet', es: 'Mijo' }, category: 'grain' },
+  { id: 'bulgur-wheat', slug: 'bulgur-wheat', density_g_per_ml: 0.750, names: { en: 'Bulgur Wheat', it: 'Bulgur', de: 'Bulgur', fr: 'Boulgour', es: 'Bulgur' }, category: 'grain' },
+  { id: 'polenta', slug: 'polenta', density_g_per_ml: 0.700, names: { en: 'Polenta (dry)', it: 'Polenta (secca)', de: 'Polenta (trocken)', fr: 'Polenta (sèche)', es: 'Polenta (seca)' }, category: 'grain' },
+  { id: 'cream-of-tartar', slug: 'cream-of-tartar', density_g_per_ml: 0.960, names: { en: 'Cream of Tartar', it: 'Cremor tartaro', de: 'Weinstein', fr: 'Crème de tartre', es: 'Crémor tártaro' }, category: 'spice' },
+  { id: 'dried-blueberries', slug: 'dried-blueberries', density_g_per_ml: 0.530, names: { en: 'Dried Blueberries', it: 'Mirtilli essiccati', de: 'Getrocknete Blaubeeren', fr: 'Myrtilles séchées', es: 'Arándanos azules secos' }, category: 'other' },
+  { id: 'dried-apricots', slug: 'dried-apricots', density_g_per_ml: 0.620, names: { en: 'Dried Apricots (chopped)', it: 'Albicocche essiccate (tritate)', de: 'Getrocknete Aprikosen (gehackt)', fr: 'Abricots secs (hachés)', es: 'Albaricoques secos (picados)' }, category: 'other' },
+  { id: 'lentils', slug: 'lentils', density_g_per_ml: 0.840, names: { en: 'Lentils (dry)', it: 'Lenticchie (secche)', de: 'Linsen (trocken)', fr: 'Lentilles (sèches)', es: 'Lentejas (secas)' }, category: 'grain' },
 ]
 
 export function getIngredientBySlug(slug: string): Ingredient | undefined {
