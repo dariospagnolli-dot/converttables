@@ -55,6 +55,14 @@ export const es = {
   // New conversion pages
   tablespoonsToGrams: 'Cucharadas a Gramos',
   teaspoonsToGrams: 'Cucharaditas a Gramos',
+  ouncesToGrams: 'Onzas a Gramos',
   stickOfButter: 'Conversiones de Barra de Mantequilla',
   ovenTemperature: 'Conversión Temperatura Horno',
+  timesTable: 'Tabla de Multiplicar',
+  liquidCooking: 'Conversiones de Líquidos en Cocina',
+  pintsToCups: 'Pintas a Tazas',
+  quartsToCups: 'Cuartos a Tazas',
+  cupsToMl: 'Tazas a Mililitros',
+  cupsToLiters: 'Tazas a Litros',
+  fractionToDecimal: 'Fracción a Decimal',
 } as const

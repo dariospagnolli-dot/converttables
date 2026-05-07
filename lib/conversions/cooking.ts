@@ -32,6 +32,11 @@ export function teaspoonToGrams(tsp: number, ingredient: Ingredient): number {
   return Math.round(tsp * ML_PER_TEASPOON * ingredient.density_g_per_ml)
 }
 
+export function ozToGrams(oz: number): number {
+  const GRAMS_PER_OZ = 28.3495
+  return Math.round(oz * GRAMS_PER_OZ * 10) / 10
+}
+
 // Generate a conversion table for common amounts
 export function generateConversionTable(ingredient: Ingredient, cupSize: CupSize = 'us') {
   const cupAmounts = [0.25, 0.333, 0.5, 0.667, 0.75, 1, 1.5, 2, 3, 4]

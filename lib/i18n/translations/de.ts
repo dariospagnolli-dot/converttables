@@ -55,6 +55,14 @@ export const de = {
   // New conversion pages
   tablespoonsToGrams: 'Esslöffel in Gramm',
   teaspoonsToGrams: 'Teelöffel in Gramm',
+  ouncesToGrams: 'Unzen in Gramm',
   stickOfButter: 'Butterstück-Umrechnungen',
   ovenTemperature: 'Backofentemperatur Umrechnung',
+  timesTable: 'Einmaleins',
+  liquidCooking: 'Flüssigkeits-Küchenumrechnungen',
+  pintsToCups: 'Pints in Tassen',
+  quartsToCups: 'Quarts in Tassen',
+  cupsToMl: 'Tassen in Milliliter',
+  cupsToLiters: 'Tassen in Liter',
+  fractionToDecimal: 'Bruch in Dezimalzahl',
 } as const

@@ -68,6 +68,14 @@ export const it = {
   // New conversion pages
   tablespoonsToGrams: 'Cucchiai in Grammi',
   teaspoonsToGrams: 'Cucchiaini in Grammi',
+  ouncesToGrams: 'Once in Grammi',
   stickOfButter: 'Conversioni Panetto di Burro',
   ovenTemperature: 'Conversione Temperatura Forno',
+  timesTable: 'Tabelline',
+  liquidCooking: 'Conversioni Liquidi Cucina',
+  pintsToCups: 'Pinte in Tazze',
+  quartsToCups: 'Quarti in Tazze',
+  cupsToMl: 'Tazze in Millilitri',
+  cupsToLiters: 'Tazze in Litri',
+  fractionToDecimal: 'Frazione in Decimale',
 } as const

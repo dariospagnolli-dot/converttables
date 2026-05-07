@@ -68,6 +68,14 @@ export const en = {
   // New conversion pages
   tablespoonsToGrams: 'Tablespoons to Grams',
   teaspoonsToGrams: 'Teaspoons to Grams',
+  ouncesToGrams: 'Ounces to Grams',
   stickOfButter: 'Stick of Butter Conversions',
   ovenTemperature: 'Oven Temperature Conversion',
+  timesTable: 'Times Table',
+  liquidCooking: 'Liquid Cooking Conversions',
+  pintsToCups: 'Pints to Cups',
+  quartsToCups: 'Quarts to Cups',
+  cupsToMl: 'Cups to Milliliters',
+  cupsToLiters: 'Cups to Liters',
+  fractionToDecimal: 'Fraction to Decimal',
 } as const

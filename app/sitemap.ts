@@ -32,6 +32,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({ url: `${BASE_URL}/${locale}/convert/grams-to-cups/${ing.slug}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.8 })
     }
 
+    // Cooking converter pages
+    entries.push({ url: `${BASE_URL}/${locale}/convert/tablespoons-to-grams`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 })
+    entries.push({ url: `${BASE_URL}/${locale}/convert/teaspoons-to-grams`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 })
+    entries.push({ url: `${BASE_URL}/${locale}/convert/oz-to-grams`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 })
+    for (const ing of INGREDIENTS) {
+      entries.push({ url: `${BASE_URL}/${locale}/convert/oz-to-grams/${ing.slug}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 })
+    }
+    entries.push({ url: `${BASE_URL}/${locale}/convert/stick-of-butter`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 })
+    entries.push({ url: `${BASE_URL}/${locale}/convert/oven-temperature`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 })
+    entries.push({ url: `${BASE_URL}/${locale}/convert/pints-to-cups`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 })
+    entries.push({ url: `${BASE_URL}/${locale}/convert/quarts-to-cups`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 })
+    entries.push({ url: `${BASE_URL}/${locale}/convert/cups-to-ml`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 })
+    entries.push({ url: `${BASE_URL}/${locale}/convert/cups-to-liters`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 })
+
+    // Fraction to decimal
+    entries.push({ url: `${BASE_URL}/${locale}/convert/fraction-to-decimal`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 })
+    const FRACTION_SLUGS = [
+      '1-2', '1-3', '2-3', '1-4', '3-4', '1-5', '2-5', '3-5', '4-5',
+      '1-6', '5-6', '1-8', '3-8', '5-8', '7-8',
+      '1-10', '3-10', '7-10', '9-10',
+      '1-12', '5-12', '7-12', '11-12',
+      '1-16', '3-16', '5-16', '7-16', '9-16', '11-16', '13-16', '15-16',
+      '1-32', '1-64',
+    ]
+    for (const f of FRACTION_SLUGS) {
+      entries.push({ url: `${BASE_URL}/${locale}/convert/fraction-to-decimal/${f}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.8 })
+    }
+
     // General conversions
     for (const pair of CONVERSION_PAIRS) {
       entries.push({ url: `${BASE_URL}/${locale}/convert/${pair.slug}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.8 })
@@ -56,6 +84,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const table of TABLE_PAGES) {
       entries.push({ url: `${BASE_URL}/${locale}/tables/${table}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.8 })
     }
+
+    // Individual multiplication table pages
+    for (let n = 1; n <= 12; n++) {
+      entries.push({ url: `${BASE_URL}/${locale}/tables/multiplication/${n}`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 })
+    }
+    entries.push({ url: `${BASE_URL}/${locale}/tables/multiplication/1-20`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 })
+    entries.push({ url: `${BASE_URL}/${locale}/tables/multiplication/1-100`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 })
 
     // Individual Roman numeral pages (1-100 + key numbers)
     const romanNumbers = [...Array.from({ length: 100 }, (_, i) => i + 1), 150, 200, 250, 300, 400, 500, 600, 700, 800, 900, 1000, 1500, 1776, 1900, 1999, 2000, 2024, 2025, 2026, 3000, 3999]

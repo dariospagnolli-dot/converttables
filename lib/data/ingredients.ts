@@ -114,6 +114,94 @@ export const INGREDIENTS: Ingredient[] = [
   { id: 'dried-blueberries', slug: 'dried-blueberries', density_g_per_ml: 0.530, names: { en: 'Dried Blueberries', it: 'Mirtilli essiccati', de: 'Getrocknete Blaubeeren', fr: 'Myrtilles séchées', es: 'Arándanos azules secos' }, category: 'other' },
   { id: 'dried-apricots', slug: 'dried-apricots', density_g_per_ml: 0.620, names: { en: 'Dried Apricots (chopped)', it: 'Albicocche essiccate (tritate)', de: 'Getrocknete Aprikosen (gehackt)', fr: 'Abricots secs (hachés)', es: 'Albaricoques secos (picados)' }, category: 'other' },
   { id: 'lentils', slug: 'lentils', density_g_per_ml: 0.840, names: { en: 'Lentils (dry)', it: 'Lenticchie (secche)', de: 'Linsen (trocken)', fr: 'Lentilles (sèches)', es: 'Lentejas (secas)' }, category: 'grain' },
+
+  // NEW LIQUIDS
+  { id: 'buttermilk', slug: 'buttermilk', density_g_per_ml: 1.033, names: { en: 'Buttermilk', it: 'Latticello', de: 'Buttermilch', fr: 'Babeurre', es: 'Suero de leche' }, category: 'liquid' },
+  { id: 'almond-milk', slug: 'almond-milk', density_g_per_ml: 1.040, names: { en: 'Almond Milk', it: 'Latte di mandorla', de: 'Mandelmilch', fr: 'Lait d\'amande', es: 'Leche de almendra' }, category: 'liquid' },
+  { id: 'oat-milk', slug: 'oat-milk', density_g_per_ml: 1.030, names: { en: 'Oat Milk', it: 'Latte di avena', de: 'Hafermilch', fr: 'Lait d\'avoine', es: 'Leche de avena' }, category: 'liquid' },
+  { id: 'soy-milk', slug: 'soy-milk', density_g_per_ml: 1.030, names: { en: 'Soy Milk', it: 'Latte di soia', de: 'Sojamilch', fr: 'Lait de soja', es: 'Leche de soja' }, category: 'liquid' },
+  { id: 'coconut-milk-canned', slug: 'coconut-milk', density_g_per_ml: 0.960, names: { en: 'Coconut Milk (canned)', it: 'Latte di cocco (in lattina)', de: 'Kokosmilch (Dose)', fr: 'Lait de coco (en boîte)', es: 'Leche de coco (enlatada)' }, category: 'liquid' },
+  { id: 'agave-nectar', slug: 'agave-nectar', density_g_per_ml: 1.350, names: { en: 'Agave Nectar', it: 'Nettare di agave', de: 'Agavendicksaft', fr: 'Nectar d\'agave', es: 'Néctar de agave' }, category: 'liquid' },
+  { id: 'apple-cider-vinegar', slug: 'apple-cider-vinegar', density_g_per_ml: 1.010, names: { en: 'Apple Cider Vinegar', it: 'Aceto di mele', de: 'Apfelessig', fr: 'Vinaigre de cidre', es: 'Vinagre de manzana' }, category: 'liquid' },
+  { id: 'balsamic-vinegar', slug: 'balsamic-vinegar', density_g_per_ml: 1.100, names: { en: 'Balsamic Vinegar', it: 'Aceto balsamico', de: 'Balsamessig', fr: 'Vinaigre balsamique', es: 'Vinagre balsámico' }, category: 'liquid' },
+  { id: 'soy-sauce', slug: 'soy-sauce', density_g_per_ml: 1.190, names: { en: 'Soy Sauce', it: 'Salsa di soia', de: 'Sojasoße', fr: 'Sauce soja', es: 'Salsa de soja' }, category: 'liquid' },
+  { id: 'vanilla-extract', slug: 'vanilla-extract', density_g_per_ml: 1.040, names: { en: 'Vanilla Extract', it: 'Estratto di vaniglia', de: 'Vanilleextrakt', fr: 'Extrait de vanille', es: 'Extracto de vainilla' }, category: 'liquid' },
+
+  // NEW FATS
+  { id: 'ghee', slug: 'ghee', density_g_per_ml: 0.905, names: { en: 'Ghee', it: 'Ghee', de: 'Ghee', fr: 'Ghee clarifié', es: 'Ghee' }, category: 'fat' },
+  { id: 'shortening', slug: 'shortening', density_g_per_ml: 0.880, names: { en: 'Vegetable Shortening', it: 'Strutto vegetale', de: 'Pflanzenfett', fr: 'Graisse végétale', es: 'Manteca vegetal' }, category: 'fat' },
+  { id: 'avocado-oil', slug: 'avocado-oil', density_g_per_ml: 0.910, names: { en: 'Avocado Oil', it: 'Olio di avocado', de: 'Avocadoöl', fr: 'Huile d\'avocat', es: 'Aceite de aguacate' }, category: 'fat' },
+  { id: 'sesame-oil', slug: 'sesame-oil', density_g_per_ml: 0.920, names: { en: 'Sesame Oil', it: 'Olio di sesamo', de: 'Sesamöl', fr: 'Huile de sésame', es: 'Aceite de sésamo' }, category: 'fat' },
+
+  // NEW DAIRY
+  { id: 'greek-yogurt', slug: 'greek-yogurt', density_g_per_ml: 1.050, names: { en: 'Greek Yogurt', it: 'Yogurt greco', de: 'Griechischer Joghurt', fr: 'Yaourt grec', es: 'Yogur griego' }, category: 'dairy' },
+  { id: 'cottage-cheese', slug: 'cottage-cheese', density_g_per_ml: 0.960, names: { en: 'Cottage Cheese', it: 'Fiocchi di latte', de: 'Hüttenkäse', fr: 'Fromage cottage', es: 'Queso cottage' }, category: 'dairy' },
+  { id: 'milk-powder', slug: 'milk-powder', density_g_per_ml: 0.550, names: { en: 'Milk Powder (dry)', it: 'Latte in polvere', de: 'Milchpulver', fr: 'Lait en poudre', es: 'Leche en polvo' }, category: 'dairy' },
+  { id: 'whipped-cream', slug: 'whipped-cream', density_g_per_ml: 0.350, names: { en: 'Whipped Cream', it: 'Panna montata', de: 'Schlagsahne (geschlagen)', fr: 'Crème fouettée', es: 'Nata montada' }, category: 'dairy' },
+  { id: 'kefir', slug: 'kefir', density_g_per_ml: 1.030, names: { en: 'Kefir', it: 'Kefir', de: 'Kefir', fr: 'Kéfir', es: 'Kéfir' }, category: 'dairy' },
+
+  // NEW SUGARS & SWEETENERS
+  { id: 'coconut-sugar', slug: 'coconut-sugar', density_g_per_ml: 0.780, names: { en: 'Coconut Sugar', it: 'Zucchero di cocco', de: 'Kokoszucker', fr: 'Sucre de coco', es: 'Azúcar de coco' }, category: 'sugar' },
+  { id: 'turbinado-sugar', slug: 'turbinado-sugar', density_g_per_ml: 0.900, names: { en: 'Turbinado Sugar', it: 'Zucchero turbinado', de: 'Turbinado-Zucker', fr: 'Sucre turbinado', es: 'Azúcar turbinado' }, category: 'sugar' },
+  { id: 'muscovado-sugar', slug: 'muscovado-sugar', density_g_per_ml: 0.850, names: { en: 'Muscovado Sugar', it: 'Zucchero muscovado', de: 'Muscovado-Zucker', fr: 'Sucre muscovado', es: 'Azúcar moscovado' }, category: 'sugar' },
+  { id: 'xylitol', slug: 'xylitol', density_g_per_ml: 0.640, names: { en: 'Xylitol', it: 'Xilitolo', de: 'Xylit', fr: 'Xylitol', es: 'Xilitol' }, category: 'sugar' },
+  { id: 'erythritol', slug: 'erythritol', density_g_per_ml: 0.480, names: { en: 'Erythritol', it: 'Eritritolo', de: 'Erythrit', fr: 'Érythritol', es: 'Eritritol' }, category: 'sugar' },
+
+  // NEW FLOURS
+  { id: 'rice-flour', slug: 'rice-flour', density_g_per_ml: 0.560, names: { en: 'Rice Flour', it: 'Farina di riso', de: 'Reismehl', fr: 'Farine de riz', es: 'Harina de arroz' }, category: 'flour' },
+  { id: 'corn-flour', slug: 'corn-flour', density_g_per_ml: 0.520, names: { en: 'Corn Flour (fine)', it: 'Farina di mais fine', de: 'Maismehl (fein)', fr: 'Farine de maïs (fine)', es: 'Harina de maíz fina' }, category: 'flour' },
+  { id: 'cassava-flour', slug: 'cassava-flour', density_g_per_ml: 0.520, names: { en: 'Cassava Flour', it: 'Farina di manioca', de: 'Maniokmehl', fr: 'Farine de manioc', es: 'Harina de yuca' }, category: 'flour' },
+  { id: 'mung-bean-flour', slug: 'mung-bean-flour', density_g_per_ml: 0.500, names: { en: 'Mung Bean Flour', it: 'Farina di fagioli mung', de: 'Mungobohnenmehl', fr: 'Farine de haricots mungo', es: 'Harina de frijol mungo' }, category: 'flour' },
+  { id: 'hazelnut-flour', slug: 'hazelnut-flour', density_g_per_ml: 0.420, names: { en: 'Hazelnut Flour', it: 'Farina di nocciole', de: 'Haselnussmehl', fr: 'Farine de noisette', es: 'Harina de avellana' }, category: 'flour' },
+
+  // NEW GRAINS & LEGUMES
+  { id: 'amaranth', slug: 'amaranth', density_g_per_ml: 0.820, names: { en: 'Amaranth (grain)', it: 'Amaranto (grano)', de: 'Amaranth (Korn)', fr: 'Amarante (grain)', es: 'Amaranto (grano)' }, category: 'grain' },
+  { id: 'sorghum', slug: 'sorghum', density_g_per_ml: 0.850, names: { en: 'Sorghum', it: 'Sorgo', de: 'Sorghum', fr: 'Sorgho', es: 'Sorgo' }, category: 'grain' },
+  { id: 'buckwheat-groats', slug: 'buckwheat-groats', density_g_per_ml: 0.700, names: { en: 'Buckwheat Groats', it: 'Grano saraceno (chicchi)', de: 'Buchweizengrütze', fr: 'Sarrasin décortiqué', es: 'Trigo sarraceno (granos)' }, category: 'grain' },
+  { id: 'wild-rice', slug: 'wild-rice', density_g_per_ml: 0.700, names: { en: 'Wild Rice', it: 'Riso selvatico', de: 'Wildreis', fr: 'Riz sauvage', es: 'Arroz salvaje' }, category: 'grain' },
+  { id: 'farro', slug: 'farro', density_g_per_ml: 0.780, names: { en: 'Farro', it: 'Farro', de: 'Farro', fr: 'Épeautre (grain)', es: 'Farro' }, category: 'grain' },
+  { id: 'black-rice', slug: 'black-rice', density_g_per_ml: 0.820, names: { en: 'Black Rice', it: 'Riso nero', de: 'Schwarzer Reis', fr: 'Riz noir', es: 'Arroz negro' }, category: 'grain' },
+  { id: 'rolled-barley', slug: 'rolled-barley', density_g_per_ml: 0.660, names: { en: 'Rolled Barley', it: 'Fiocchi d\'orzo', de: 'Gerstenflocken', fr: 'Orge roulée', es: 'Cebada en copos' }, category: 'grain' },
+  { id: 'chickpeas-dried', slug: 'chickpeas', density_g_per_ml: 0.810, names: { en: 'Chickpeas (dry)', it: 'Ceci (secchi)', de: 'Kichererbsen (trocken)', fr: 'Pois chiches (secs)', es: 'Garbanzos (secos)' }, category: 'grain' },
+  { id: 'black-beans-dried', slug: 'black-beans', density_g_per_ml: 0.830, names: { en: 'Black Beans (dry)', it: 'Fagioli neri (secchi)', de: 'Schwarze Bohnen (trocken)', fr: 'Haricots noirs (secs)', es: 'Frijoles negros (secos)' }, category: 'grain' },
+  { id: 'split-peas', slug: 'split-peas', density_g_per_ml: 0.820, names: { en: 'Split Peas (dry)', it: 'Piselli spezzati (secchi)', de: 'Schälerbsen (trocken)', fr: 'Pois cassés (secs)', es: 'Guisantes partidos (secos)' }, category: 'grain' },
+  { id: 'oat-bran', slug: 'oat-bran', density_g_per_ml: 0.300, names: { en: 'Oat Bran', it: 'Crusca d\'avena', de: 'Haferkleie', fr: 'Son d\'avoine', es: 'Salvado de avena' }, category: 'grain' },
+  { id: 'wheat-bran', slug: 'wheat-bran', density_g_per_ml: 0.240, names: { en: 'Wheat Bran', it: 'Crusca di frumento', de: 'Weizenkleie', fr: 'Son de blé', es: 'Salvado de trigo' }, category: 'grain' },
+
+  // NEW NUTS & NUT BUTTERS
+  { id: 'cashews', slug: 'cashews', density_g_per_ml: 0.500, names: { en: 'Cashews (whole)', it: 'Anacardi (interi)', de: 'Cashews (ganz)', fr: 'Noix de cajou (entières)', es: 'Anacardos (enteros)' }, category: 'nut' },
+  { id: 'pistachios', slug: 'pistachios', density_g_per_ml: 0.520, names: { en: 'Pistachios (shelled)', it: 'Pistacchi (sgusciati)', de: 'Pistazien (geschält)', fr: 'Pistaches (décortiquées)', es: 'Pistachos (sin cáscara)' }, category: 'nut' },
+  { id: 'macadamia-nuts', slug: 'macadamia-nuts', density_g_per_ml: 0.530, names: { en: 'Macadamia Nuts', it: 'Noci di macadamia', de: 'Macadamia-Nüsse', fr: 'Noix de macadamia', es: 'Nueces de macadamia' }, category: 'nut' },
+  { id: 'pine-nuts', slug: 'pine-nuts', density_g_per_ml: 0.580, names: { en: 'Pine Nuts', it: 'Pinoli', de: 'Pinienkerne', fr: 'Pignons de pin', es: 'Piñones' }, category: 'nut' },
+  { id: 'peanuts-whole', slug: 'peanuts', density_g_per_ml: 0.580, names: { en: 'Peanuts (whole)', it: 'Arachidi (intere)', de: 'Erdnüsse (ganz)', fr: 'Cacahuètes (entières)', es: 'Cacahuetes (enteros)' }, category: 'nut' },
+  { id: 'almond-butter', slug: 'almond-butter', density_g_per_ml: 1.060, names: { en: 'Almond Butter', it: 'Burro di mandorle', de: 'Mandelbutter', fr: 'Beurre d\'amande', es: 'Mantequilla de almendra' }, category: 'nut' },
+  { id: 'cashew-butter', slug: 'cashew-butter', density_g_per_ml: 1.070, names: { en: 'Cashew Butter', it: 'Burro di anacardi', de: 'Cashewbutter', fr: 'Beurre de cajou', es: 'Mantequilla de anacardo' }, category: 'nut' },
+
+  // NEW SPICES & LEAVENING
+  { id: 'turmeric', slug: 'turmeric', density_g_per_ml: 0.640, names: { en: 'Turmeric (ground)', it: 'Curcuma (in polvere)', de: 'Kurkuma (gemahlen)', fr: 'Curcuma (moulu)', es: 'Cúrcuma (molida)' }, category: 'spice' },
+  { id: 'paprika', slug: 'paprika', density_g_per_ml: 0.540, names: { en: 'Paprika', it: 'Paprica', de: 'Paprika', fr: 'Paprika', es: 'Pimentón' }, category: 'spice' },
+  { id: 'cumin-ground', slug: 'cumin', density_g_per_ml: 0.520, names: { en: 'Cumin (ground)', it: 'Cumino (in polvere)', de: 'Kreuzkümmel (gemahlen)', fr: 'Cumin (moulu)', es: 'Comino (molido)' }, category: 'spice' },
+  { id: 'garlic-powder', slug: 'garlic-powder', density_g_per_ml: 0.620, names: { en: 'Garlic Powder', it: 'Aglio in polvere', de: 'Knoblauchpulver', fr: 'Ail en poudre', es: 'Ajo en polvo' }, category: 'spice' },
+  { id: 'ginger-powder', slug: 'ginger-powder', density_g_per_ml: 0.520, names: { en: 'Ginger (ground)', it: 'Zenzero (in polvere)', de: 'Ingwer (gemahlen)', fr: 'Gingembre (moulu)', es: 'Jengibre (molido)' }, category: 'spice' },
+  { id: 'chili-powder', slug: 'chili-powder', density_g_per_ml: 0.530, names: { en: 'Chili Powder', it: 'Peperoncino in polvere', de: 'Chilipulver', fr: 'Piment en poudre', es: 'Chile en polvo' }, category: 'spice' },
+  { id: 'black-pepper', slug: 'black-pepper', density_g_per_ml: 0.560, names: { en: 'Black Pepper (ground)', it: 'Pepe nero (macinato)', de: 'Schwarzer Pfeffer (gemahlen)', fr: 'Poivre noir (moulu)', es: 'Pimienta negra (molida)' }, category: 'spice' },
+  { id: 'active-dry-yeast', slug: 'active-dry-yeast', density_g_per_ml: 0.720, names: { en: 'Active Dry Yeast', it: 'Lievito secco attivo', de: 'Trockenhefe (aktiv)', fr: 'Levure sèche active', es: 'Levadura seca activa' }, category: 'spice' },
+  { id: 'instant-yeast', slug: 'instant-yeast', density_g_per_ml: 0.720, names: { en: 'Instant Yeast', it: 'Lievito istantaneo', de: 'Instanthefe', fr: 'Levure instantanée', es: 'Levadura instantánea' }, category: 'spice' },
+  { id: 'onion-powder', slug: 'onion-powder', density_g_per_ml: 0.500, names: { en: 'Onion Powder', it: 'Cipolla in polvere', de: 'Zwiebelpulver', fr: 'Oignon en poudre', es: 'Cebolla en polvo' }, category: 'spice' },
+
+  // NEW OTHER
+  { id: 'matcha-powder', slug: 'matcha-powder', density_g_per_ml: 0.380, names: { en: 'Matcha Powder', it: 'Polvere di matcha', de: 'Matchapulver', fr: 'Poudre de matcha', es: 'Polvo de matcha' }, category: 'other' },
+  { id: 'espresso-powder', slug: 'espresso-powder', density_g_per_ml: 0.400, names: { en: 'Espresso Powder', it: 'Polvere di espresso', de: 'Espressopulver', fr: 'Poudre d\'espresso', es: 'Polvo de espresso' }, category: 'other' },
+  { id: 'carob-powder', slug: 'carob-powder', density_g_per_ml: 0.450, names: { en: 'Carob Powder', it: 'Polvere di carruba', de: 'Johannisbrotkernmehl', fr: 'Poudre de caroube', es: 'Harina de algarroba' }, category: 'other' },
+  { id: 'white-chocolate-chips', slug: 'white-chocolate-chips', density_g_per_ml: 0.660, names: { en: 'White Chocolate Chips', it: 'Gocce di cioccolato bianco', de: 'Weiße Schokoladenstückchen', fr: 'Pépites de chocolat blanc', es: 'Chips de chocolate blanco' }, category: 'other' },
+  { id: 'xanthan-gum', slug: 'xanthan-gum', density_g_per_ml: 0.640, names: { en: 'Xanthan Gum', it: 'Gomma xantana', de: 'Xanthan', fr: 'Gomme xanthane', es: 'Goma xantana' }, category: 'other' },
+  { id: 'vital-wheat-gluten', slug: 'vital-wheat-gluten', density_g_per_ml: 0.480, names: { en: 'Vital Wheat Gluten', it: 'Glutine di frumento vitale', de: 'Weizenglutenmehl', fr: 'Gluten de blé vital', es: 'Gluten de trigo vital' }, category: 'other' },
+  { id: 'flaxseed-whole', slug: 'flaxseed-whole', density_g_per_ml: 0.680, names: { en: 'Flaxseed (whole)', it: 'Semi di lino (interi)', de: 'Leinsamen (ganz)', fr: 'Graines de lin (entières)', es: 'Linaza (entera)' }, category: 'other' },
+  { id: 'dried-dates', slug: 'dried-dates', density_g_per_ml: 0.720, names: { en: 'Dried Dates (chopped)', it: 'Datteri essiccati (tritati)', de: 'Getrocknete Datteln (gehackt)', fr: 'Dattes séchées (hachées)', es: 'Dátiles secos (picados)' }, category: 'other' },
+  { id: 'dried-figs', slug: 'dried-figs', density_g_per_ml: 0.600, names: { en: 'Dried Figs (chopped)', it: 'Fichi essiccati (tritati)', de: 'Getrocknete Feigen (gehackt)', fr: 'Figues séchées (hachées)', es: 'Higos secos (picados)' }, category: 'other' },
+  { id: 'dried-mango', slug: 'dried-mango', density_g_per_ml: 0.550, names: { en: 'Dried Mango (chopped)', it: 'Mango essiccato (tritato)', de: 'Getrocknete Mango (gehackt)', fr: 'Mangue séchée (hachée)', es: 'Mango seco (picado)' }, category: 'other' },
+  { id: 'maca-powder', slug: 'maca-powder', density_g_per_ml: 0.440, names: { en: 'Maca Powder', it: 'Polvere di maca', de: 'Macapulver', fr: 'Poudre de maca', es: 'Polvo de maca' }, category: 'other' },
+  { id: 'spirulina', slug: 'spirulina', density_g_per_ml: 0.420, names: { en: 'Spirulina Powder', it: 'Spirulina in polvere', de: 'Spirulinapulver', fr: 'Spiruline en poudre', es: 'Espirulina en polvo' }, category: 'other' },
 ]
 
 export function getIngredientBySlug(slug: string): Ingredient | undefined {

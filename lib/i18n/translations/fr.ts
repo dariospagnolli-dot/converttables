@@ -55,6 +55,14 @@ export const fr = {
   // New conversion pages
   tablespoonsToGrams: 'Cuillères à soupe en grammes',
   teaspoonsToGrams: 'Cuillères à café en grammes',
+  ouncesToGrams: 'Onces en grammes',
   stickOfButter: 'Conversions bâtonnet de beurre',
   ovenTemperature: 'Conversion température four',
+  timesTable: 'Table de multiplication',
+  liquidCooking: 'Conversions liquides cuisine',
+  pintsToCups: 'Pintes en tasses',
+  quartsToCups: 'Quarts en tasses',
+  cupsToMl: 'Tasses en millilitres',
+  cupsToLiters: 'Tasses en litres',
+  fractionToDecimal: 'Fraction en Décimal',
 } as const

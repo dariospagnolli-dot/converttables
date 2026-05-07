@@ -1,7 +1,18 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/i18n/config'
 import { t } from '@/lib/i18n'
 import { generateMultiplicationTable } from '@/lib/tables/math'
+
+const SINGLE_NUMBERS = Array.from({ length: 12 }, (_, i) => i + 1)
+
+const timesTableLabel: Record<Locale, (n: number) => string> = {
+  en: n => `${n} Times Table`,
+  it: n => `Tabellina del ${n}`,
+  de: n => `${n}er Einmaleins`,
+  fr: n => `Table de ${n}`,
+  es: n => `Tabla del ${n}`,
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -63,6 +74,30 @@ export default async function MultiplicationPage({ params }: { params: Promise<{
           </div>
         ))}
       </div>
+
+      {/* Links to individual times tables */}
+      <section className="mt-12">
+        <h2 className="text-xl font-semibold mb-4">
+          {{ en: 'Individual Times Tables', it: 'Tabelline Singole', de: 'Einzelne Einmaleins-Tabellen', fr: 'Tables individuelles', es: 'Tablas individuales' }[l]}
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+          {SINGLE_NUMBERS.map(n => (
+            <Link
+              key={n}
+              href={`/${locale}/tables/multiplication/${n}`}
+              className="rounded border px-3 py-2 text-sm text-center hover:bg-accent transition-colors"
+            >
+              {timesTableLabel[l](n)}
+            </Link>
+          ))}
+          <Link href={`/${locale}/tables/multiplication/1-20`} className="rounded border px-3 py-2 text-sm text-center hover:bg-accent transition-colors">
+            {{ en: 'Table 1–20', it: 'Tavola 1–20', de: 'Einmaleins 1–20', fr: 'Table 1–20', es: 'Tabla 1–20' }[l]}
+          </Link>
+          <Link href={`/${locale}/tables/multiplication/1-100`} className="rounded border px-3 py-2 text-sm text-center hover:bg-accent transition-colors">
+            {{ en: 'Table 1–100', it: 'Tavola 1–100', de: 'Einmaleins 1–100', fr: 'Table 1–100', es: 'Tabla 1–100' }[l]}
+          </Link>
+        </div>
+      </section>
     </div>
   )
 }
