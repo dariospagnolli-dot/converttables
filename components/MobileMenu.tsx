@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import type { Locale } from '@/lib/i18n/config'
+import { SearchBar } from './SearchBar'
 
 const nav: Record<string, Record<Locale, string>> = {
   convert: { en: 'Convert', it: 'Converti', de: 'Umrechnen', fr: 'Convertir', es: 'Convertir' },
@@ -33,7 +34,10 @@ export function MobileMenu({ locale }: { locale: Locale }) {
       </button>
 
       {open && (
-        <div className="absolute top-full left-0 right-0 bg-white border-b border-zinc-100 shadow-md z-50 px-4 py-2">
+        <div className="absolute top-full left-0 right-0 bg-white border-b border-zinc-100 shadow-md z-50 px-4 py-3">
+          <div className="mb-3">
+            <SearchBar locale={locale} />
+          </div>
           <nav className="flex flex-col text-sm font-medium">
             <Link
               href={`/${locale}/convert`}

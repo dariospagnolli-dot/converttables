@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Locale } from '@/lib/i18n/config'
 import { LocaleSwitcher } from './LocaleSwitcher'
 import { MobileMenu } from './MobileMenu'
+import { SearchBar } from './SearchBar'
 
 function BrandIcon() {
   return (
@@ -58,6 +59,11 @@ export function Header({ locale }: { locale: Locale }) {
             {nav.howMany[locale]}
           </Link>
         </nav>
+
+        {/* Search (desktop) */}
+        <div className="hidden sm:block">
+          <SearchBar locale={locale} />
+        </div>
 
         {/* Locale switcher + mobile menu */}
         <div className="flex items-center gap-1">
