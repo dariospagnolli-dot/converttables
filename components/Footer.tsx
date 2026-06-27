@@ -44,6 +44,7 @@ export function Footer({ locale }: { locale: Locale }) {
             </p>
             <ul className="space-y-1.5 text-muted-foreground">
               <li><Link href={`/${locale}/convert/how-many/cm-in-inch`} className="hover:text-foreground">{{ en: 'How Many...?', it: 'Quanti/e...?', de: 'Wie viele...?', fr: 'Combien de...?', es: '¿Cuántos...?' }[locale]}</Link></li>
+              <li><Link href={`/${locale}/about`} className="hover:text-foreground">{{ en: 'About', it: 'Chi siamo', de: 'Über uns', fr: 'À propos', es: 'Acerca de' }[locale]}</Link></li>
               <li><Link href={`/${locale}/legal/privacy`} className="hover:text-foreground">{{ en: 'Privacy Policy', it: 'Privacy', de: 'Datenschutz', fr: 'Confidentialité', es: 'Privacidad' }[locale]}</Link></li>
               <li><Link href={`/${locale}/legal/cookies`} className="hover:text-foreground">Cookie Policy</Link></li>
               <li><Link href={`/${locale}/legal/terms`} className="hover:text-foreground">{{ en: 'Terms of Use', it: 'Termini', de: 'Nutzungsbedingungen', fr: 'Conditions', es: 'Condiciones' }[locale]}</Link></li>
