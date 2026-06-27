@@ -61,6 +61,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${dmSans.variable} h-full antialiased`}>
+      <head>
+        {/* AdSense */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7258748506074457" crossOrigin="anonymous" />
+      </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col bg-background text-foreground font-sans">
         {/* Consent Mode v2 — must run before GTM */}
         <script dangerouslySetInnerHTML={{ __html: `
@@ -95,13 +100,6 @@ export default async function LocaleLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','${GTM_ID}');
         `}</Script>
-        {/* AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7258748506074457"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   )
