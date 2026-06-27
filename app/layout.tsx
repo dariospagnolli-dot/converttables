@@ -14,5 +14,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return (
+    <>
+      <head>
+        {/* AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7258748506074457"
+          crossOrigin="anonymous"
+        />
+      </head>
+      {children}
+    </>
+  )
 }
