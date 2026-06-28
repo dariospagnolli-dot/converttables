@@ -6,9 +6,10 @@ import type { Locale } from '@/lib/i18n/config'
 import { SearchBar } from './SearchBar'
 
 const nav: Record<string, Record<Locale, string>> = {
-  convert: { en: 'Convert', it: 'Converti', de: 'Umrechnen', fr: 'Convertir', es: 'Convertir' },
-  tables:  { en: 'Tables',  it: 'Tabelle',  de: 'Tabellen',  fr: 'Tables',   es: 'Tablas'   },
-  howMany: { en: 'How Many', it: 'Quanti?', de: 'Wie viele?', fr: 'Combien?', es: '¿Cuántos?' },
+  convert: { en: 'Convert',  it: 'Converti',   de: 'Umrechnen', fr: 'Convertir', es: 'Convertir'  },
+  cooking: { en: 'Cooking',  it: 'Cucina',      de: 'Küche',     fr: 'Cuisine',   es: 'Cocina'     },
+  tables:  { en: 'Tables',   it: 'Tabelle',     de: 'Tabellen',  fr: 'Tables',    es: 'Tablas'     },
+  about:   { en: 'About',    it: 'Chi siamo',   de: 'Über uns',  fr: 'À propos',  es: 'Acerca de'  },
 }
 
 export function MobileMenu({ locale }: { locale: Locale }) {
@@ -39,26 +40,17 @@ export function MobileMenu({ locale }: { locale: Locale }) {
             <SearchBar locale={locale} />
           </div>
           <nav className="flex flex-col text-sm font-medium">
-            <Link
-              href={`/${locale}/convert`}
-              onClick={() => setOpen(false)}
-              className="px-3 py-2.5 text-zinc-700 hover:bg-zinc-50 rounded-lg transition-colors"
-            >
+            <Link href={`/${locale}/convert`} onClick={() => setOpen(false)} className="px-3 py-2.5 text-zinc-700 hover:bg-zinc-50 rounded-lg transition-colors">
               {nav.convert[locale]}
             </Link>
-            <Link
-              href={`/${locale}/tables/multiplication`}
-              onClick={() => setOpen(false)}
-              className="px-3 py-2.5 text-zinc-700 hover:bg-zinc-50 rounded-lg transition-colors"
-            >
+            <Link href={`/${locale}/cooking`} onClick={() => setOpen(false)} className="px-3 py-2.5 text-zinc-700 hover:bg-zinc-50 rounded-lg transition-colors">
+              {nav.cooking[locale]}
+            </Link>
+            <Link href={`/${locale}/tables`} onClick={() => setOpen(false)} className="px-3 py-2.5 text-zinc-700 hover:bg-zinc-50 rounded-lg transition-colors">
               {nav.tables[locale]}
             </Link>
-            <Link
-              href={`/${locale}/convert/how-many/cm-in-inch`}
-              onClick={() => setOpen(false)}
-              className="px-3 py-2.5 text-zinc-700 hover:bg-zinc-50 rounded-lg transition-colors"
-            >
-              {nav.howMany[locale]}
+            <Link href={`/${locale}/about`} onClick={() => setOpen(false)} className="px-3 py-2.5 text-zinc-700 hover:bg-zinc-50 rounded-lg transition-colors">
+              {nav.about[locale]}
             </Link>
           </nav>
         </div>

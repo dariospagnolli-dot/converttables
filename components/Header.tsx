@@ -18,10 +18,10 @@ function BrandIcon() {
 }
 
 const nav: Record<string, Record<Locale, string>> = {
-  convert: { en: 'Convert', it: 'Converti', de: 'Umrechnen', fr: 'Convertir', es: 'Convertir' },
-  tables:  { en: 'Tables',  it: 'Tabelle',  de: 'Tabellen',  fr: 'Tables',   es: 'Tablas'   },
-  howMany: { en: 'How Many', it: 'Quanti?', de: 'Wie viele?', fr: 'Combien?', es: '¿Cuántos?' },
-  about:   { en: 'About', it: 'Chi siamo', de: 'Über uns', fr: 'À propos', es: 'Acerca de' },
+  convert: { en: 'Convert',  it: 'Converti',   de: 'Umrechnen', fr: 'Convertir', es: 'Convertir'  },
+  cooking: { en: 'Cooking',  it: 'Cucina',      de: 'Küche',     fr: 'Cuisine',   es: 'Cocina'     },
+  tables:  { en: 'Tables',   it: 'Tabelle',     de: 'Tabellen',  fr: 'Tables',    es: 'Tablas'     },
+  about:   { en: 'About',    it: 'Chi siamo',   de: 'Über uns',  fr: 'À propos',  es: 'Acerca de'  },
 }
 
 export function Header({ locale }: { locale: Locale }) {
@@ -41,23 +41,14 @@ export function Header({ locale }: { locale: Locale }) {
 
         {/* Nav */}
         <nav className="hidden sm:flex items-center gap-6 text-sm font-medium">
-          <Link
-            href={`/${locale}/convert`}
-            className="text-zinc-500 hover:text-zinc-900 transition-colors"
-          >
+          <Link href={`/${locale}/convert`} className="text-zinc-500 hover:text-zinc-900 transition-colors">
             {nav.convert[locale]}
           </Link>
-          <Link
-            href={`/${locale}/tables/multiplication`}
-            className="text-zinc-500 hover:text-zinc-900 transition-colors"
-          >
-            {nav.tables[locale]}
+          <Link href={`/${locale}/cooking`} className="text-zinc-500 hover:text-zinc-900 transition-colors">
+            {nav.cooking[locale]}
           </Link>
-          <Link
-            href={`/${locale}/convert/how-many/cm-in-inch`}
-            className="text-zinc-500 hover:text-zinc-900 transition-colors"
-          >
-            {nav.howMany[locale]}
+          <Link href={`/${locale}/tables`} className="text-zinc-500 hover:text-zinc-900 transition-colors">
+            {nav.tables[locale]}
           </Link>
           <Link href={`/${locale}/about`} className="text-zinc-500 hover:text-zinc-900 transition-colors">
             {nav.about[locale]}
