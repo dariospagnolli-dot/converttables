@@ -5,7 +5,6 @@ import { t } from '@/lib/i18n'
 import type { Locale } from '@/lib/i18n/config'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import { CookieBanner } from '@/components/CookieBanner'
 
 const GTM_ID = 'GTM-KJDPWVJX'
 
@@ -67,18 +66,12 @@ export default async function LocaleLayout({
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7258748506074457" crossOrigin="anonymous" />
       </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col bg-background text-foreground font-sans">
-        {/* Consent Mode v2 — must run before GTM */}
+        {/* Consent Mode v2 defaults — Google CMP handles updates */}
         <script dangerouslySetInnerHTML={{ __html: `
           window.dataLayer=window.dataLayer||[];
           function gtag(){window.dataLayer.push(arguments);}
           window.gtag=gtag;
-          try{
-            var _c=localStorage.getItem('ct_cookie_consent');
-            var _g=_c==='accepted'?'granted':'denied';
-            gtag('consent','default',{analytics_storage:_g,ad_storage:_g,ad_user_data:_g,ad_personalization:_g});
-          }catch(e){
-            gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
-          }
+          gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
         `}} />
         {/* GTM noscript fallback */}
         <noscript>
@@ -91,7 +84,6 @@ export default async function LocaleLayout({
         <Header locale={locale as Locale} />
         <main className="flex-1">{children}</main>
         <Footer locale={locale as Locale} />
-        <CookieBanner locale={locale as Locale} />
         {/* GTM loader */}
         <Script id="gtm" strategy="afterInteractive">{`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
